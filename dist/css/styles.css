@@ -1,24 +1,3 @@
-h1 {
-  text-align: center;
-}
 
-#loginForm,
-#registerForm {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-}
-
-.registerHere {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.formError {
-  color: red;
-  margin-bottom: 40px;
-}
 
 /*# sourceMappingURL=styles.css.map */

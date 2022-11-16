@@ -16,24 +16,30 @@
     <link rel="stylesheet" href="dist/css/styles.css" />
   </head>
   <body>
-    <h1>Logo</h1>
-    <form action="" id="loginForm">
-      <input type="email" placeholder="example@stud.noroff.no" id="email" />
-      <input
-        type="password"
-        placeholder="Password"
-        id="password"
-        minlength="8"
-      />
-      <div class="formError"></div>
+    <main class="mt-5 d-flex flex-column align-items-center">
+      <h1 class="mt-5">Logo</h1>
+      <form action="" id="loginForm" class="d-flex flex-column mb-4">
+        <div class="mb-3">
+          <input type="email" placeholder="example@stud.noroff.no" id="email" />
+        </div>
+        <div class="mb-3">
+          <input
+            type="password"
+            placeholder="Password"
+            id="password"
+            minlength="8"
+          />
+        </div>
+        <div class="formError"></div>
 
-      <button type="submit">Log in</button>
-    </form>
+        <button type="submit" class="btn btn-primary">Log in</button>
+      </form>
 
-    <div class="registerHere">
-      <p>Want to join?</p>
-      <a href="register.html">Register here</a>
-    </div>
+      <div class="d-flex">
+        <p>Want to join?</p>
+        <a href="register.html" class="ms-1">Register here</a>
+      </div>
+    </main>
     <!-- <script src="js/script.js"></script> -->
     <script defer type="module" src="js/login/login.mjs"></script>
   </body>
