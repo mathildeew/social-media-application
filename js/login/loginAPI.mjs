@@ -22,13 +22,15 @@ export async function loginUserAPI(url, userData) {
     const accessToken = json.accessToken;
     localStorage.setItem("accessToken", accessToken);
 
+    console.log(json);
+
     const formError = document.querySelector(".formError");
     if (json.errors[0].message === "Invalid email or password") {
       formError.innerHTML = `<p>${json.errors[0].message}</p>`;
     } else {
       formError.innerHTML = ``;
-      location.href = `/profile.html`;
     }
+    // location.href = `/profile.html`;
   } catch (error) {
     console.log(error);
   }
