@@ -15,4 +15,9 @@ h1 {
   align-items: center;
 }
 
+.formError {
+  color: red;
+  margin-bottom: 40px;
+}
+
 /*# sourceMappingURL=styles.css.map */

@@ -13,15 +13,24 @@
   </head>
   <body>
     <h1>Logo</h1>
-    <form action="" method="post" id="loginForm">
-      <input type="email" placeholder="example@email.com" id="email" />
-      <input type="password" placeholder="Password" id="password" />
-      <button>Log in</button>
+    <form action="" id="loginForm">
+      <input type="email" placeholder="example@stud.noroff.no" id="email" />
+      <input
+        type="password"
+        placeholder="Password"
+        id="password"
+        minlength="8"
+      />
+      <div class="formError"></div>
+
+      <button type="submit">Log in</button>
     </form>
+
     <div class="registerHere">
       <p>Want to join?</p>
       <a href="">Register here</a>
     </div>
-    <script src="js/script.js"></script>
+    <!-- <script src="js/script.js"></script> -->
+    <script defer type="module" src="js/login/login.mjs"></script>
   </body>
 </html>
