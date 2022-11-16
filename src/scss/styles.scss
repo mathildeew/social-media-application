@@ -1,0 +1,22 @@
+h1 {
+  text-align: center;
+}
+
+#loginForm {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.registerHere {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formError {
+  // display: none;
+  color: red;
+  margin-bottom: 40px;
+}
