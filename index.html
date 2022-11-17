@@ -13,14 +13,24 @@
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="dist/css/styles.css" />
   </head>
+
   <body>
     <main class="mt-5 d-flex flex-column align-items-center">
-      <h1 class="mt-5">Logo</h1>
+      <h1 class="my-5">Logo</h1>
       <form action="" id="loginForm" class="d-flex flex-column mb-4">
         <div class="mb-3">
-          <input type="email" placeholder="example@stud.noroff.no" id="email" />
+          <input
+            type="email"
+            placeholder="example@stud.noroff.no"
+            id="email"
+            class="rounded-pill"
+          />
         </div>
         <div class="mb-3">
           <input
@@ -28,11 +38,14 @@
             placeholder="Password"
             id="password"
             minlength="8"
+            class="rounded-pill"
           />
         </div>
         <div class="formError"></div>
 
-        <button type="submit" class="btn btn-primary">Log in</button>
+        <button type="submit" class="btn btn-primary rounded-pill">
+          Log in
+        </button>
       </form>
 
       <div class="d-flex">
@@ -42,5 +55,6 @@
     </main>
     <!-- <script src="js/script.js"></script> -->
     <script defer type="module" src="js/login/login.mjs"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
