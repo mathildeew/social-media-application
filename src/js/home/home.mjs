@@ -1,9 +1,10 @@
 import { allPostsUrl } from "../api/apiUrl.mjs";
 import { displayFeed } from "./displayFeed.mjs";
+import * as storage from "../storage/localStorage.mjs";
 
-async function getAllPosts(url) {
+export async function getAllPosts(url) {
   try {
-    const token = localStorage.getItem("accessToken");
+    const token = storage.get("token");
 
     const getData = {
       method: "GET",
@@ -22,5 +23,3 @@ async function getAllPosts(url) {
     console.log(error);
   }
 }
-
-getAllPosts(allPostsUrl);

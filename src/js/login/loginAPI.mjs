@@ -1,3 +1,5 @@
+import * as storage from "../storage/localStorage.mjs";
+
 /**
  * API call to login user
  * @param {string} url
@@ -20,7 +22,7 @@ export async function loginUserAPI(url, userData) {
     const json = await response.json();
 
     const accessToken = json.accessToken;
-    localStorage.setItem("accessToken", accessToken);
+    storage.set("token", json.accessToken);
 
     const name = json.name;
     localStorage.setItem("name", name);

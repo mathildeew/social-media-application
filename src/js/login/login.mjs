@@ -12,5 +12,6 @@ export function loginUser() {
     const profile = Object.fromEntries(formData.entries());
 
     loginUserAPI(loginUrl, profile);
+    // window.location.href = "/profile/";
   });
 }
