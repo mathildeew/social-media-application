@@ -23,16 +23,6 @@ export async function getProfileMediaApi(url) {
   }
 }
 
-export function displayMedia(userProfile) {
-  const currentBanner = document.querySelector("#currentBanner");
-  const currentAvatar = document.querySelector("#currentAvatar");
-
-  currentAvatar.src = userProfile.avatar;
-  currentBanner.src = userProfile.banner;
-  console.log(userProfile.banner);
-  console.log(userProfile.avatar);
-}
-
 export async function editMedia(url, postContent) {
   try {
     const token = storage.get("token");
