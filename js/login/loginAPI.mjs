@@ -33,7 +33,7 @@ export async function loginUserAPI(url, userData) {
     // } else {
     //   formError.innerHTML = ``;
     // }
-    location.href = `/profile.html?name=${name}`;
+    location.href = `/profile/`;
   } catch (error) {
     console.log(error);
   }
