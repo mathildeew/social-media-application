@@ -1,12 +1,13 @@
 /**
- * API call to register user
+ * API call to login user
  * @param {string} url
  * @param {any} userData
  * ``` js
- *  registerUser(registerUrl, userRegister);
+ * loginUser(loginUrl, userLogin);
  * ```
  */
-export async function registerUserAPI(url, userData) {
+
+export async function loginUserAPI(url, userData) {
   try {
     const postData = {
       method: "POST",
@@ -17,6 +18,14 @@ export async function registerUserAPI(url, userData) {
     };
     const response = await fetch(url, postData);
     const json = await response.json();
+
+    const accessToken = json.accessToken;
+    localStorage.setItem("accessToken", accessToken);
+
+    const name = json.name;
+    localStorage.setItem("name", name);
+
+    console.log(json);
   } catch (error) {
     console.log(error);
   }
