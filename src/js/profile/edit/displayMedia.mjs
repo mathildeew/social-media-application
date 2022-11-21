@@ -6,5 +6,7 @@ export function displayMedia() {
   const banner = localStorage.getItem("banner");
 
   currentAvatar.src = `${avatar}`;
-  currentBanner.src = `${banner}`;
+  console.log(currentAvatar.src);
+
+  // currentBanner.src = `${banner}`;
 }
