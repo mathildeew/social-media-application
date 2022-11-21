@@ -22,10 +22,13 @@ export async function loginUserAPI(url, userData) {
     const json = await response.json();
 
     const accessToken = json.accessToken;
-    storage.set("token", json.accessToken);
-
+    storage.set("token", accessToken);
     const name = json.name;
-    localStorage.setItem("name", name);
+    storage.set("name", name);
+    const avatar = json.avatar;
+    storage.set("avatar", avatar);
+    const banner = json.banner;
+    storage.set("banner", banner);
 
     console.log(json);
   } catch (error) {

@@ -1,4 +1,4 @@
-import { registerUrl } from "../api/apiUrl.mjs";
+import { registerUrl } from "../api/apiUrls.mjs";
 import { registerUserAPI } from "./registerAPI.mjs";
 
 export function registerUser() {

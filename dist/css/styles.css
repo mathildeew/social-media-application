@@ -38,4 +38,9 @@ i {
   text-align: center;
 }
 
+#currentAvatar,
+#currentBanner {
+  width: 150px;
+}
+
 /*# sourceMappingURL=styles.css.map */

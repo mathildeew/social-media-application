@@ -49,17 +49,16 @@
       </div>
     </nav>
 
-    <main class="my-5 mx-auto d-flex justify-content-center row">
-      <div class="col-lg-4">
+    <main class=" mx-auto d-flex justify-content-center row">
+      
         <!-- User info -->
         <section class="">
+          <img id="bannerPic" class="col-12"/>
+          <div class="col-lg-4"></div>
           <div class="mb-2 d-flex flex-row align-items-center borderREMOVE">
-            <img
-              src="/assets/images/dmitry-ratushny-T8gLom6k8Jo-unsplash-cropped-downsized.jpg"
-              alt="@my_usernames profile picture"
-              class="profilePic rounded-pill me-1"
-            />
-            <h2 class="username"></h2>
+            <img class="profilePic rounded-pill me-1" id="avatarPic" />
+
+            <h2 id="username"></h2>
           </div>
 
           <div class="mb-2 borderREMOVE">
@@ -69,7 +68,7 @@
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
             <div class="editProfile">
-              <button class="btn btn-secondary">Edit profile</button>
+              <a href="./edit/" class="btn btn-secondary">Edit profile</a>
             </div>
           </div>
         </section>
@@ -142,9 +141,10 @@
       <div class="col-lg-8">
         <section class="mx-1 mb-2 borderREMOVE">
           <h3>Make a post</h3>
-          <form>
+          <form id="createPost">
             <input
               type="text"
+              name="title"
               placeholder="Title"
               class="form-control mb-3"
               id=""
@@ -158,6 +158,7 @@
             />
             <div class="mb-3">
               <textarea
+                name="body"
                 placeholder="Share something with the world!"
                 class="form-control"
                 id="exampleFormControlTextarea1"
@@ -172,7 +173,9 @@
         <!-- Posts -->
         <section class="mx-1 mb-2 borderREMOVE">
           <h3>Posts</h3>
-          <div class="card mb-3">
+          <div id="userPost">
+            <!-- REMOVE THIS
+              <div class="card mb-3" >
             <div class="card-body">
               <div class="d-flex align-items-center mb-3">
                 <img
@@ -191,27 +194,7 @@
               <i class="bi bi-pencil-square me-4"></i>
               <i class="bi bi-trash3"></i>
             </div>
-          </div>
-
-          <div class="card mb-3">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-3">
-                <img
-                  src="/assets/images/dmitry-ratushny-T8gLom6k8Jo-unsplash-cropped-downsized.jpg"
-                  alt="@usernames profilepicture"
-                  class="rounded-pill me-2 postImg"
-                />
-                <h5 class="card-title">@my_username</h5>
-              </div>
-              <h6 class="card-subtitle mb-2 text-muted">31. october 2020</h6>
-
-              <p class="card-text">
-                Nothing beats fall colors🍁🍂 So excited to start my next
-                project!
-              </p>
-              <i class="bi bi-chat-left-text me-4"></i>
-              <i class="bi bi-suit-heart me-4"></i>
-            </div>
+          </div> -->
           </div>
         </section>
       </div>

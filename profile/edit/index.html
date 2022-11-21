@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Social Media Application made for JavaScript 2 Course Assignment. Log in or register here."
+    />
+    <title>Register</title>
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+  </head>
+  <body>
+    <main class="mt-5 d-flex flex-column align-items-center">
+      <h1 class="my-5">Update media profile</h1>
+      <form id="updateMediaForm" class="d-flex flex-column mb-4">
+        <img id="currentAvatar" />
+        <input
+          name="avatar"
+          type="url"
+          placeholder="New avatar"
+          id="avatar"
+          class="form-control rounded-pill mb-3"
+        />
+        <img id="currentBanner" />
+
+        <input
+          name="banner"
+          type="url"
+          placeholder="New banner"
+          id="banner"
+          class="form-control rounded-pill mb-3"
+        />
+
+        <button type="submit" class="btn btn-primary rounded-pill">
+          Update
+        </button>
+      </form>
+
+      <a href="../../profile/">Back to profile</a>
+    </main>
+    <script defer type="module" src="/src/js/script.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

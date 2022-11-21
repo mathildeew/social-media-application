@@ -1,18 +1,18 @@
-export function displayFeed(json) {
+export function displayFeed(allPosts) {
   const cardPosts = document.querySelector(".cardJSON");
 
-  for (let i = 0; i < json.length; i++) {
-    const cardTitle = json[i].title;
-    const cardDate = json[i].created;
-    const cardText = json[i].body;
-    const cardComments = json[i]._count.comments;
-    const cardReactions = json[i]._count.reactions;
+  for (let i = 0; i < allPosts.length; i++) {
+    const cardTitle = allPosts[i].title;
+    const cardDate = allPosts[i].created;
+    const cardText = allPosts[i].body;
+    const cardComments = allPosts[i]._count.comments;
+    const cardReactions = allPosts[i]._count.reactions;
 
     var cardImg;
-    if (json[i].media === null) {
+    if (allPosts[i].media === null) {
       var cardImg = "";
     } else {
-      var cardImg = json[i].media;
+      var cardImg = allPosts[i].media;
     }
 
     if (i <= 10) {

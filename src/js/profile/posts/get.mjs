@@ -1,8 +1,7 @@
-import { allPostsUrl } from "../api/apiUrl.mjs";
-import { displayFeed } from "./displayFeed.mjs";
-import * as storage from "../storage/localStorage.mjs";
+import * as storage from "../../storage/localStorage.mjs";
+import { displayUserPosts } from "../displayProfile/displayUserPosts.mjs";
 
-export async function getAllPosts(url) {
+export async function getUserPostsAPI(url) {
   try {
     const token = storage.get("token");
 
@@ -15,10 +14,10 @@ export async function getAllPosts(url) {
     };
 
     const response = await fetch(url, getData);
-    const json = await response.json();
-    console.log(json);
+    const usersPosts = await response.json();
 
-    displayFeed(json);
+    console.log(usersPosts);
+    displayUserPosts(usersPosts);
   } catch (error) {
     console.log(error);
   }

@@ -1,4 +1,4 @@
-import { loginUrl } from "../api/apiUrl.mjs";
+import { loginUrl } from "../api/apiUrls.mjs";
 import { loginUserAPI } from "./loginAPI.mjs";
 
 export function loginUser() {
