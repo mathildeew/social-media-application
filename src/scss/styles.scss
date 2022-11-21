@@ -12,7 +12,7 @@ h1 {
 
 // Navbar
 i {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #000;
 }
 
@@ -26,6 +26,10 @@ i {
   height: 100px;
 }
 
+.friendPic {
+  width: 140px;
+}
+
 // Small image on card
 .postImg {
   width: 50px;
@@ -36,6 +40,8 @@ i {
   border: 2px solid green;
 }
 
-::placeholder {
-  text-align: center;
+#homePage {
+  ::placeholder {
+    text-align: center;
+  }
 }

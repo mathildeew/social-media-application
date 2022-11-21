@@ -7,7 +7,7 @@ h1 {
 }
 
 i {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #000;
 }
 
@@ -21,6 +21,10 @@ i {
   height: 100px;
 }
 
+.friendPic {
+  width: 140px;
+}
+
 .postImg {
   width: 50px;
   height: 50px;
@@ -30,7 +34,7 @@ i {
   border: 2px solid green;
 }
 
-::placeholder {
+#homePage ::placeholder {
   text-align: center;
 }
 

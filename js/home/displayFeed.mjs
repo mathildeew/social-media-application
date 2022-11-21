@@ -5,6 +5,8 @@ export function displayFeed(json) {
     const cardTitle = json[i].title;
     const cardDate = json[i].created;
     const cardText = json[i].body;
+    const cardComments = json[i]._count.comments;
+    const cardReactions = json[i]._count.reactions;
 
     var cardImg;
     if (json[i].media === null) {
@@ -23,8 +25,10 @@ export function displayFeed(json) {
                                       <h6 class="card-subtitle mb-2 text-muted">${cardDate}</h6>
                                       <img src="${cardImg}" class ="card-img" />
                                       <p class="card-text">${cardText}</p>
-                                      <i class="bi bi-chat-left-text me-4"></i>
+                                      <i class="bi bi-chat-left-text"></i>
+                                      <p class="d-inline me-4">${cardComments}</p>
                                       <i class="bi bi-suit-heart"></i>
+                                      <p class="d-inline">${cardReactions}</p>
                                       </div>
                                   </div>
                               `;
