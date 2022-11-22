@@ -1,7 +1,7 @@
 import * as storage from "../../storage/localStorage.mjs";
-import { displayUserPosts } from "../displayProfile/displayUserPosts.mjs";
+import { displayPosts } from "../displayProfile/displayPosts.mjs";
 
-export async function getUserPostsAPI(url) {
+export async function getPosts(url) {
   try {
     const token = storage.get("token");
 
@@ -14,10 +14,10 @@ export async function getUserPostsAPI(url) {
     };
 
     const response = await fetch(url, getData);
-    const usersPosts = await response.json();
+    const userPosts = await response.json();
 
-    console.log(usersPosts);
-    displayUserPosts(usersPosts);
+    console.log(userPosts);
+    displayPosts(userPosts);
   } catch (error) {
     console.log(error);
   }

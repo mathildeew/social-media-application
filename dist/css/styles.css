@@ -38,9 +38,8 @@ i {
   text-align: center;
 }
 
-#currentAvatar,
-#currentBanner {
-  width: 150px;
+.editMedia {
+  width: 100px;
 }
 
 /*# sourceMappingURL=styles.css.map */
