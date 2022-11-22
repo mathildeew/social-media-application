@@ -1,0 +1,18 @@
+import { displayFeed } from "../home/displayFeed.mjs";
+import { allPostsUrl } from "../api/apiUrls.mjs";
+
+export function searchPosts(posts) {
+  const search = document.querySelector("#search");
+
+  search.addEventListener("keyup", (event) => {
+    const filter = event.target.value.trim().toLowerCase();
+
+    const filteredPosts = posts.filter(function (post) {
+      if (post.title.toLowerCase().includes(filter)) {
+        return true;
+      }
+    });
+    console.log(filteredPosts);
+    displayFeed(filteredPosts);
+  });
+}

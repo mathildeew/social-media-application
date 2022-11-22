@@ -1,6 +1,7 @@
 import * as storage from "../storage/localStorage.mjs";
 import { displayPosts } from "../profile/displayProfile/displayPosts.mjs";
 import { displayFeed } from "../home/displayFeed.mjs";
+import { searchPosts } from "./search.mjs";
 
 const path = location.pathname;
 
@@ -25,6 +26,7 @@ export async function getPosts(url) {
     }
     if (path === "/home/") {
       displayFeed(posts);
+      searchPosts(posts);
     }
   } catch (error) {
     console.log(error);

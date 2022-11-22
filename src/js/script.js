@@ -16,6 +16,10 @@ import { displayUser } from "./profile/displayProfile/displayUser.mjs";
 import { editMedia } from "./profile/edit/editProfile.mjs";
 
 // Home feed
+import { searchPosts } from "./posts/search.mjs";
+
+// Single post
+import { reactToPost } from "./posts/react.mjs";
 
 // Posts
 import { getPosts } from "./posts/get.mjs";
@@ -31,6 +35,10 @@ if (path === "/") {
 if (path === "/home/") {
   getPosts(allPostsUrl);
   logoutUser();
+}
+
+if (path === "/home/post/") {
+  reactToPost();
 }
 
 if (path === "/profile/") {
