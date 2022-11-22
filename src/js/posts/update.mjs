@@ -1,7 +1,6 @@
-import { updatePostUrl } from "../api/apiUrl.mjs";
-import * as storage from "../../storage/localStorage.mjs";
+import * as storage from "../storage/localStorage.mjs";
 
-export async function updatePostAPI() {
+export async function updatePostAPI(url, postContent) {
   try {
     const token = storage.get("token");
 
@@ -13,17 +12,9 @@ export async function updatePostAPI() {
       },
       body: JSON.stringify(postContent),
     };
-    const response = await fetch(url, postData);
+    const response = await fetch(url, putData);
     const json = await response.json();
   } catch (error) {
     console.log(error);
   }
-}
-
-export function updatePost() {
-  const postContent = {
-    id: seeeijf,
-    title: sdfc,
-    body: sd,
-  };
 }
