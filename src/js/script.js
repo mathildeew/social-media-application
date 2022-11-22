@@ -1,3 +1,5 @@
+import * as storage from "./storage/localStorage.mjs";
+
 import { baseUrl } from "./api/apiUrls.mjs";
 import { allPostsUrl } from "./api/apiUrls.mjs";
 
@@ -14,26 +16,27 @@ import {
   getProfileMediaApi,
 } from "./profile/edit/editProfile.mjs";
 import { displayMedia } from "./profile/edit/displayMedia.mjs";
+import { displayUserPosts } from "./profile/displayProfile/displayUserPosts.mjs";
 
 const path = location.pathname;
 
-// if (path === "/") {
-//   loginUser();
-// } else if (path === "/profile/register/") {
-//   registerUser();
-// }
+if (path === "/") {
+  loginUser();
+} else if (path === "/profile/register/") {
+  registerUser();
+}
 
-// if (path === "/home/") {
-//   getAllPosts(allPostsUrl);
-//   logoutUser();
-// }
+if (path === "/home/") {
+  getAllPosts(allPostsUrl);
+  logoutUser();
+}
 
-// if (path === "/profile/") {
-//   displayUser();
+if (path === "/profile/") {
+  displayUser();
 
-//   // getUserPostsAPI(usersPostsUrl);
-//   logoutUser();
-// }
+  // getUserPostsAPI(usersPostsUrl);
+  logoutUser();
+}
 
 if (path === "/profile/edit/") {
   displayMedia();

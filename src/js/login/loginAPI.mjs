@@ -29,8 +29,6 @@ export async function loginUserAPI(url, userData) {
     storage.set("avatar", avatar);
     const banner = json.banner;
     storage.set("banner", banner);
-
-    console.log(json);
   } catch (error) {
     console.log(error);
   }

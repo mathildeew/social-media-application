@@ -6,5 +6,6 @@ export const createPostUrl = `${baseUrl}/api/v1/social/posts`;
 export const updatePostUrl = `${baseUrl}/api/v1/social/posts/<id>`;
 
 const name = localStorage.getItem("name");
+
 const usersPostsUrl = `${baseUrl}/api/v1/social/profiles/${name}/posts`;
-export const userPostsUrl = `${baseUrl}/api/v1/social/profiles/`;
+export const userProfilesUrl = `${baseUrl}/api/v1/social/profiles/`;
