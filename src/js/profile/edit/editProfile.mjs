@@ -1,5 +1,3 @@
-import * as storage from "../../storage/localStorage.mjs";
-
 import { editMediaUrl } from "../../api/apiUrls.mjs";
 import { editMediaAPI } from "./editAPI.mjs";
 
