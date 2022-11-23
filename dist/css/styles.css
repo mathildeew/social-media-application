@@ -10788,13 +10788,17 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.maxW {
-  max-width: 1800px;
+.navbar-brand {
+  color: #f1f7fd;
+}
+
+.nav-link {
+  color: #f1f7fd;
 }
 
 i {
   font-size: 1.3rem;
-  color: #000;
+  color: #f1f7fd;
 }
 
 .wallPost {

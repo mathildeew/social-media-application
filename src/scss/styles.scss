@@ -4,14 +4,13 @@
 @import "utilities.scss";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-.maxW {
-  max-width: 1800px;
-}
+@import "navbar.scss";
+@import "nav.scss";
 
 // Navbar
 i {
   font-size: 1.3rem;
-  color: #000;
+  color: $light;
 }
 
 .wallPost {
