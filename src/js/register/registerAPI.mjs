@@ -1,13 +1,12 @@
 /**
- * API call to login user
+ * API call to register user
  * @param {string} url
  * @param {any} userData
  * ``` js
- * loginUser(loginUrl, userLogin);
+ *  registerUser(registerUrl, userRegister);
  * ```
  */
-
-export async function loginUserAPI(url, userData) {
+export async function registerUserAPI(url, userData) {
   try {
     const postData = {
       method: "POST",
@@ -22,15 +21,10 @@ export async function loginUserAPI(url, userData) {
     const accessToken = json.accessToken;
     localStorage.setItem("accessToken", accessToken);
 
-    console.log(json);
+    const name = json.name;
+    localStorage.setItem("name", name);
 
-    const formError = document.querySelector(".formError");
-    if (json.errors[0].message === "Invalid email or password") {
-      formError.innerHTML = `<p>${json.errors[0].message}</p>`;
-    } else {
-      formError.innerHTML = ``;
-    }
-    // location.href = `/profile.html`;
+    console.log(json);
   } catch (error) {
     console.log(error);
   }

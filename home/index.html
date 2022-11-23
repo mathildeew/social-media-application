@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand">Logo</span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="navbar-nav me-auto mb-2 mb-lg-0">
+            <a class="nav-link disabled" aria-current="page">
+              <i class="bi bi-house-fill"></i>
+              Home</a
+            >
+            <a class="nav-link" href="/profile/">
+              <i class="bi bi-person"></i>
+              Profile
+            </a>
+            <a class="nav-link" id="logout">
+              <i class="bi bi-door-closed"></i>
+              Log out</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="mx-auto mb-5 maxW">
+      <!-- Search and filter -->
+      <div class="mt-4 d-flex justify-content-center align-items-center">
+        <form class="d-flex me-4" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            id="search"
+          />
+          <button class="btn btn-secondary" type="submit">Search</button>
+        </form>
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Filter posts
+          </button>
+          <ul class="dropdown-menu">
+            <li>Date</li>
+            <li>With image</li>
+            <li>Something else</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Posts -->
+      <section class="mt-5 mx-1 mb-2 cardJSON">
+        <!--<div class="card mb-3 ">
+         <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <h5 class="card-title"></h5>
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted"></h6>
+            <img class="card-img" />
+
+            <p class="card-text"></p>
+            <i class="bi bi-chat-left-text me-4"></i>
+            <i class="bi bi-suit-heart"></i>
+          </div> 
+        </div>-->
+
+        <!-- <div class="card mb-3">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <img
+                src="assets/images/anthony-fomin-oHCBHRuzOyA-unsplash-cropped-downsized.jpg"
+                alt="@usernames profilepicture"
+                class="rounded-pill me-2 postImg"
+              />
+              <h5 class="card-title">@friendsusername</h5>
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted">31. october 2020</h6>
+            <p class="card-text">
+              What's up with the weather? Autumn already??!
+            </p>
+            <i class="bi bi-chat-left-text me-4"></i>
+            <i class="bi bi-suit-heart"></i>
+          </div>
+        </div> -->
+      </section>
+    </main>
+
+    <script type="module" src="../src/js/script.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

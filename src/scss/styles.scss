@@ -1,23 +1,51 @@
+// scss-docs-start theme-color-variables
+$primary: #b8d1f3;
+$secondary: #507bb7;
+
 h1 {
-  text-align: center;
+  font-family: maple-web, serif;
 }
 
-#loginForm,
-#registerForm {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
+.maxW {
+  max-width: 1800px;
 }
 
-.registerHere {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+// Navbar
+i {
+  font-size: 1.3rem;
+  color: #000;
 }
 
-.formError {
-  // display: none;
-  color: red;
-  margin-bottom: 40px;
+.wallPost {
+  background-color: #fff;
+  height: 60px;
+}
+
+.profilePic {
+  width: 100px;
+  height: 100px;
+}
+
+.friendPic {
+  width: 140px;
+}
+
+// Small image on card
+.postImg {
+  width: 50px;
+  height: 50px;
+}
+
+.borderREMOVE {
+  border: 2px solid green;
+}
+
+#homePage {
+  ::placeholder {
+    text-align: center;
+  }
+}
+
+.editMedia {
+  width: 100px;
 }
