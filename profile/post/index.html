@@ -15,7 +15,7 @@
     />
     <link rel="stylesheet" href="/dist/css/styles.css" />
   </head>
-  <body>
+  <body class="bg-light">
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
         <span class="navbar-brand">Logo</span>
@@ -49,57 +49,60 @@
       </div>
     </nav>
 
-    <main class="mx-auto row justify-content-center">
-      <h1>Edit post</h1>
-
-      <div class="card m-2 col-md-6">
-        <div class="card-body">
-          <div class="d-flex align-items-center mb-3">
-            <h5 class="card-title" id="currentTitle"></h5>
+    <main class="row justify-content-center">
+      <section class="mx-1 mb-3 col-md-6">
+        <div class="card m-2">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <h5 class="card-title" id="currentTitle"></h5>
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted" id="currentDate"></h6>
+            <img class="card-img" id="currentImg" />
+            <p class="card-text" id="currentText"></p>
           </div>
-          <h6 class="card-subtitle mb-2 text-muted" id="currentDate"></h6>
-          <img class="card-img" id="currentImg" />
-          <p class="card-text" id="currentText"></p>
+        </div>
+      </section>
+
+      <div class="col-md-4">
+        <div class="mx-1 mt-3 mb-3 p-1">
+          <h2>Update post</h2>
+          <form
+            id="updatePostForm"
+            class="d-flex flex-column justify-content-center"
+          >
+            <input
+              name="title"
+              type="text"
+              placeholder="New title"
+              id="newTitle"
+              class="form-control mb-3"
+            />
+            <textarea
+              name="body"
+              type="text"
+              placehodler="New text"
+              id="newText"
+              rows="4"
+              class="form-control mb-3"
+            ></textarea>
+
+            <input
+              name="media"
+              type="url"
+              placeholder="New image (must be url)"
+              id="newImg"
+              class="form-control mb-3"
+            />
+
+            <button type="submit" class="btn btn-primary rounded-pill mb-4">
+              Update
+            </button>
+            <button class="btn btn-secondary rounded-pill" id="delete">
+              Delete post
+            </button>
+          </form>
         </div>
       </div>
-
-      <form
-        id="updatePostForm"
-        class="d-flex flex-column m-2 p-1 card col-md-4"
-      >
-        <label for="newTitle" class="form-label"> New title</label>
-        <input
-          name="title"
-          type="text"
-          placeholder=""
-          id="newTitle"
-          class="form-control mb-3"
-        />
-        <label for="newText">New text</label>
-        <textarea
-          name="body"
-          type="text"
-          placehodler=""
-          id="newText"
-          rows="4"
-          class="form-control mb-3"
-        ></textarea>
-
-        <input
-          name="media"
-          type="url"
-          placeholder=""
-          id="newImg"
-          class="form-control mb-3"
-        />
-
-        <button type="submit" class="btn btn-primary rounded-pill mb-4">
-          Update
-        </button>
-        <button class="btn btn-secondary rounded-pill" id="delete">
-          Delete post
-        </button>
-      </form>
     </main>
 
     <script type="module" src="/src/js/script.js"></script>
