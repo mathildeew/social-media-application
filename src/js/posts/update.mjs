@@ -4,16 +4,19 @@ export async function updatePostAPI(url, postContent) {
   try {
     const token = storage.get("token");
 
-    const putData = {
+    const postData = {
       method: "PUT",
-      header: {
+      headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(postContent),
     };
-    const response = await fetch(url, putData);
+
+    const response = await fetch(url, postData);
     const json = await response.json();
+    console.log(json);
+    console.log(typeof postData);
   } catch (error) {
     console.log(error);
   }
