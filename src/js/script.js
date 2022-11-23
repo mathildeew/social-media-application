@@ -21,13 +21,13 @@ import { editMedia } from "./profile/edit/editProfile.mjs";
 
 // Single post
 import { reactToPost } from "./posts/react.mjs";
+import { commentPost } from "./home/singlePost/commentPost.mjs";
 
 // Posts
 import { getPosts } from "./posts/get.mjs";
 import { editPost } from "./profile/post/editPost.mjs";
 import { deletePost } from "./posts/delete.mjs";
 import { createPost } from "./posts/create.mjs";
-import { comments } from "./home/singlePost/displayComments.mjs";
 
 const path = location.pathname;
 
@@ -43,8 +43,9 @@ if (path === "/home/") {
 }
 
 if (path === "/home/post/") {
-  getPosts(urlLinks.commentsUrl);
+  getPosts(urlLinks.singlePostUrl);
   reactToPost();
+  commentPost();
 }
 
 if (path === "/profile/") {

@@ -16,7 +16,7 @@ export function displayFeed(post) {
       var cardImg = post[i].media;
     }
 
-    if (i <= 10) {
+    if (i <= 50) {
       cardPosts.innerHTML += `
                               
                                 <div class="card m-1 col-md-5 col-lg-3">
