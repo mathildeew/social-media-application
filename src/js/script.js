@@ -25,6 +25,7 @@ import { reactToPost } from "./posts/react.mjs";
 // Posts
 import { getPosts } from "./posts/get.mjs";
 import { editPost } from "./profile/post/editPost.mjs";
+import { deletePost } from "./posts/delete.mjs";
 
 const path = location.pathname;
 
@@ -52,6 +53,7 @@ if (path === "/profile/") {
 if (path === "/profile/post/") {
   getPosts(urlLinks.singlePostUrl);
   editPost();
+  deletePost();
 }
 
 if (path === "/profile/edit/") {

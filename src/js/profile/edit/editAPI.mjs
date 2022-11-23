@@ -19,7 +19,6 @@ export async function editMediaAPI(url, postContent) {
     storage.set("avatar", json.avatar);
     storage.set("banner", json.banner);
     console.log(json);
-    console.log(typeof url);
 
     // location.reload();
   } catch (error) {
