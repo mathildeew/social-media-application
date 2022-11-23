@@ -10803,7 +10803,7 @@ i {
 }
 
 .profilePic {
-  max-height: 100px;
+  max-height: 130px;
   object-fit: cover;
   object-position: center center;
 }
@@ -10829,6 +10829,10 @@ i {
   max-height: 300px;
   object-fit: cover;
   object-position: bottom center;
+}
+
+.formError {
+  display: none;
 }
 
 /*# sourceMappingURL=styles.css.map */

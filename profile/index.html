@@ -49,38 +49,39 @@
       </div>
     </nav>
 
-    <main class="mx-auto row">
+    <main class="bg-light row">
       <!-- User info -->
       <img id="bannerContainer" class="col-12" />
 
       <div class="col-md-4">
-        <section class="borderREMOVE m-2" id="about">
+        <section class="card bg-white mx-1 my-3" id="about">
           <div class="p-1">
             <div class="mb-2 d-flex flex-row align-items-center">
               <img
-                class="profilePic rounded-pill me-1 img-fluid"
+                class="profilePic rounded me-1 img-fluid"
                 id="avatarContainer"
               />
               <h2 id="userNameContainer"></h2>
             </div>
-            <h3>About</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <a href="./edit/" class="btn btn-secondary">Edit profile</a>
+            <a href="./edit/" class="btn btn-primary rounded-pill"
+              >Edit profile</a
+            >
           </div>
         </section>
 
         <!-- Friends -->
-        <section class="borderREMOVE m-2" id="friends">
+        <section class="card bg-white mx-1" id="friends">
           <div class="p-1">
             <h3>Friends</h3>
 
             <img
               src="/assets/images/anthony-fomin-oHCBHRuzOyA-unsplash-cropped-downsized.jpg"
               alt=""
-              class="rounded-pill img-fluid friendPic"
+              class="rounded img-fluid friendPic"
             />
           </div>
         </section>
@@ -88,7 +89,7 @@
 
       <div class="col-md-8">
         <!-- Create a post -->
-        <section class="m-2 borderREMOVE">
+        <section class="mx-1 mt-3">
           <div class="p-1">
             <h3>Make a post</h3>
             <form id="createPost">
@@ -118,13 +119,15 @@
                 ></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary">Post</button>
+              <button type="submit" class="btn btn-primary rounded-pill">
+                Make post
+              </button>
             </form>
           </div>
         </section>
 
         <!-- Posts -->
-        <section class="m-2 borderREMOVE">
+        <section class="mx-1 mb-3">
           <div class="p-1">
             <h3>Posts</h3>
             <div id="userPost"></div>
