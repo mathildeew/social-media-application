@@ -1,5 +1,5 @@
-import { createPostUrl } from "../../api/apiUrls.mjs";
-import * as storage from "../../storage/localStorage.mjs";
+import { allPostsUrl } from "../api/apiUrls.mjs";
+import * as storage from "../storage/localStorage.mjs";
 
 export async function createPostAPI(url, postContent) {
   try {
@@ -31,8 +31,10 @@ export function createPost() {
     const postContent = {
       title: postForm.title.value,
       body: postForm.body.value,
+      media: postForm.media.value,
     };
 
-    createPostAPI(createPostUrl, postContent);
+    createPostAPI(allPostsUrl, postContent);
+    location.reload();
   });
 }

@@ -4,6 +4,7 @@ export function displayPost(post) {
   const img = document.querySelector("#currentImg");
   const text = document.querySelector("#currentText");
 
+  const postDate = new Date(post.created).toLocaleDateString();
   var cardImg;
   if (post.media === null) {
     var cardImg = "";
@@ -11,8 +12,8 @@ export function displayPost(post) {
     var cardImg = post.media;
   }
 
-  title.innerHTML = `Current title: ${post.title}`;
-  date.innerHTML = `Date created: ${post.created}`;
+  title.innerHTML = `${post.title}`;
+  date.innerHTML = `${postDate}`;
   img.src = `${cardImg}`;
-  text.innerHTML = `Current text: ${post.body}`;
+  text.innerHTML = `${post.body}`;
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile</title>
+    <title>Edit post</title>
     <link
       rel="stylesheet"
       href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -49,45 +49,57 @@
       </div>
     </nav>
 
-    <main class="mx-auto d-flex justify-content-center row">
-      <h1>Update post</h1>
-      <h2 id="currentTitle"></h2>
-      <h3 id="currentDate"></h3>
-      <img id="currentImg" />
-      <p id="currentText"></p>
+    <main class="mx-auto row justify-content-center">
+      <h1>Edit post</h1>
 
-      <form id="updatePostForm" class="d-flex flex-column mb-4">
+      <div class="card m-2 col-md-6">
+        <div class="card-body">
+          <div class="d-flex align-items-center mb-3">
+            <h5 class="card-title" id="currentTitle"></h5>
+          </div>
+          <h6 class="card-subtitle mb-2 text-muted" id="currentDate"></h6>
+          <img class="card-img" id="currentImg" />
+          <p class="card-text" id="currentText"></p>
+        </div>
+      </div>
+
+      <form
+        id="updatePostForm"
+        class="d-flex flex-column m-2 p-1 card col-md-4"
+      >
+        <label for="newTitle" class="form-label"> New title</label>
         <input
           name="title"
           type="text"
-          placeholder="New title"
-          id="newText"
-          class="form-control rounded-pill mb-3"
+          placeholder=""
+          id="newTitle"
+          class="form-control mb-3"
         />
-
-        <input
+        <label for="newText">New text</label>
+        <textarea
           name="body"
           type="text"
-          placeholder="New text"
+          placehodler=""
           id="newText"
-          class="form-control rounded-pill mb-3"
-        />
+          rows="4"
+          class="form-control mb-3"
+        ></textarea>
 
         <input
           name="media"
           type="url"
-          placeholder="New image"
+          placeholder=""
           id="newImg"
-          class="form-control rounded-pill mb-3"
+          class="form-control mb-3"
         />
 
-        <button type="submit" class="btn btn-primary rounded-pill">
+        <button type="submit" class="btn btn-primary rounded-pill mb-4">
           Update
         </button>
+        <button class="btn btn-secondary rounded-pill" id="delete">
+          Delete post
+        </button>
       </form>
-      <button class="btn btn-secondary rounded-pill" id="delete">
-        Delete post
-      </button>
     </main>
 
     <script type="module" src="/src/js/script.js"></script>

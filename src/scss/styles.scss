@@ -22,12 +22,13 @@ i {
 }
 
 .profilePic {
-  width: 100px;
-  height: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .friendPic {
-  width: 140px;
+  width: 70px;
 }
 
 // Small image on card
@@ -48,4 +49,10 @@ i {
 
 .editMedia {
   width: 100px;
+}
+
+#bannerContainer {
+  max-height: 300px;
+  object-fit: cover;
+  object-position: bottom center;
 }

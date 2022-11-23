@@ -26,6 +26,7 @@ import { reactToPost } from "./posts/react.mjs";
 import { getPosts } from "./posts/get.mjs";
 import { editPost } from "./profile/post/editPost.mjs";
 import { deletePost } from "./posts/delete.mjs";
+import { createPost } from "./posts/create.mjs";
 
 const path = location.pathname;
 
@@ -48,6 +49,7 @@ if (path === "/profile/") {
   displayUser();
   getPosts(usersPostsUrl);
   logoutUser();
+  createPost(allPostsUrl);
 }
 
 if (path === "/profile/post/") {

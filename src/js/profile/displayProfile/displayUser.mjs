@@ -8,7 +8,7 @@ export function displayUser() {
   const banner = storage.get("banner");
   const avatar = storage.get("avatar");
 
-  userNameContainer.innerHTML = `@${username}`;
+  userNameContainer.innerHTML = `${username}`;
   bannerContainer.src = `${banner}`;
   avatarContainer.src = `${avatar}`;
 }

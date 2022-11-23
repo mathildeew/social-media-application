@@ -20,10 +20,10 @@ export function displayPosts(post) {
                             <div class="card-body">
                               <div class="d-flex align-items-center justify-content-between mb-3">
                                 <h5 class="card-title">${title}</h5>
-                                <a href="/profile/post/?id=${id}"<i class="bi bi-pencil-square"></i></a>
+                                <a href="/profile/post/?id=${id}"><i class="bi bi-pencil-square"></i></a>
                               </div>
                               <h6 class="card-subtitle mb-2 text-muted">${date}</h6>
-                              <img src="${postImg}" />
+                              <img src="${postImg}" class="card-img" />
                               <p class="card-text">${postContent}</p>
                                   <i class="bi bi-chat-left-text"></i>
                                   <p class="d-inline me-4">${comments}</p>

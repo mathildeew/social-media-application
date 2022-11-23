@@ -49,127 +49,86 @@
       </div>
     </nav>
 
-    <main class="mx-auto d-flex justify-content-center row">
+    <main class="mx-auto row">
       <!-- User info -->
-      <section class="borderREMOVE mb-2">
-        <img id="bannerContainer" class="col-12" />
-        <div class="col-lg-4"></div>
-        <div class="mb-2 d-flex flex-row align-items-center">
-          <img class="profilePic rounded-pill me-1" id="avatarContainer" />
-          <h2 id="userNameContainer"></h2>
-        </div>
+      <img id="bannerContainer" class="col-12" />
 
-        <div class="">
-          <h3>About</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-          <div class="editProfile">
+      <div class="col-md-4">
+        <section class="borderREMOVE m-2" id="about">
+          <div class="p-1">
+            <div class="mb-2 d-flex flex-row align-items-center">
+              <img
+                class="profilePic rounded-pill me-1 img-fluid"
+                id="avatarContainer"
+              />
+              <h2 id="userNameContainer"></h2>
+            </div>
+            <h3>About</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
             <a href="./edit/" class="btn btn-secondary">Edit profile</a>
           </div>
-        </div>
-      </section>
-
-      <!-- Friends -->
-      <section class="mx-1 mb-2 borderREMOVE">
-        <h3>Friends</h3>
-        <div class="row row-cols-3 text-center mb-3 gy-3">
-          <div class="col-4 col-md-3">
-            <img
-              src="/assets/images/anthony-fomin-oHCBHRuzOyA-unsplash-cropped-downsized.jpg"
-              alt="@usernames profilepicture"
-              class="friendPic rounded-pill img-fluid"
-            />
-          </div>
-          <div class="col-4 col-md-3">
-            <img
-              src="/assets/images/anthony-fomin-oHCBHRuzOyA-unsplash-cropped-downsized.jpg"
-              alt="@usernames profilepicture"
-              class="friendPic rounded-pill img-fluid"
-            />
-          </div>
-          <div class="col-4 col-md-3">
-            <img
-              src="/assets/images/anthony-fomin-oHCBHRuzOyA-unsplash-cropped-downsized.jpg"
-              alt="@usernames profilepicture"
-              class="friendPic rounded-pill img-fluid"
-            />
-          </div>
-          <div class="col-4 col-md-3">
-            <img
-              src="/assets/images/anthony-fomin-oHCBHRuzOyA-unsplash-cropped-downsized.jpg"
-              alt="@usernames profilepicture"
-              class="friendPic rounded-pill img-fluid"
-            />
-          </div>
-          <div class="col-4 col-md-3">
-            <img
-              src="/assets/images/anthony-fomin-oHCBHRuzOyA-unsplash-cropped-downsized.jpg"
-              alt="@usernames profilepicture"
-              class="friendPic rounded-pill img-fluid"
-            />
-          </div>
-          <div class="col-4 col-md-3">
-            <img
-              src="/assets/images/anthony-fomin-oHCBHRuzOyA-unsplash-cropped-downsized.jpg"
-              alt="@usernames profilepicture"
-              class="friendPic rounded-pill img-fluid"
-            />
-          </div>
-          <div class="d-none d-md-block col-md-3">
-            <img
-              src="/assets/images/anthony-fomin-oHCBHRuzOyA-unsplash-cropped-downsized.jpg"
-              alt="@usernames profilepicture"
-              class="friendPic rounded-pill img-fluid"
-            />
-          </div>
-          <div class="d-none d-md-block col-md-3">
-            <img
-              src="/assets/images/anthony-fomin-oHCBHRuzOyA-unsplash-cropped-downsized.jpg"
-              alt="@usernames profilepicture"
-              class="friendPic rounded-pill img-fluid"
-            />
-          </div>
-        </div>
-      </section>
-
-      <!-- Create a post -->
-      <div class="col-lg-8">
-        <section class="mx-1 mb-2 borderREMOVE">
-          <h3>Make a post</h3>
-          <form id="createPost">
-            <input
-              type="text"
-              name="title"
-              placeholder="Title"
-              class="form-control mb-3"
-              id=""
-            />
-
-            <input
-              type="link"
-              placeholder="Link to image"
-              class="form-control mb-3"
-              id=""
-            />
-            <div class="mb-3">
-              <textarea
-                name="body"
-                placeholder="Share something with the world!"
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                rows="3"
-              ></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Post</button>
-          </form>
         </section>
 
-        <section class="mx-1 mb-2 borderREMOVE">
-          <h3>Posts</h3>
-          <div id="userPost"></div>
+        <!-- Friends -->
+        <section class="borderREMOVE m-2" id="friends">
+          <div class="p-1">
+            <h3>Friends</h3>
+
+            <img
+              src="/assets/images/anthony-fomin-oHCBHRuzOyA-unsplash-cropped-downsized.jpg"
+              alt=""
+              class="rounded-pill img-fluid friendPic"
+            />
+          </div>
+        </section>
+      </div>
+
+      <div class="col-md-8">
+        <!-- Create a post -->
+        <section class="m-2 borderREMOVE">
+          <div class="p-1">
+            <h3>Make a post</h3>
+            <form id="createPost">
+              <input
+                type="text"
+                name="title"
+                placeholder="Title"
+                class="form-control mb-3"
+                id=""
+              />
+
+              <input
+                type="link"
+                name="media"
+                placeholder="Link to image (must be a url)"
+                class="form-control mb-3"
+                id=""
+              />
+              <div class="mb-3">
+                <textarea
+                  name="body"
+                  type="text"
+                  placeholder="Share something with the world!"
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Post</button>
+            </form>
+          </div>
+        </section>
+
+        <!-- Posts -->
+        <section class="m-2 borderREMOVE">
+          <div class="p-1">
+            <h3>Posts</h3>
+            <div id="userPost"></div>
+          </div>
         </section>
       </div>
     </main>
