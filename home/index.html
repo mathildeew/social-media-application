@@ -15,7 +15,7 @@
     />
     <link rel="stylesheet" href="/dist/css/styles.css" />
   </head>
-  <body>
+  <body class="bg-light">
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
         <span class="navbar-brand">Logo</span>
@@ -60,11 +60,10 @@
             aria-label="Search"
             id="search"
           />
-          <button class="btn btn-secondary" type="submit">Search</button>
         </form>
         <div class="dropdown">
           <button
-            class="btn btn-secondary dropdown-toggle"
+            class="btn btn-primary dropdown-toggle"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -80,40 +79,7 @@
       </div>
 
       <!-- Posts -->
-      <section class="mt-5 mx-1 mb-2 cardJSON">
-        <!--<div class="card mb-3 ">
-         <div class="card-body">
-            <div class="d-flex align-items-center mb-3">
-              <h5 class="card-title"></h5>
-            </div>
-            <h6 class="card-subtitle mb-2 text-muted"></h6>
-            <img class="card-img" />
-
-            <p class="card-text"></p>
-            <i class="bi bi-chat-left-text me-4"></i>
-            <i class="bi bi-suit-heart"></i>
-          </div> 
-        </div>-->
-
-        <!-- <div class="card mb-3">
-          <div class="card-body">
-            <div class="d-flex align-items-center mb-3">
-              <img
-                src="assets/images/anthony-fomin-oHCBHRuzOyA-unsplash-cropped-downsized.jpg"
-                alt="@usernames profilepicture"
-                class="rounded-pill me-2 postImg"
-              />
-              <h5 class="card-title">@friendsusername</h5>
-            </div>
-            <h6 class="card-subtitle mb-2 text-muted">31. october 2020</h6>
-            <p class="card-text">
-              What's up with the weather? Autumn already??!
-            </p>
-            <i class="bi bi-chat-left-text me-4"></i>
-            <i class="bi bi-suit-heart"></i>
-          </div>
-        </div> -->
-      </section>
+      <section class="mt-5 mx-1 userPosts row justify-content-around"></section>
     </main>
 
     <script type="module" src="../src/js/script.js"></script>
