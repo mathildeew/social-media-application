@@ -31,6 +31,7 @@ export async function getPosts(url) {
     }
     if (path === "/home/") {
       displayFeed(posts);
+      console.log(posts);
       searchPosts(posts);
     }
     if (path === "/home/post/") {

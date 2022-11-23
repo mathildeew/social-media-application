@@ -10839,4 +10839,12 @@ i {
   display: none;
 }
 
+.card i {
+  color: #7668c6;
+}
+
+.postAvatar {
+  height: 40px;
+}
+
 /*# sourceMappingURL=styles.css.map */
