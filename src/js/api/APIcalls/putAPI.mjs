@@ -1,23 +1,27 @@
 import * as storage from "../../storage/localStorage.mjs";
 
-export async function editMediaAPI(url, postContent) {
+const path = location.pathname;
+
+export async function putAPI(url, putContent) {
   try {
     const token = storage.get("token");
 
-    const postData = {
+    const putData = {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(postContent),
+      body: JSON.stringify(putContent),
     };
 
-    const response = await fetch(url, postData);
+    const response = await fetch(url, putData);
     const json = await response.json();
-    console.log(json);
-    storage.set("avatar", json.avatar);
-    storage.set("banner", json.banner);
+
+    if (path === "/profile/edit/") {
+      storage.set("avatar", json.avatar);
+      storage.set("banner", json.banner);
+    }
     console.log(json);
 
     // location.reload();

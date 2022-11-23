@@ -1,18 +1,18 @@
-export function displayPosts(post) {
+export function displayPosts(posts) {
   const usersPost = document.querySelector("#userPost");
 
-  for (let i = 0; i < post.length; i++) {
-    const id = post[i].id;
-    const title = post[i].title;
-    const date = new Date(post[i].created).toLocaleDateString();
-    const postContent = post[i].body;
-    const comments = post[i]._count.comments;
-    const reactions = post[i]._count.reactions;
+  for (let i = 0; i < posts.length; i++) {
+    const id = posts[i].id;
+    const title = posts[i].title;
+    const date = new Date(posts[i].created).toLocaleDateString();
+    const postContent = posts[i].body;
+    const comments = posts[i]._count.comments;
+    const reactions = posts[i]._count.reactions;
     var postImg;
-    if (post[i].media === null) {
+    if (posts[i].media === null) {
       var postImg = "";
     } else {
-      var postImg = post[i].media;
+      var postImg = posts[i].media;
     }
 
     usersPost.innerHTML += `

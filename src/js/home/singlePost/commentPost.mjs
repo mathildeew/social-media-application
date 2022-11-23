@@ -1,6 +1,7 @@
 import { commentPostUrl } from "../../api/apiUrls.mjs";
-import { commentPostAPI } from "../../posts/comment.mjs";
+import { postAPI } from "../../api/APIcalls/postAPI.mjs";
 
+// Get params to link
 const IDurl = new URL(location.href);
 const postID = IDurl.searchParams.get("id");
 
@@ -14,7 +15,7 @@ export function commentPost() {
       body: commentForm.body.value,
     };
 
-    commentPostAPI(commentPostUrl, postContent);
-    location.reload();
+    postAPI(commentPostUrl, postContent);
+    // location.reload();
   });
 }

@@ -1,5 +1,5 @@
 import { loginUrl } from "../api/apiUrls.mjs";
-import { loginUserAPI } from "./loginAPI.mjs";
+import { postAPI } from "../api/APIcalls/postAPI.mjs";
 
 export function loginUser() {
   const loginForm = document.querySelector("#loginForm");
@@ -11,7 +11,6 @@ export function loginUser() {
     const formData = new FormData(form);
     const profile = Object.fromEntries(formData.entries());
 
-    loginUserAPI(loginUrl, profile);
-    // window.location.href = "/profile/";
+    postAPI(loginUrl, profile);
   });
 }

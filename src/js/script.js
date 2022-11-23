@@ -1,9 +1,4 @@
-import * as storage from "./storage/localStorage.mjs";
 import * as urlLinks from "./api/apiUrls.mjs";
-
-// API urls
-import { allPostsUrl } from "./api/apiUrls.mjs";
-import { usersPostsUrl } from "./api/apiUrls.mjs";
 
 // Log in, log out & register
 import { loginUser } from "./login/login.mjs";
@@ -12,51 +7,40 @@ import { logoutUser } from "./profile/logout.mjs";
 
 // User profile
 import { displayUser } from "./profile/displayProfile/displayUser.mjs";
-import { displayPost } from "./profile/post/displayPost.mjs";
 
 // Edit profile
 import { editMedia } from "./profile/edit/editProfile.mjs";
 
-// Home feed
-
-// Single post
+// Single post react & comment
 import { reactToPost } from "./posts/react.mjs";
 import { commentPost } from "./home/singlePost/commentPost.mjs";
 
 // Posts
-import { getPosts } from "./posts/get.mjs";
+import { getAPI } from "./api/APIcalls/getAPI.mjs";
 import { editPost } from "./profile/post/editPost.mjs";
 import { deletePost } from "./posts/delete.mjs";
 import { createPost } from "./posts/create.mjs";
 
+// Run function based on pathname
 const path = location.pathname;
 
 if (path === "/") {
   loginUser();
-} else if (path === "/profile/register/") {
+}
+
+if (path === "/profile/register/") {
   registerUser();
-}
-
-if (path === "/home/") {
-  getPosts(allPostsUrl);
-  logoutUser();
-}
-
-if (path === "/home/post/") {
-  getPosts(urlLinks.singlePostUrl);
-  reactToPost();
-  commentPost();
 }
 
 if (path === "/profile/") {
   displayUser();
-  getPosts(usersPostsUrl);
+  getAPI(urlLinks.usersPostsUrl);
+  createPost(urlLinks.allPostsUrl);
   logoutUser();
-  createPost(allPostsUrl);
 }
 
 if (path === "/profile/post/") {
-  getPosts(urlLinks.singlePostUrl);
+  getAPI(urlLinks.singlePostUrl);
   editPost();
   deletePost();
 }
@@ -64,4 +48,15 @@ if (path === "/profile/post/") {
 if (path === "/profile/edit/") {
   displayUser();
   editMedia();
+}
+
+if (path === "/home/") {
+  getAPI(urlLinks.allPostsUrl);
+  logoutUser();
+}
+
+if (path === "/home/post/") {
+  getAPI(urlLinks.singlePostUrl);
+  reactToPost();
+  commentPost();
 }

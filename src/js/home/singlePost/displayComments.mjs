@@ -1,6 +1,6 @@
 import * as storage from "../../storage/localStorage.mjs";
 
-export function comments(post) {
+export function displayComments(post) {
   const commentsContainer = document.querySelector("#comments");
 
   const comments = post.comments;

@@ -1,19 +1,15 @@
-import * as storage from "../storage/localStorage.mjs";
-
-export async function commentPostAPI(url, postContent) {
+export async function deleteAPI(url) {
   try {
     const token = storage.get("token");
 
-    const postData = {
-      method: "post",
+    const deleteData = {
+      method: "delete",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(postContent),
     };
-
-    const response = await fetch(url, postData);
+    const response = await fetch(url, deleteData);
     const json = await response.json();
     console.log(json);
   } catch (error) {

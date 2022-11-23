@@ -1,26 +1,5 @@
 import { allPostsUrl } from "../api/apiUrls.mjs";
-import * as storage from "../storage/localStorage.mjs";
-
-export async function createPostAPI(url, postContent) {
-  try {
-    const token = storage.get("token");
-
-    const postData = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(postContent),
-    };
-
-    const response = await fetch(url, postData);
-    const json = await response.json();
-    console.log(json);
-  } catch (error) {
-    console.log(error);
-  }
-}
+import { postAPI } from "../api/APIcalls/postAPI.mjs";
 
 export function createPost() {
   const postForm = document.querySelector("#createPost");
@@ -34,7 +13,7 @@ export function createPost() {
       media: postForm.media.value,
     };
 
-    createPostAPI(allPostsUrl, postContent);
+    postAPI(allPostsUrl, postContent);
     location.reload();
   });
 }
