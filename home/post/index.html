@@ -15,7 +15,7 @@
     />
     <link rel="stylesheet" href="/dist/css/styles.css" />
   </head>
-  <body>
+  <body class="bg-light">
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
         <span class="navbar-brand">Logo</span>
@@ -49,8 +49,8 @@
       </div>
     </nav>
 
-    <main class="mx-auto mb-5 maxW">
-      <section class="mt-5 mx-1 mb-2">
+    <main class="mx-auto row justify-content-around">
+      <section class="mt-5 mx-1 mb-2 col-lg-5">
         <div class="card mb-3">
           <div class="card-body">
             <div class="d-flex align-items-center mb-3">
@@ -59,19 +59,40 @@
             <h6 class="card-subtitle mb-2 text-muted" id="postDate"></h6>
             <img class="card-img" id="postImg" />
             <p class="card-text" id="postText"></p>
-            <div class="d-flex justify-content-around">
-              <div class="d-flex">
-                <i class="bi bi-chat-left-text me-2"></i>
-                <p id="postComment"></p>
-              </div>
-              <div class="d-flex" id="react">
-                <i class="bi bi-suit-heart me-2"></i>
-                <p id="postReact"></p>
-              </div>
-            </div>
+            <i class="bi bi-chat-left-text"></i>
+            <p id="postComment" class="d-inline me-4"></p>
+            <i class="bi bi-suit-heart me-2"></i>
+            <p id="postReact" class="d-inline me-4"></p>
           </div>
         </div>
       </section>
+
+      <div class="col-lg-4">
+        <section class="mb-3">
+          <h2>Make comment</h2>
+          <form
+            id="makeCommentForm"
+            class="d-flex flex-column justify-content-center"
+          >
+            <textarea
+              name="text"
+              id="comment"
+              class="form-control mb-3"
+            ></textarea>
+
+            <button type="submit" class="btn btn-primary rounded-pill">
+              Post comment
+            </button>
+          </form>
+        </section>
+
+        <section class="mb-3">
+          <h2>Comments</h2>
+          <div class="rounded form-control d-flex align-items-center">
+            <p>Very cool!</p>
+          </div>
+        </section>
+      </div>
     </main>
 
     <script type="module" src="/src/js/home/singlePost/postID.mjs"></script>
