@@ -3,6 +3,8 @@ import { displayPosts } from "../profile/displayProfile/displayPosts.mjs";
 import { displayFeed } from "../home/displayFeed.mjs";
 import { searchPosts } from "./search.mjs";
 import { displayPost } from "../profile/post/displayPost.mjs";
+import { displayPostID } from "../home/singlePost/displayPost.mjs";
+import { comments } from "../home/singlePost/displayComments.mjs";
 
 const path = location.pathname;
 
@@ -21,7 +23,6 @@ export async function getPosts(url) {
     const response = await fetch(url, getData);
     const posts = await response.json();
 
-    console.log(posts);
     if (path === "/profile/") {
       displayPosts(posts);
     }
@@ -31,6 +32,11 @@ export async function getPosts(url) {
     if (path === "/home/") {
       displayFeed(posts);
       searchPosts(posts);
+    }
+    if (path === "/home/post/") {
+      displayPostID(posts);
+      comments(posts);
+      console.log(posts);
     }
   } catch (error) {
     console.log(error);

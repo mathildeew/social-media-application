@@ -1,38 +1,7 @@
 import { baseUrl } from "../../api/apiUrls.mjs";
 import * as storage from "../../storage/localStorage.mjs";
 
-// Get blogpost by ID
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
-const id = params.get("id");
-
-const postUrl = `${baseUrl}/api/v1/social/posts/${id}`;
-
-async function getPost(url) {
-  try {
-    const token = storage.get("token");
-
-    const getData = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    };
-
-    const response = await fetch(url, getData);
-    const posts = await response.json();
-
-    console.log(posts);
-    displayPosts(posts);
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-getPost(postUrl);
-
-function displayPosts(post) {
+export function displayPostID(post) {
   const titleContainer = document.querySelector("#postTitle");
   const textContainer = document.querySelector("#postText");
   const imgContainer = document.querySelector("#postImg");

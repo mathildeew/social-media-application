@@ -19,6 +19,7 @@ export const allPostsUrl = `${baseUrl}/api/v1/social/posts`;
 export const singlePostUrl = `${baseUrl}/api/v1/social/posts/${id}`;
 export const createPostUrl = `${baseUrl}/api/v1/social/posts`;
 // export const updatePostUrl = `${baseUrl}/api/v1/social/posts/${id}`;
+export const commentsUrl = `${baseUrl}/api/v1/social/posts/${id}?_author=true&_comments=true&_reactions=true`;
 
 export const usersPostsUrl = `${baseUrl}/api/v1/social/profiles/${name}/posts`;
 export const userProfilesUrl = `${baseUrl}/api/v1/social/profiles/`;
