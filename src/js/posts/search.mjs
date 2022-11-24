@@ -1,5 +1,4 @@
 import { displayFeed } from "../home/displayFeed.mjs";
-import { allPostsUrl } from "../api/apiUrls.mjs";
 
 export function searchPosts(posts) {
   const search = document.querySelector("#search");

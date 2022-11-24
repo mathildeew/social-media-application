@@ -10,6 +10,11 @@ export function displayPostID(post) {
   const reactContainer = document.querySelector("#postReact");
   const avatarContainer = document.querySelector("#postAvatar");
   const authorContainer = document.querySelector("#postAuthor");
+  const iconOne = document.querySelector("#iconOne");
+  const iconTwo = document.querySelector("#iconTwo");
+  const iconThree = document.querySelector("#iconThree");
+  const iconFour = document.querySelector("#iconFour");
+  const iconFive = document.querySelector("#iconFive");
 
   var postAvatar;
   if (post.author.avatar === null || post.author.avatar === "") {
@@ -35,4 +40,9 @@ export function displayPostID(post) {
   textContainer.innerHTML += post.body;
   commentContainer.innerHTML = post._count.comments;
   reactContainer.innerHTML = post._count.reactions;
+  iconOne.innerHTML = post.reactions[0].symbol + post.reactions[0].count;
+  iconTwo.innerHTML = post.reactions[1].symbol + post.reactions[1].count;
+  iconThree.innerHTML = post.reactions[2].symbol + post.reactions[2].count;
+  iconFour.innerHTML = post.reactions[3].symbol + post.reactions[3].count;
+  iconFive.innerHTML = post.reactions[4].symbol + post.reactions[4].count;
 }

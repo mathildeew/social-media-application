@@ -30,14 +30,14 @@ export async function getAPI(url) {
       displayPost(json);
     }
     if (path === "/home/") {
-      displayFeed(json);
       searchPosts(json);
+      displayFeed(json);
     }
     if (path === "/home/post/") {
       displayPostID(json);
       displayComments(json);
     }
-    console.log(json);
+    // console.log(json);
   } catch (error) {
     console.log(error);
   }
