@@ -5,6 +5,7 @@ import { searchPosts } from "../../posts/search.mjs";
 import { displayPost } from "../../profile/post/displayPost.mjs";
 import { displayPostID } from "../../home/singlePost/displayPost.mjs";
 import { displayComments } from "../../home/singlePost/displayComments.mjs";
+import { filterPosts } from "../../posts/filter.mjs";
 
 const path = location.pathname;
 
@@ -32,6 +33,7 @@ export async function getAPI(url) {
     if (path === "/home/") {
       searchPosts(json);
       displayFeed(json);
+      filterPosts(json);
     }
     if (path === "/home/post/") {
       displayPostID(json);
