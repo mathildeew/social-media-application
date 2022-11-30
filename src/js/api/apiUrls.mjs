@@ -15,6 +15,9 @@ export const loginUrl = `${baseUrl}/api/v1/social/auth/login`;
 // User profile
 export const allUsersUrl = `${baseUrl}/api/v1/social/profiles`;
 export const singleUserUrl = `${baseUrl}/api/v1/social/profiles/${userName}`;
+export const followUserUrl = `${baseUrl}/api/v1/social/profiles/${userName}/follow`;
+export const unFollowUserUrl = `${baseUrl}/api/v1/social/profiles/${userName}/unfollow`;
+
 export const editMediaUrl = `${baseUrl}/api/v1/social/profiles/${name}/media`;
 
 // Get, create, edit, comment & react to posts

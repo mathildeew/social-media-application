@@ -1,6 +1,7 @@
+// Display feed at home page
 export function displayFeed(post) {
-  const cardPosts = document.querySelector(".userPosts");
-  cardPosts.innerHTML = "";
+  const feedContainer = document.querySelector("#feedContainer");
+  feedContainer.innerHTML = "";
 
   for (let i = 0; i < post.length; i++) {
     const author = post[i].author.name;
@@ -27,31 +28,31 @@ export function displayFeed(post) {
       var cardImg = post[i].media;
     }
 
-    cardPosts.innerHTML += `                   
-                            <div class="card m-1 col-md-5 col-lg-3">
-                              <div class="card-body">
-                                <div class="d-flex flex-row align-items-center mb-3">
-                                  <img src="${avatar}" class="postAvatar me-3">
-                                  <h4>${author}</h4>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                  <h5 class="card-title">${title}</h5>
-                                </div>
-                                <h6 class="card-subtitle mb-2 text-muted">${date}</h6>
-                                <img src="${cardImg}" class="card-img missingImg" />
-                                <p class="card-text">${text}</p>
-                                  <div class="d-flex justify-content-between">
-                                    <div>
-                                      <i class="bi bi-chat-left-text"></i>
-                                      <p class="d-inline me-4">${comments}</p>
-                                      <i class="bi bi-suit-heart"></i>
-                                      <p class="d-inline">${react}</p>
+    feedContainer.innerHTML += `                   
+                                <div class="card m-1 col-md-5 col-lg-3">
+                                  <div class="card-body">
+                                    <div class="d-flex flex-row align-items-center mb-3">
+                                      <img src="${avatar}" class="postAvatar me-3">
+                                      <a href="/users/profile/?name=${author}"><h4 >${author}</h4></a>
                                     </div>
-                                    <a href="/home/post/?id=${id}">View post</a>
+                                    <div class="d-flex align-items-center">
+                                      <h5 class="card-title">${title}</h5>
+                                    </div>
+                                    <h6 class="card-subtitle mb-2 text-muted">${date}</h6>
+                                    <img src="${cardImg}" class="card-img missingImg" />
+                                    <p class="card-text">${text}</p>
+                                      <div class="d-flex justify-content-between">
+                                        <div>
+                                          <i class="bi bi-chat-left-text"></i>
+                                          <p class="d-inline me-4">${comments}</p>
+                                          <i class="bi bi-suit-heart"></i>
+                                          <p class="d-inline">${react}</p>
+                                        </div>
+                                        <a href="/home/post/?id=${id}">View post</a>
+                                      </div>
                                   </div>
                                 </div>
-                              </div>
-                              `;
+                                `;
   }
 }
 

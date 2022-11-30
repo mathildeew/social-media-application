@@ -10,14 +10,12 @@ export function filterPosts(posts) {
       return a.id - b.id;
     });
     displayFeed(oldestToNewest);
-    // console.log(oldestToNewest);
   });
   selectTwo.addEventListener("click", (event) => {
     const newestToOldest = posts.sort(function (a, b) {
       return b.id - a.id;
     });
     displayFeed(newestToOldest);
-    // console.log(oldestToNewest);
   });
   selectThree.addEventListener("click", (event) => {
     const postsWithImage = posts.filter((post) => {

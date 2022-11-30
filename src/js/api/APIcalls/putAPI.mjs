@@ -21,10 +21,10 @@ export async function putAPI(url, putContent) {
     if (path === "/profile/edit/") {
       storage.set("avatar", json.avatar);
       storage.set("banner", json.banner);
+      // location.reload();
     }
-    console.log(json);
 
-    // location.reload();
+    console.log(json);
   } catch (error) {
     console.log(error);
   }

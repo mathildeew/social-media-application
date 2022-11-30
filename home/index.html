@@ -64,7 +64,7 @@
       </div>
     </nav>
 
-    <main class="mx-auto mb-5 maxW">
+    <main class="mx-auto mb-5">
       <!-- Search and filter -->
       <div class="mt-4 d-flex justify-content-center align-items-center">
         <form class="d-flex me-4" role="search">
@@ -105,8 +105,11 @@
         </div>
       </div>
 
-      <!-- Posts -->
-      <section class="mt-5 mx-1 userPosts row justify-content-around"></section>
+      <!-- Feed with all posts -->
+      <section
+        class="mt-5 mx-1 row justify-content-around"
+        id="feedContainer"
+      ></section>
     </main>
     <script type="module" src="../src/js/script.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

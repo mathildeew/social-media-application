@@ -21,6 +21,7 @@ import { editPost } from "./profile/post/editPost.mjs";
 import { deletePost } from "./posts/delete.mjs";
 import { createPost } from "./posts/create.mjs";
 import { displayUsersProfile } from "./users/profile/displayUsersProfile.mjs";
+import { followUser } from "./users/profile/followUser.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -68,4 +69,5 @@ if (path === "/users/") {
 
 if (path === "/users/profile/") {
   getAPI(urlLinks.singleUserUrl);
+  followUser();
 }

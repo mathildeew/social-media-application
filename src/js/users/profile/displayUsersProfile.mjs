@@ -4,8 +4,18 @@ const avatarContainer = document.querySelector("#avatarContainer");
 const userNameContainer = document.querySelector("#userNameContainer");
 
 export function displayUsersProfile(user) {
-  const usersAvatar = user.avatar;
-  const usersBanner = user.banner;
+  var usersAvatar;
+  if (user.avatar === null || user.avatar === "") {
+    var usersAvatar = "";
+  } else {
+    usersAvatar = user.avatar;
+  }
+  var usersBanner;
+  if (user.banner === null || user.banner === "") {
+    var usersBanner = "";
+  } else {
+    usersBanner = user.banner;
+  }
 
   userNameContainer.innerHTML += `${user.name}`;
   bannerContainer.src = `${usersBanner}`;
