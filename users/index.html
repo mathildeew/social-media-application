@@ -43,16 +43,16 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <div class="navbar-nav me-auto mb-2 mb-lg-0">
-            <a class="nav-link" aria-current="page">
-              <i class="bi bi-house-fill"></i>
+            <a class="nav-link" href="/home/">
+              <i class="bi bi-house"></i>
               Home</a
             >
             <a class="nav-link" href="/profile/">
               <i class="bi bi-person"></i>
               Profile
             </a>
-            <a class="nav-link" href="/users/">
-              <i class="bi bi-people"></i>
+            <a class="nav-link" href="/users/" aria-current="page">
+              <i class="bi bi-people-fill"></i>
               Users
             </a>
             <a class="nav-link" id="logout">
@@ -64,59 +64,13 @@
       </div>
     </nav>
 
-    <main class="mx-auto row justify-content-around">
-      <section class="mt-5 mx-1 mb-2 col-md-8 col-lg-5">
-        <div class="card mb-3">
-          <div class="card-body">
-            <div class="d-flex flex-row align-items-center mb-3">
-              <img id="postAvatar" class="postAvatar me-3" />
-              <h4 id="postAuthor"></h4>
-            </div>
-            <div class="d-flex align-items-center">
-              <h5 class="card-title" id="postTitle"></h5>
-            </div>
-            <h6 class="card-subtitle mb-2 text-muted" id="postDate"></h6>
-            <img class="card-img" id="postImg" />
-            <p class="card-text" id="postText"></p>
-            <i class="bi bi-chat-left-text"></i>
-            <p id="postComment" class="d-inline me-4"></p>
-            <i class="bi bi-suit-heart me-2"></i>
-            <p id="postReact" class="d-inline me-4"></p>
-            <div id="iconOne"></div>
-            <div id="iconTwo"></div>
-            <div id="iconThree"></div>
-            <div id="iconFour"></div>
-            <div id="iconFive"></div>
-          </div>
-        </div>
-      </section>
-
-      <div class="col-md-8 col-lg-4">
-        <section class="mb-3">
-          <h2>Make comment</h2>
-          <form
-            id="makeCommentForm"
-            class="d-flex flex-column justify-content-center"
-          >
-            <textarea
-              name="body"
-              id="comment"
-              class="form-control mb-3"
-            ></textarea>
-
-            <button type="submit" class="btn btn-primary rounded-pill">
-              Post comment
-            </button>
-          </form>
-        </section>
-
-        <section class="mb-3">
-          <h2>Comments</h2>
-          <div id="comments"></div>
-        </section>
-      </div>
+    <main class="mx-auto mb-5 maxW">
+      <section
+        id="allUsers"
+        class="mt-5 mx-1 row justify-content-around"
+      ></section>
     </main>
-    <script type="module" src="/src/js/script.js"></script>
+    <script type="module" src="../src/js/script.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

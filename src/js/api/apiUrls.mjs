@@ -5,6 +5,9 @@ const name = storage.get("name");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
+const userName = params.get("name");
+
+console.log(userName);
 
 export const baseUrl = "https://api.noroff.dev";
 // Log in, log out & register
@@ -12,8 +15,9 @@ export const registerUrl = `${baseUrl}/api/v1/social/auth/register`;
 export const loginUrl = `${baseUrl}/api/v1/social/auth/login`;
 
 // User profile
+export const allUsersUrl = `${baseUrl}/api/v1/social/profiles`;
+export const singleUserUrl = `${baseUrl}/api/v1/social/profiles/${userName}`;
 export const editMediaUrl = `${baseUrl}/api/v1/social/profiles/${name}/media`;
-// export const userProfilesUrl = `${baseUrl}/api/v1/social/profiles/`;
 
 // Get, create, edit, comment & react to posts
 export const allPostsUrl = `${baseUrl}/api/v1/social/posts/?_author=true&_comments=true&_reactions=true`;

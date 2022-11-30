@@ -20,6 +20,7 @@ import { getAPI } from "./api/APIcalls/getAPI.mjs";
 import { editPost } from "./profile/post/editPost.mjs";
 import { deletePost } from "./posts/delete.mjs";
 import { createPost } from "./posts/create.mjs";
+import { displayUsersProfile } from "./users/profile/displayUsersProfile.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -59,4 +60,12 @@ if (path === "/home/post/") {
   getAPI(urlLinks.singlePostUrl);
   reactToPost();
   commentPost();
+}
+
+if (path === "/users/") {
+  getAPI(urlLinks.allUsersUrl);
+}
+
+if (path === "/users/profile/") {
+  getAPI(urlLinks.singleUserUrl);
 }
