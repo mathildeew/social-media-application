@@ -7,8 +7,6 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 const userName = params.get("name");
 
-console.log(userName);
-
 export const baseUrl = "https://api.noroff.dev";
 // Log in, log out & register
 export const registerUrl = `${baseUrl}/api/v1/social/auth/register`;

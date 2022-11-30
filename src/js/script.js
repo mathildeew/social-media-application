@@ -51,10 +51,10 @@ if (path === "/profile/edit/") {
   editMedia();
 }
 
-if (path === "/home/") {
-  getAPI(urlLinks.allPostsUrl);
-  logoutUser();
-}
+// if (path === "/home/") {
+//   getAPI(urlLinks.allPostsUrl);
+//   logoutUser();
+// }
 
 if (path === "/home/post/") {
   getAPI(urlLinks.singlePostUrl);

@@ -4,7 +4,6 @@ import { displayFeed } from "../../home/displayFeed.mjs";
 import { searchPosts } from "../../posts/search.mjs";
 import { displayPost } from "../../profile/post/displayPost.mjs";
 import { displayPostID } from "../../home/singlePost/displayPost.mjs";
-import { displayComments } from "../../home/singlePost/displayComments.mjs";
 import { filterPosts } from "../../posts/filter.mjs";
 import { displayUsers } from "../../users/displayUsers.mjs";
 import { displayUsersProfile } from "../../users/profile/displayUsersProfile.mjs";
@@ -39,7 +38,6 @@ export async function getAPI(url) {
     }
     if (path === "/home/post/") {
       displayPostID(json);
-      displayComments(json);
     }
 
     if (path === "/users/") {
@@ -47,7 +45,6 @@ export async function getAPI(url) {
     }
     if (path === "/users/profile/") {
       displayUsersProfile(json);
-      console.log(json);
     }
     console.log(json);
   } catch (error) {
