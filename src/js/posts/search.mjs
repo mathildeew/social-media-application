@@ -14,7 +14,6 @@ export function searchPosts(posts) {
         return true;
       }
     });
-    console.log(filteredPosts);
     displayFeed(filteredPosts);
   });
 }

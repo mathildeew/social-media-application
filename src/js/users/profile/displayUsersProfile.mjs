@@ -2,6 +2,8 @@ import * as storage from "../../storage/localStorage.mjs";
 const bannerContainer = document.querySelector("#bannerContainer");
 const avatarContainer = document.querySelector("#avatarContainer");
 const userNameContainer = document.querySelector("#userNameContainer");
+const followingContainer = document.querySelector("#following");
+const followersContainer = document.querySelector("#followers");
 
 export function displayUsersProfile(user) {
   var usersAvatar;
@@ -20,4 +22,6 @@ export function displayUsersProfile(user) {
   userNameContainer.innerHTML += `${user.name}`;
   bannerContainer.src = `${usersBanner}`;
   avatarContainer.src = `${usersAvatar}`;
+  followersContainer.innerHTML = user._count.followers;
+  followingContainer.innerHTML = user._count.following;
 }

@@ -65,15 +65,28 @@
     </nav>
 
     <main class="row justify-content-center">
-      <section class="mx-1 mb-3 col-md-6">
-        <div class="card m-2">
+      <section class="mt-5 mx-1 mb-3 col-md-8 col-lg-5">
+        <div class="card mb-3">
           <div class="card-body">
-            <div class="d-flex align-items-center mb-3">
-              <h5 class="card-title" id="currentTitle"></h5>
+            <div class="d-flex flex-row align-items-center mb-3">
+              <img id="avatar" class="postAvatar me-3" />
+              <h4 id="author"></h4>
             </div>
-            <h6 class="card-subtitle mb-2 text-muted" id="currentDate"></h6>
-            <img class="card-img" id="currentImg" />
-            <p class="card-text" id="currentText"></p>
+            <div class="d-flex align-items-center">
+              <h5 class="card-title" id="title"></h5>
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted" id="date"></h6>
+            <img class="card-img" id="image" />
+            <p class="card-text" id="text"></p>
+            <i class="bi bi-chat-left-text"></i>
+            <p id="postComment" class="d-inline me-4"></p>
+            <i class="bi bi-suit-heart me-2"></i>
+            <p id="postReact" class="d-inline me-4"></p>
+            <div id="iconOne"></div>
+            <div id="iconTwo"></div>
+            <div id="iconThree"></div>
+            <div id="iconFour"></div>
+            <div id="iconFive"></div>
           </div>
         </div>
       </section>
@@ -117,6 +130,11 @@
             </button>
           </form>
         </div>
+
+        <section class="mb-3">
+          <h2>Comments</h2>
+          <div id="comments"></div>
+        </section>
       </div>
     </main>
 

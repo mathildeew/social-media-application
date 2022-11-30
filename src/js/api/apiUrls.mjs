@@ -13,10 +13,12 @@ export const registerUrl = `${baseUrl}/api/v1/social/auth/register`;
 export const loginUrl = `${baseUrl}/api/v1/social/auth/login`;
 
 // User profile
+export const usersProfileUrl = `${baseUrl}/api/v1/social/profiles/${name}?_following=true&_followers=true`;
 export const allUsersUrl = `${baseUrl}/api/v1/social/profiles`;
 export const singleUserUrl = `${baseUrl}/api/v1/social/profiles/${userName}`;
 export const followUserUrl = `${baseUrl}/api/v1/social/profiles/${userName}/follow`;
 export const unFollowUserUrl = `${baseUrl}/api/v1/social/profiles/${userName}/unfollow`;
+export const otherUsersPostsUrl = `${baseUrl}/api/v1/social/profiles/${userName}/posts`;
 
 export const editMediaUrl = `${baseUrl}/api/v1/social/profiles/${name}/media`;
 

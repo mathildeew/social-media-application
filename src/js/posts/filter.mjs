@@ -1,9 +1,11 @@
 import { displayFeed } from "../home/displayFeed.mjs";
+import { displayPost } from "../profile/post/displayPost.mjs";
 
 export function filterPosts(posts) {
   const selectOne = document.querySelector("#selectOne");
   const selectTwo = document.querySelector("#selectTwo");
   const selectThree = document.querySelector("#selectThree");
+  const selectFour = document.querySelector("#selectFour");
 
   selectOne.addEventListener("click", (event) => {
     const oldestToNewest = posts.sort(function (a, b) {
@@ -25,6 +27,23 @@ export function filterPosts(posts) {
         return true;
       }
     });
+
     displayFeed(postsWithImage);
+  });
+
+  selectFour.addEventListener("click", (event) => {
+    const filter = "test".toLowerCase().trim();
+
+    const postsWithoutTest = posts.filter(function (post) {
+      if (
+        post.title.toLowerCase().includes(filter) ||
+        post.body.toLowerCase().includes(filter)
+      ) {
+        return false;
+      } else {
+        return true;
+      }
+    });
+    displayFeed(postsWithoutTest);
   });
 }

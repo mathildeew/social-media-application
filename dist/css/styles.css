@@ -10837,6 +10837,7 @@ i {
 
 .formError {
   display: none;
+  color: red;
 }
 
 .card i {

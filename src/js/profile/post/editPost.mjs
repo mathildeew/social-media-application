@@ -1,5 +1,5 @@
+import { fetchOptions } from "../../api/fetchOptions.mjs";
 import { singlePostUrl } from "../../api/apiUrls.mjs";
-import { putAPI } from "../../api/APIcalls/putAPI.mjs";
 
 const IDurl = new URL(location.href);
 const postID = IDurl.searchParams.get("id");
@@ -9,13 +9,19 @@ export function editPost() {
 
   updateForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    const putContent = {
-      id: postID,
-      title: updateForm.title.value,
-      body: updateForm.body.value,
-      media: updateForm.media.value,
-    };
 
-    putAPI(singlePostUrl, putContent);
+    const form = event.target;
+    const formData = new FormData(form);
+    const putContent = Object.fromEntries(formData.entries());
+
+    async function editPostAPI(url, putContent) {
+      const [getData, postData, putData] = fetchOptions;
+      putData["body"] = JSON.stringify(putContent);
+      const response = await fetch(url, putData);
+      const json = await response.json();
+      location.reload();
+      console.log(json);
+    }
+    editPostAPI(singlePostUrl, putContent);
   });
 }

@@ -2,7 +2,6 @@ import * as urlLinks from "./api/apiUrls.mjs";
 
 // Log in, log out & register
 import { loginUser } from "./login/login.mjs";
-import { registerUser } from "./register/register.mjs";
 import { logoutUser } from "./profile/logout.mjs";
 
 // User profile
@@ -11,17 +10,23 @@ import { displayUser } from "./profile/displayProfile/displayUser.mjs";
 // Edit profile
 import { editMedia } from "./profile/edit/editProfile.mjs";
 
+// Singe post by user
+import { getPostAPI } from "./profile/post/getPost.mjs";
+
 // Single post react & comment
 import { reactToPost } from "./posts/react.mjs";
-import { commentPost } from "./home/singlePost/commentPost.mjs";
+import { commentPost } from "./home/singlePost/comment.mjs";
 
 // Posts
-import { getAPI } from "./api/APIcalls/getAPI.mjs";
 import { editPost } from "./profile/post/editPost.mjs";
-import { deletePost } from "./posts/delete.mjs";
-import { createPost } from "./posts/create.mjs";
+import { deletePost } from "./profile/post/delete.mjs";
+import { createPost } from "./profile/post/create.mjs";
 import { displayUsersProfile } from "./users/profile/displayUsersProfile.mjs";
 import { followUser } from "./users/profile/followUser.mjs";
+import { displayUsersPosts } from "./users/profile/displayUsersPosts.mjs";
+
+import { getFeed } from "./home/getFeed.mjs";
+import { getPosts } from "./profile/displayProfile/getPosts.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -30,19 +35,20 @@ if (path === "/") {
   loginUser();
 }
 
-if (path === "/profile/register/") {
-  registerUser();
-}
+// if (path === "/profile/register/") {
+//   registerUser();
+// }
 
 if (path === "/profile/") {
   displayUser();
-  getAPI(urlLinks.usersPostsUrl);
-  createPost(urlLinks.allPostsUrl);
+  createPost();
+  getPosts(urlLinks.usersPostsUrl);
   logoutUser();
 }
 
 if (path === "/profile/post/") {
-  getAPI(urlLinks.singlePostUrl);
+  getPostAPI(urlLinks.singlePostUrl);
+  // getAPI(urlLinks.singlePostUrl);
   editPost();
   deletePost();
 }
@@ -53,21 +59,22 @@ if (path === "/profile/edit/") {
 }
 
 if (path === "/home/") {
-  getAPI(urlLinks.allPostsUrl);
+  getFeed(urlLinks.allPostsUrl);
   logoutUser();
 }
 
 if (path === "/home/post/") {
-  getAPI(urlLinks.singlePostUrl);
-  reactToPost();
+  getPostAPI(urlLinks.singlePostUrl);
+  //   reactToPost();
   commentPost();
 }
 
-if (path === "/users/") {
-  getAPI(urlLinks.allUsersUrl);
-}
+// if (path === "/users/") {
+//   getAPI(urlLinks.allUsersUrl);
+// }
 
-if (path === "/users/profile/") {
-  getAPI(urlLinks.singleUserUrl);
-  followUser();
-}
+// if (path === "/users/profile/") {
+//   getAPI(urlLinks.singleUserUrl);
+//   displayUsersPosts(urlLinks.otherUsersPostsUrl);
+//   followUser();
+// }
