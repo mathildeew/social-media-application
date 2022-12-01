@@ -57,7 +57,7 @@ if (path === "/profile/post/") {
 }
 
 if (path === "/profile/edit/") {
-  displayUser();
+  getUserAPI(urlLinks.userProfileUrl);
   editMedia();
   logoutUser();
   automaticLogout();
