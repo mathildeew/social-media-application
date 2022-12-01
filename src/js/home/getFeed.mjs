@@ -1,7 +1,7 @@
 import { fetchOptions } from "../api/fetchOptions.mjs";
 import { displayFeed } from "./displayFeed.mjs";
-import { searchPosts } from "../posts/search.mjs";
-import { filterPosts } from "../posts/filter.mjs";
+import { searchPosts } from "./search.mjs";
+import { filterPosts } from "./filter.mjs";
 
 export async function getFeed(url) {
   try {

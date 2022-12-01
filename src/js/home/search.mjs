@@ -1,4 +1,4 @@
-import { displayFeed } from "../home/displayFeed.mjs";
+import { displayFeed } from "./displayFeed.mjs";
 
 export function searchPosts(posts) {
   const search = document.querySelector("#search");

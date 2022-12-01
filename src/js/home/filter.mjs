@@ -1,5 +1,4 @@
-import { displayFeed } from "../home/displayFeed.mjs";
-import { displayPost } from "../profile/post/displayPost.mjs";
+import { displayFeed } from "./displayFeed.mjs";
 
 export function filterPosts(posts) {
   const selectOne = document.querySelector("#selectOne");
@@ -37,7 +36,8 @@ export function filterPosts(posts) {
     const postsWithoutTest = posts.filter(function (post) {
       if (
         post.title.toLowerCase().includes(filter) ||
-        post.body.toLowerCase().includes(filter)
+        post.body.toLowerCase().includes(filter) ||
+        post.author.name.toLowerCase().includes(filter)
       ) {
         return false;
       } else {
