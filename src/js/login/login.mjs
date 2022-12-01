@@ -4,11 +4,10 @@ import { loginUrl } from "../api/apiUrls.mjs";
 
 export function loginUser() {
   const loginForm = document.querySelector("#loginForm");
+  const errorMessage = document.querySelector(".formError");
 
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    const errorMessage = document.querySelector(".formError");
 
     const form = event.target;
     const formData = new FormData(form);

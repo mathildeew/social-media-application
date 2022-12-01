@@ -1,6 +1,7 @@
 import * as urlLinks from "./api/apiUrls.mjs";
 
 // Log in, log out & register
+import { registerUser } from "./register/register.mjs";
 import { loginUser } from "./login/login.mjs";
 import { logoutUser } from "./profile/logout.mjs";
 
@@ -38,9 +39,9 @@ if (path === "/") {
   loginUser();
 }
 
-// if (path === "/profile/register/") {
-//   registerUser();
-// }
+if (path === "/profile/register/") {
+  registerUser();
+}
 
 if (path === "/profile/") {
   displayUser();
