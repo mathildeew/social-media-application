@@ -1,23 +1,16 @@
-import * as storage from "../../storage/localStorage.mjs";
 const bannerContainer = document.querySelector("#bannerContainer");
 const avatarContainer = document.querySelector("#avatarContainer");
 const userNameContainer = document.querySelector("#userNameContainer");
 
 export function displayUser(user) {
-  const username = storage.get("name");
-  const banner = storage.get("banner");
-  const avatar = storage.get("avatar");
-
-  userNameContainer.innerHTML = `${username}`;
-  bannerContainer.src = `${banner}`;
-  avatarContainer.src = `${avatar}`;
+  userNameContainer.innerHTML = user.name;
+  bannerContainer.src = user.banner;
+  avatarContainer.src = user.avatar;
 
   const followingContainer = document.querySelector("#followingContainer");
   const followersContainer = document.querySelector("#followersContainer");
   const following = user.following;
   const followers = user.followers;
-
-  console.log(user.followers);
 
   if (!following.length) {
     followingContainer.innerHTML = `

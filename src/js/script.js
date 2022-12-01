@@ -24,9 +24,8 @@ import { commentPost } from "./post/comment.mjs";
 import { deletePost } from "./post/delete.mjs";
 
 // Users
-import { getUsersAPI } from "./users/profile/getUsers.mjs";
-import { getSingleUserAPI } from "./users/profile/getSingleUser.mjs";
-import { getSingleUserPostsAPI } from "./users/profile/getSingleUserPosts.mjs";
+import { getUsersAPI } from "./users/getUsers.mjs";
+import { getUserPostsAPI } from "./users/profile/getUserPosts.mjs";
 import { followUser } from "./users/profile/followUser.mjs";
 
 // Run function based on pathname
@@ -85,8 +84,9 @@ if (path === "/users/") {
 }
 
 if (path === "/users/profile/") {
-  getSingleUserAPI(urlLinks.singleUserUrl);
-  getSingleUserPostsAPI(urlLinks.singleUserPostsUrl);
+  getUserAPI(urlLinks.profileUrl);
+  getUserPostsAPI(urlLinks.profilePostsUrl);
+
   followUser();
   logoutUser();
   automaticLogout();

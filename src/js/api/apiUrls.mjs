@@ -12,7 +12,7 @@ export const baseUrl = "https://api.noroff.dev";
 export const registerUrl = `${baseUrl}/api/v1/social/auth/register`;
 export const loginUrl = `${baseUrl}/api/v1/social/auth/login`;
 
-// User profile
+// Profile
 export const userProfileUrl = `${baseUrl}/api/v1/social/profiles/${name}?_following=true&_followers=true`;
 export const editMediaUrl = `${baseUrl}/api/v1/social/profiles/${name}/media`;
 
@@ -20,6 +20,9 @@ export const editMediaUrl = `${baseUrl}/api/v1/social/profiles/${name}/media`;
 export const allUsersUrl = `${baseUrl}/api/v1/social/profiles`;
 
 // Users profile
+export const profileUrl = `${baseUrl}/api/v1/social/profiles/${userName}?_following=true&_followers=true`;
+export const profilePostsUrl = `${baseUrl}/api/v1/social/profiles/${userName}/posts`;
+
 export const singleUserUrl = `${baseUrl}/api/v1/social/profiles/${userName}`;
 export const followUserUrl = `${baseUrl}/api/v1/social/profiles/${userName}/follow`;
 export const unFollowUserUrl = `${baseUrl}/api/v1/social/profiles/${userName}/unfollow`;

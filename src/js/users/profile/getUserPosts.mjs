@@ -1,15 +1,14 @@
 import { fetchOptions } from "../../api/fetchOptions.mjs";
-import { displaySingleUserProfile } from "./displaySingleUserProfile.mjs";
-import { searchUsers } from "../searchUsers.mjs";
+import { displayUserPosts } from "../../users/profile/displayUserPosts.mjs";
 
-export async function getSingleUserAPI(url) {
+export async function getUserPostsAPI(url) {
   try {
     const [getData] = fetchOptions;
 
     const response = await fetch(url, getData);
     const json = await response.json();
-
-    displaySingleUserProfile(json);
+    displayUserPosts(json);
+    console.log(json);
   } catch (error) {
     console.log(error);
   }
