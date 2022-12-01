@@ -30,6 +30,9 @@ i {
 
 .friendPic {
   width: 70px;
+  height: 70px;
+  object-fit: contain;
+  object-position: center center;
 }
 
 // Small image on card

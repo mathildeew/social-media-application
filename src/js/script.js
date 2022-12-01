@@ -10,6 +10,7 @@ import { automaticLogout } from "./profile/logout.mjs";
 import { getFeed } from "./home/getFeed.mjs";
 
 // User profile
+import { getUserAPI } from "./profile/displayProfile/getProfile.mjs";
 import { displayUser } from "./profile/displayProfile/displayUser.mjs";
 import { getPostsAPI } from "./profile/displayProfile/getPosts.mjs";
 
@@ -40,7 +41,7 @@ if (path === "/profile/register/") {
 }
 
 if (path === "/profile/") {
-  displayUser();
+  getUserAPI(urlLinks.userProfileUrl);
   createPost();
   getPostsAPI(urlLinks.usersPostsUrl);
   logoutUser();

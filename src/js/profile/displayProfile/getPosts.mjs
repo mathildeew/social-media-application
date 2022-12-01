@@ -7,7 +7,6 @@ export async function getPostsAPI(url) {
 
     const response = await fetch(url, getData);
     const json = await response.json();
-    console.log(json);
     displayPosts(json);
   } catch (error) {
     console.log(error);

@@ -2,7 +2,7 @@ export function displayUsers(users) {
   const usersContainer = document.querySelector("#allUsers");
   usersContainer.innerHTML = "";
 
-  // console.log(users);
+  console.log(users);
 
   for (let i = 0; i < users.length; i++) {
     var avatar;

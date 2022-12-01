@@ -13,6 +13,7 @@ export const registerUrl = `${baseUrl}/api/v1/social/auth/register`;
 export const loginUrl = `${baseUrl}/api/v1/social/auth/login`;
 
 // User profile
+export const userProfileUrl = `${baseUrl}/api/v1/social/profiles/${name}?_following=true&_followers=true`;
 export const editMediaUrl = `${baseUrl}/api/v1/social/profiles/${name}/media`;
 
 // Users
