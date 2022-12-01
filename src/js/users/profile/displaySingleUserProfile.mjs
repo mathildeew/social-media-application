@@ -19,8 +19,6 @@ export function displaySingleUserProfile(user) {
     usersBanner = user.banner;
   }
 
-  console.log(user);
-
   userNameContainer.innerHTML += `${user.name}`;
   bannerContainer.src = `${usersBanner}`;
   avatarContainer.src = `${usersAvatar}`;

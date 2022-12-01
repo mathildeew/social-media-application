@@ -28,11 +28,11 @@ export function registerUser() {
       const accessToken = json.accessToken;
       storage.set("token", accessToken);
 
-      if (name === undefined) {
-        errorMessage.style.display = "block";
-      } else {
-        errorMessage.style.display = "none";
+      if (response.ok) {
         window.location.href = "/";
+        errorMessage.style.display = "none";
+      } else {
+        errorMessage.style.display = "block";
       }
 
       console.log(json);

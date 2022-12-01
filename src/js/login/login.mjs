@@ -29,13 +29,10 @@ export function loginUser() {
         const accessToken = json.accessToken;
         storage.set("token", accessToken);
 
-        if (accessToken === undefined) {
-          errorMessage.style.display = "block";
-        } else {
+        if (response.ok) {
           errorMessage.style.display = "none";
-
-          console.log(json);
-          window.location.href = "/profile/";
+        } else {
+          errorMessage.style.display = "block";
         }
       } catch (error) {
         console.log(error);

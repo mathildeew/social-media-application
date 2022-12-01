@@ -1,10 +1,22 @@
+import { fetchOptions } from "../../api/fetchOptions.mjs";
 import { followUserUrl } from "../../api/apiUrls.mjs";
-// import { putAPI } from "../../api/APIcalls/putAPI.mjs";
+import * as storage from "../../storage/localStorage.mjs";
 
 export function followUser() {
   const followUserBtn = document.querySelector("#followUser");
 
   followUserBtn.addEventListener("click", (event) => {
-    // putAPI(followUserUrl);
+    async function followUserAPI(url) {
+      const [getData, postData, putData] = fetchOptions;
+      const token = storage.get("token");
+      putData["headers"] = { Authorization: `Bearer ${token}` };
+
+      const response = await fetch(url, putData);
+      const json = await response.json();
+
+      console.log(json);
+      console.log(putData);
+    }
+    followUserAPI(followUserUrl);
   });
 }

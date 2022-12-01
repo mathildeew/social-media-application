@@ -1,9 +1,6 @@
 import { fetchOptions } from "../../api/fetchOptions.mjs";
 import { singlePostUrl } from "../../api/apiUrls.mjs";
 
-const IDurl = new URL(location.href);
-const postID = IDurl.searchParams.get("id");
-
 export function editPost() {
   const updateForm = document.querySelector("#updatePostForm");
 
