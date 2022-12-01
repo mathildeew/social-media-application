@@ -29,7 +29,9 @@ export function displayPost(post) {
     var postAvatar = post.author.avatar;
   }
 
-  link.href = `/users/profile/?name=${post.author.name}`;
+  if (location.pathname === "/home/post/") {
+    link.href = `/users/profile/?name=${post.author.name}`;
+  }
   avatar.src = postAvatar;
   author.innerHTML = post.author.name;
   title.innerHTML = post.title;

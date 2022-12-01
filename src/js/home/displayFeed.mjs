@@ -13,7 +13,6 @@ export function displayFeed(post) {
     const react = post[i]._count.reactions;
 
     // Set placeholder if avatar is missing
-    var avatar;
     if (post[i].author.avatar === null || post[i].author.avatar === "") {
       var avatar =
         "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";

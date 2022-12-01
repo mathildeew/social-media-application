@@ -13,6 +13,7 @@ import { getFeed } from "./home/getFeed.mjs";
 import { getUserAPI } from "./profile/displayProfile/getProfile.mjs";
 import { displayUser } from "./profile/displayProfile/displayUser.mjs";
 import { getPostsAPI } from "./profile/displayProfile/getPosts.mjs";
+import { editPost } from "./post/editPost.mjs";
 
 // Edit profile
 import { editMedia } from "./profile/edit/editProfile.mjs";
@@ -86,7 +87,6 @@ if (path === "/users/") {
 if (path === "/users/profile/") {
   getUserAPI(urlLinks.profileUrl);
   getUserPostsAPI(urlLinks.profilePostsUrl);
-
   followUser();
   logoutUser();
   automaticLogout();

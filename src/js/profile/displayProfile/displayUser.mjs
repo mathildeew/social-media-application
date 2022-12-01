@@ -3,6 +3,7 @@ const avatarContainer = document.querySelector("#avatarContainer");
 const userNameContainer = document.querySelector("#userNameContainer");
 
 export function displayUser(user) {
+  document.title += user.name;
   userNameContainer.innerHTML = user.name;
 
   // Set placeholder if banner is missing
