@@ -31,6 +31,7 @@ export function loginUser() {
 
         if (response.ok) {
           errorMessage.style.display = "none";
+          window.location.href = "/profile/";
         } else {
           errorMessage.style.display = "block";
         }

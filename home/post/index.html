@@ -15,10 +15,11 @@
     />
     <link rel="stylesheet" href="/dist/css/styles.css" />
   </head>
+
   <body class="bg-light">
     <nav class="navbar navbar-expand-lg bg-primary">
       <div class="container-fluid">
-        <span class="navbar-brand">Logo</span>
+        <span class="navbar-brand me-5">Pattern</span>
         <div
           class="d-lg-none"
           data-bs-toggle="collapse"
@@ -43,7 +44,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <div class="navbar-nav me-auto mb-2 mb-lg-0">
-            <a class="nav-link" aria-current="page">
+            <a class="nav-link" aria-current="page" href="/home/">
               <i class="bi bi-house-fill"></i>
               Home</a
             >
@@ -65,35 +66,31 @@
     </nav>
 
     <main class="mx-auto row justify-content-around">
-      <section class="mt-5 mx-1 mb-2 col-md-8 col-lg-5">
+      <!-- Users post -->
+      <section class="col-md-8 col-lg-5 mt-4 mx-1">
         <div class="card mb-3">
           <div class="card-body">
             <div class="d-flex flex-row align-items-center mb-3">
-              <img id="avatar" class="postAvatar me-3" />
-              <h4 id="author"></h4>
+              <img id="avatar" class="me-3" />
+              <a id="userprofileLink"> <h4 id="author"></h4></a>
             </div>
             <div class="d-flex align-items-center">
-              <h5 class="card-title" id="title"></h5>
+              <h5 id="title" class="card-title"></h5>
             </div>
-            <h6 class="card-subtitle mb-2 text-muted" id="date"></h6>
-            <img class="card-img" id="image" />
-            <p class="card-text" id="text"></p>
+            <h6 id="date" class="card-subtitle mb-2 text-muted"></h6>
+            <img id="image" class="card-img" />
+            <p id="text" class="card-text"></p>
             <i class="bi bi-chat-left-text"></i>
-            <p id="postComment" class="d-inline me-4"></p>
-            <i class="bi bi-suit-heart me-2"></i>
-            <p id="postReact" class="d-inline me-4"></p>
-            <div id="iconOne"></div>
-            <div id="iconTwo"></div>
-            <div id="iconThree"></div>
-            <div id="iconFour"></div>
-            <div id="iconFive"></div>
+            <p id="postComments" class="d-inline me-4"></p>
+            <i class="bi bi-suit-heart"></i>
+            <p id="postReacts" class="d-inline me-4"></p>
           </div>
         </div>
       </section>
 
-      <div class="col-md-8 col-lg-4">
-        <section class="mb-3">
-          <h2>Make comment</h2>
+      <div class="col-md-8 col-lg-4 mt-4">
+        <section class="mb-4">
+          <h2>Comment post</h2>
           <form
             id="makeCommentForm"
             class="d-flex flex-column justify-content-center"
@@ -110,7 +107,7 @@
           </form>
         </section>
 
-        <section class="mb-3">
+        <section class="mb-4">
           <h2>Comments</h2>
           <div id="comments"></div>
         </section>

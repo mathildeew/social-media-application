@@ -63,7 +63,12 @@ i {
   }
 }
 
-.postAvatar {
+.card-img {
+  height: 300px;
+  object-fit: cover;
+}
+
+#avatar {
   height: 40px;
 }
 

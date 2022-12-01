@@ -10878,7 +10878,12 @@ i {
   color: #7668c6;
 }
 
-.postAvatar {
+.card-img {
+  height: 300px;
+  object-fit: cover;
+}
+
+#avatar {
   height: 40px;
 }
 

@@ -6,15 +6,21 @@ export function displayPost(post) {
   const date = document.querySelector("#date");
   const img = document.querySelector("#image");
   const text = document.querySelector("#text");
-
+  const link = document.querySelector("#userprofileLink");
+  const commentsCount = document.querySelector("#postComments");
+  const reactsCount = document.querySelector("#postReacts");
   const postDate = new Date(post.created).toLocaleDateString();
+
+  // Set placeholder if post is missing image
   var cardImg;
   if (post.media === null) {
-    var cardImg = "";
+    var cardImg =
+      "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg";
   } else {
     var cardImg = post.media;
   }
 
+  // Set placeholder if avatar is missing
   var postAvatar;
   if (post.author.avatar === null || post.author.avatar === "") {
     var postAvatar =
@@ -23,13 +29,17 @@ export function displayPost(post) {
     var postAvatar = post.author.avatar;
   }
 
+  link.href = `/users/profile/?name=${post.author.name}`;
   avatar.src = postAvatar;
-  author.innerHTML = `${post.author.name}`;
-  title.innerHTML = `${post.title}`;
-  date.innerHTML = `${postDate}`;
-  img.src = `${cardImg}`;
-  text.innerHTML = `${post.body}`;
+  author.innerHTML = post.author.name;
+  title.innerHTML = post.title;
+  date.innerHTML = postDate;
+  img.src = cardImg;
+  text.innerHTML = post.body;
   console.log(post);
+
+  commentsCount.innerHTML = post._count.comments;
+  reactsCount.innerHTML = post._count.reactions;
 
   // Display comments
   const commentsContainer = document.querySelector("#comments");
@@ -40,20 +50,22 @@ export function displayPost(post) {
     for (let i = 0; i < comments.length; i++) {
       const date = new Date(comments[i].created).toLocaleDateString();
       commentsContainer.innerHTML += `
-                                    <div class="rounded form-control d-flex flex-column ">
+                                      <div class="d-flex flex-column rounded form-control mb-3">
                                         <div class="d-flex justify-content-between">
-                                            <h3>${comments[i].owner}</h3>
-                                            <p class="text-muted">${date}</h4>
+                                          <a href="/users/profile/?name=${comments[i].owner}">
+                                            <h5>${comments[i].owner}</h5>
+                                          </a>
+                                          <p class="text-muted">${date}</p>
                                         </div>
                                         <p>${comments[i].body}</p>
-                                    </div>
-                                    `;
+                                      </div>
+                                      `;
     }
   } else {
     commentsContainer.innerHTML = `
-    <div class="rounded form-control d-flex align-items-center">
-        <p>No comments yet. Be the first one!</p>
-    </div>
-   `;
+                                  <div class="rounded form-control d-flex align-items-center">
+                                    <p>No comments yet. Be the first one!</p>
+                                  </div>
+                                  `;
   }
 }
