@@ -4,8 +4,24 @@ const userNameContainer = document.querySelector("#userNameContainer");
 
 export function displayUser(user) {
   userNameContainer.innerHTML = user.name;
-  bannerContainer.src = user.banner;
-  avatarContainer.src = user.avatar;
+
+  // Set placeholder if banner is missing
+  if (user.banner === null || user.banner === "") {
+    var banner =
+      "https://www.unfe.org/wp-content/uploads/2019/04/SM-placeholder.png";
+  } else {
+    banner = user.banner;
+  }
+  bannerContainer.src = banner;
+
+  // Set placeholder if avatar is missing
+  if (user.avatar === null || user.avatar === "") {
+    var avatar =
+      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
+  } else {
+    var avatar = user.avatar;
+  }
+  avatarContainer.src = avatar;
 
   const followingContainer = document.querySelector("#followingContainer");
   const followersContainer = document.querySelector("#followersContainer");
@@ -23,8 +39,7 @@ export function displayUser(user) {
                                   `;
   } else {
     for (let i = 0; i < following.length; i++) {
-      // Set placeholder if avatar is missing
-      var followingAvatar;
+      // Set placeholder if following avatar is missing
       if (following[i].avatar === null || following[i].avatar === "") {
         followingAvatar =
           "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
@@ -51,7 +66,7 @@ export function displayUser(user) {
                                     `;
   } else {
     for (let i = 0; i < followers.length; i++) {
-      // Set placeholder if avatar is missing
+      // Set placeholder if followers avatar is missing
       if (followers[i].avatar === null || followers[i].avatar === "") {
         followersAvatar =
           "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";

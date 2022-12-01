@@ -18,6 +18,7 @@ export async function getUserAPI(url) {
 
     const response = await fetch(url, getData);
     const json = await response.json();
+    console.log(json);
 
     displayUser(json);
   } catch (error) {

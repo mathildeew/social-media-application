@@ -8,7 +8,6 @@ export async function getUserPostsAPI(url) {
     const response = await fetch(url, getData);
     const json = await response.json();
     displayUserPosts(json);
-    console.log(json);
   } catch (error) {
     console.log(error);
   }
