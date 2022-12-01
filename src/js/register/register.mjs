@@ -1,5 +1,6 @@
 import { registerUrl } from "../api/apiUrls.mjs";
-import { registerUserAPI } from "./registerAPI.mjs";
+// import { registerUserAPI } from "./registerAPI.mjs";
+import { postAPI } from "../api/APIcalls/postAPI.mjs";
 
 export function registerUser() {
   const registerForm = document.querySelector("#registerForm");
@@ -11,7 +12,6 @@ export function registerUser() {
     const formData = new FormData(form);
     const profile = Object.fromEntries(formData.entries());
 
-    console.log(form.password.value);
-    registerUserAPI(registerUrl, profile);
+    postAPI(registerUrl, profile);
   });
 }

@@ -15,30 +15,45 @@
     />
     <link rel="stylesheet" href="/dist/css/styles.css" />
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg bg-primary">
       <div class="container-fluid">
         <span class="navbar-brand">Logo</span>
-        <button
-          class="navbar-toggler"
-          type="button"
+        <div
+          class="d-lg-none"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            class="bi"
+            fill="white"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <div class="navbar-nav me-auto mb-2 mb-lg-0">
-            <a class="nav-link disabled" aria-current="page">
+            <a class="nav-link" aria-current="page">
               <i class="bi bi-house-fill"></i>
               Home</a
             >
             <a class="nav-link" href="/profile/">
               <i class="bi bi-person"></i>
               Profile
+            </a>
+            <a class="nav-link" href="/users/">
+              <i class="bi bi-people"></i>
+              Users
             </a>
             <a class="nav-link" id="logout">
               <i class="bi bi-door-closed"></i>
@@ -49,32 +64,59 @@
       </div>
     </nav>
 
-    <main class="mx-auto mb-5 maxW">
-      <section class="mt-5 mx-1 mb-2">
+    <main class="mx-auto row justify-content-around">
+      <section class="mt-5 mx-1 mb-2 col-md-8 col-lg-5">
         <div class="card mb-3">
           <div class="card-body">
-            <div class="d-flex align-items-center mb-3">
-              <h5 class="card-title" id="postTitle"></h5>
+            <div class="d-flex flex-row align-items-center mb-3">
+              <img id="avatar" class="postAvatar me-3" />
+              <h4 id="author"></h4>
             </div>
-            <h6 class="card-subtitle mb-2 text-muted" id="postDate"></h6>
-            <img class="card-img" id="postImg" />
-            <p class="card-text" id="postText"></p>
-            <div class="d-flex justify-content-around">
-              <div class="d-flex">
-                <i class="bi bi-chat-left-text me-2"></i>
-                <p id="postComment"></p>
-              </div>
-              <div class="d-flex" id="react">
-                <i class="bi bi-suit-heart me-2"></i>
-                <p id="postReact"></p>
-              </div>
+            <div class="d-flex align-items-center">
+              <h5 class="card-title" id="title"></h5>
             </div>
+            <h6 class="card-subtitle mb-2 text-muted" id="date"></h6>
+            <img class="card-img" id="image" />
+            <p class="card-text" id="text"></p>
+            <i class="bi bi-chat-left-text"></i>
+            <p id="postComment" class="d-inline me-4"></p>
+            <i class="bi bi-suit-heart me-2"></i>
+            <p id="postReact" class="d-inline me-4"></p>
+            <div id="iconOne"></div>
+            <div id="iconTwo"></div>
+            <div id="iconThree"></div>
+            <div id="iconFour"></div>
+            <div id="iconFive"></div>
           </div>
         </div>
       </section>
-    </main>
 
-    <script type="module" src="/src/js/home/singlePost/postID.mjs"></script>
+      <div class="col-md-8 col-lg-4">
+        <section class="mb-3">
+          <h2>Make comment</h2>
+          <form
+            id="makeCommentForm"
+            class="d-flex flex-column justify-content-center"
+          >
+            <textarea
+              name="body"
+              id="comment"
+              class="form-control mb-3"
+            ></textarea>
+
+            <button type="submit" class="btn btn-primary rounded-pill">
+              Post comment
+            </button>
+          </form>
+        </section>
+
+        <section class="mb-3">
+          <h2>Comments</h2>
+          <div id="comments"></div>
+        </section>
+      </div>
+    </main>
+    <script type="module" src="/src/js/script.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

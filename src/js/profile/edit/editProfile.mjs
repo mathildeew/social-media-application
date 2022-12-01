@@ -1,15 +1,26 @@
+import * as storage from "../../storage/localStorage.mjs";
+import { fetchOptions } from "../../api/fetchOptions.mjs";
 import { editMediaUrl } from "../../api/apiUrls.mjs";
-import { editMediaAPI } from "./editAPI.mjs";
 
 export function editMedia() {
   const updateForm = document.querySelector("#updateMediaForm");
 
   updateForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    const mediaContent = {
-      banner: updateForm.banner.value,
-      avatar: updateForm.avatar.value,
-    };
-    editMediaAPI(editMediaUrl, mediaContent);
+
+    const form = event.target;
+    const formData = new FormData(form);
+    const putContent = Object.fromEntries(formData.entries());
+
+    async function editMediaAPI(url, putContent) {
+      const [getData, postData, putData] = fetchOptions;
+      putData["body"] = JSON.stringify(putContent);
+      const response = await fetch(url, putData);
+      const json = await response.json();
+      storage.set("avatar", json.avatar);
+      storage.set("banner", json.banner);
+      location.reload();
+    }
+    editMediaAPI(editMediaUrl, putContent);
   });
 }

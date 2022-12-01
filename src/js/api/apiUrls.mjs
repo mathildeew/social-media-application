@@ -1,24 +1,30 @@
 import * as storage from "../storage/localStorage.mjs";
 
+// Get params to links
 const name = storage.get("name");
-
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
+const userName = params.get("name");
 
-// Log in, log out & register
 export const baseUrl = "https://api.noroff.dev";
+// Log in, log out & register
 export const registerUrl = `${baseUrl}/api/v1/social/auth/register`;
 export const loginUrl = `${baseUrl}/api/v1/social/auth/login`;
 
 // User profile
+export const usersProfileUrl = `${baseUrl}/api/v1/social/profiles/${name}?_following=true&_followers=true`;
+export const allUsersUrl = `${baseUrl}/api/v1/social/profiles`;
+export const singleUserUrl = `${baseUrl}/api/v1/social/profiles/${userName}`;
+export const followUserUrl = `${baseUrl}/api/v1/social/profiles/${userName}/follow`;
+export const unFollowUserUrl = `${baseUrl}/api/v1/social/profiles/${userName}/unfollow`;
+export const otherUsersPostsUrl = `${baseUrl}/api/v1/social/profiles/${userName}/posts`;
+
 export const editMediaUrl = `${baseUrl}/api/v1/social/profiles/${name}/media`;
 
 // Get, create, edit, comment & react to posts
-export const allPostsUrl = `${baseUrl}/api/v1/social/posts`;
-export const singlePostUrl = `${baseUrl}/api/v1/social/posts/${id}`;
-export const createPostUrl = `${baseUrl}/api/v1/social/posts`;
-// export const updatePostUrl = `${baseUrl}/api/v1/social/posts/${id}`;
-
+export const allPostsUrl = `${baseUrl}/api/v1/social/posts/?_author=true&_comments=true&_reactions=true`;
+export const singlePostUrl = `${baseUrl}/api/v1/social/posts/${id}?_author=true&_comments=true&_reactions=true`;
 export const usersPostsUrl = `${baseUrl}/api/v1/social/profiles/${name}/posts`;
-export const userProfilesUrl = `${baseUrl}/api/v1/social/profiles/`;
+// export const createPostUrl = `${baseUrl}/api/v1/social/posts`;
+export const commentPostUrl = `${baseUrl}/api/v1/social/posts/${id}/comment`;
