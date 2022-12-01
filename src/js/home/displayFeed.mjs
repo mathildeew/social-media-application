@@ -55,5 +55,3 @@ export function displayFeed(post) {
                                 `;
   }
 }
-
-// ØVERTSTE LINJE `

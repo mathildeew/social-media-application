@@ -31,6 +31,7 @@ import { getPosts } from "./profile/displayProfile/getPosts.mjs";
 
 // Users
 import { getUsersAPI } from "./users/profile/getUsers.mjs";
+import { searchUsers } from "./users/searchUsers.mjs";
 
 // Run function based on pathname
 const path = location.pathname;

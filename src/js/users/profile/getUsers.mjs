@@ -1,5 +1,6 @@
 import { fetchOptions } from "../../api/fetchOptions.mjs";
 import { displayUsers } from "../displayUsers.mjs";
+import { searchUsers } from "../searchUsers.mjs";
 
 export async function getUsersAPI(url) {
   try {
@@ -9,6 +10,7 @@ export async function getUsersAPI(url) {
     const json = await response.json();
 
     displayUsers(json);
+    searchUsers(json);
   } catch (error) {
     console.log(error);
   }

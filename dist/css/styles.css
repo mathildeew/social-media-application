@@ -10807,6 +10807,10 @@ textarea.form-control-lg {
   color: #f1f7fd;
 }
 
+.borderGREEN {
+  border: 2px solid green;
+}
+
 i {
   font-size: 1.3rem;
   color: #f1f7fd;
