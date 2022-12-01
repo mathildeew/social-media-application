@@ -10,9 +10,12 @@ export function displayUserPosts(posts) {
     const postContent = posts[i].body;
     const comments = posts[i]._count.comments;
     const reactions = posts[i]._count.reactions;
+
+    // Set placeholder if post is missing image
     var postImg;
     if (posts[i].media === null) {
-      var postImg = "";
+      var postImg =
+        "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg";
     } else {
       var postImg = posts[i].media;
     }
