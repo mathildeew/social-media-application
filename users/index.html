@@ -64,7 +64,22 @@
       </div>
     </nav>
 
-    <main class="mx-auto mb-5 maxW">
+    <main class="mx-auto mb-5">
+      <!-- Search users -->
+      <div class="mx-1 col-md-3">
+        <div class="input-group flex-nowrap mt-5">
+          <span class="input-group-text" id="addon-wrapping">@</span>
+          <input
+            type="text"
+            class="form-control mx-auto"
+            placeholder="Username"
+            aria-label="Username"
+            aria-describedby="addon-wrapping"
+          />
+        </div>
+      </div>
+
+      <!-- All users API-->
       <section
         id="allUsers"
         class="mt-5 mx-1 row justify-content-around"

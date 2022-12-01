@@ -25,6 +25,8 @@ export function loginUser() {
         storage.set("name", name);
         const avatar = json.avatar;
         storage.set("avatar", avatar);
+        const banner = json.banner;
+        storage.set("banner", banner);
         const accessToken = json.accessToken;
         storage.set("token", accessToken);
 
@@ -33,6 +35,7 @@ export function loginUser() {
         } else {
           errorMessage.style.display = "none";
 
+          console.log(json);
           window.location.href = "/profile/";
         }
       } catch (error) {

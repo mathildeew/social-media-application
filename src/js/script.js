@@ -28,6 +28,9 @@ import { displayUsersPosts } from "./users/profile/displayUsersPosts.mjs";
 import { getFeed } from "./home/getFeed.mjs";
 import { getPosts } from "./profile/displayProfile/getPosts.mjs";
 
+// Users
+import { getUsersAPI } from "./users/profile/getUsers.mjs";
+
 // Run function based on pathname
 const path = location.pathname;
 
@@ -69,9 +72,9 @@ if (path === "/home/post/") {
   commentPost();
 }
 
-// if (path === "/users/") {
-//   getAPI(urlLinks.allUsersUrl);
-// }
+if (path === "/users/") {
+  getUsersAPI(urlLinks.allUsersUrl);
+}
 
 // if (path === "/users/profile/") {
 //   getAPI(urlLinks.singleUserUrl);
