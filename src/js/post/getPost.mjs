@@ -1,4 +1,4 @@
-import { fetchOptions } from "../../api/fetchOptions.mjs";
+import { fetchOptions } from "../api/fetchOptions.mjs";
 import { displayPost } from "./displayPost.mjs";
 
 export async function getPostAPI(url) {

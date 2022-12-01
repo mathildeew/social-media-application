@@ -2,7 +2,6 @@ import { displayFeed } from "./displayFeed.mjs";
 
 export function searchPosts(posts) {
   const search = document.querySelector("#search");
-  console.log(posts);
 
   search.addEventListener("keyup", (event) => {
     let filter = event.target.value.trim().toLowerCase();

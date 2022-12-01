@@ -1,5 +1,5 @@
-import { allPostsUrl } from "../../api/apiUrls.mjs";
-import { fetchOptions } from "../../api/fetchOptions.mjs";
+import { allPostsUrl } from "../api/apiUrls.mjs";
+import { fetchOptions } from "../api/fetchOptions.mjs";
 
 export function createPost() {
   const postForm = document.querySelector("#createPost");

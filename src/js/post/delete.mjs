@@ -1,5 +1,5 @@
-import { fetchOptions } from "../../api/fetchOptions.mjs";
-import { singlePostUrl } from "../../api/apiUrls.mjs";
+import { fetchOptions } from "../api/fetchOptions.mjs";
+import { singlePostUrl } from "../api/apiUrls.mjs";
 
 export function deletePost() {
   const deleteBtn = document.querySelector("#delete");

@@ -1,5 +1,5 @@
-import { fetchOptions } from "../../api/fetchOptions.mjs";
-import { commentPostUrl } from "../../api/apiUrls.mjs";
+import { fetchOptions } from "../api/fetchOptions.mjs";
+import { commentPostUrl } from "../api/apiUrls.mjs";
 
 // Get params to link
 const IDurl = new URL(location.href);

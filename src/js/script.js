@@ -4,32 +4,29 @@ import * as urlLinks from "./api/apiUrls.mjs";
 import { registerUser } from "./register/register.mjs";
 import { loginUser } from "./login/login.mjs";
 import { logoutUser } from "./profile/logout.mjs";
+import { automaticLogout } from "./profile/logout.mjs";
+
+// Home
+import { getFeed } from "./home/getFeed.mjs";
 
 // User profile
 import { displayUser } from "./profile/displayProfile/displayUser.mjs";
+import { getPostsAPI } from "./profile/displayProfile/getPosts.mjs";
 
 // Edit profile
 import { editMedia } from "./profile/edit/editProfile.mjs";
 
-// Singe post by user
-import { getPostAPI } from "./profile/post/getPost.mjs";
-
-// Single post react & comment
-import { commentPost } from "./home/singlePost/comment.mjs";
-
-// Posts
-import { editPost } from "./profile/post/editPost.mjs";
-import { deletePost } from "./profile/post/delete.mjs";
-import { createPost } from "./profile/post/create.mjs";
-import { followUser } from "./users/profile/followUser.mjs";
-
-import { getFeed } from "./home/getFeed.mjs";
-import { getPosts } from "./profile/displayProfile/getPosts.mjs";
+// Post
+import { getPostAPI } from "./post/getPost.mjs";
+import { createPost } from "./post/create.mjs";
+import { commentPost } from "./post/comment.mjs";
+import { deletePost } from "./post/delete.mjs";
 
 // Users
 import { getUsersAPI } from "./users/profile/getUsers.mjs";
 import { getSingleUserAPI } from "./users/profile/getSingleUser.mjs";
 import { getSingleUserPostsAPI } from "./users/profile/getSingleUserPosts.mjs";
+import { followUser } from "./users/profile/followUser.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -40,44 +37,57 @@ if (path === "/") {
 
 if (path === "/profile/register/") {
   registerUser();
+  automaticLogout();
 }
 
 if (path === "/profile/") {
   displayUser();
   createPost();
-  getPosts(urlLinks.usersPostsUrl);
+  getPostsAPI(urlLinks.usersPostsUrl);
   logoutUser();
+  automaticLogout();
 }
 
 if (path === "/profile/post/") {
   getPostAPI(urlLinks.singlePostUrl);
-  // getAPI(urlLinks.singlePostUrl);
   editPost();
   deletePost();
+  logoutUser();
+  automaticLogout();
 }
 
 if (path === "/profile/edit/") {
   displayUser();
   editMedia();
+  logoutUser();
+  automaticLogout();
 }
 
 if (path === "/home/") {
   getFeed(urlLinks.allPostsUrl);
   logoutUser();
+  logoutUser();
+  automaticLogout();
 }
 
 if (path === "/home/post/") {
   getPostAPI(urlLinks.singlePostUrl);
   //   reactToPost();
   commentPost();
+  logoutUser();
+  automaticLogout();
 }
 
 if (path === "/users/") {
   getUsersAPI(urlLinks.allUsersUrl);
+  logoutUser();
+  automaticLogout();
 }
 
 if (path === "/users/profile/") {
   getSingleUserAPI(urlLinks.singleUserUrl);
   getSingleUserPostsAPI(urlLinks.singleUserPostsUrl);
   followUser();
+  logoutUser();
+  automaticLogout();
 }
