@@ -5,7 +5,7 @@ const userNameContainer = document.querySelector("#userNameContainer");
 const followingContainer = document.querySelector("#following");
 const followersContainer = document.querySelector("#followers");
 
-export function displayUsersProfile(user) {
+export function displaySingleUserProfile(user) {
   var usersAvatar;
   if (user.avatar === null || user.avatar === "") {
     var usersAvatar = "";
@@ -18,6 +18,8 @@ export function displayUsersProfile(user) {
   } else {
     usersBanner = user.banner;
   }
+
+  console.log(user);
 
   userNameContainer.innerHTML += `${user.name}`;
   bannerContainer.src = `${usersBanner}`;

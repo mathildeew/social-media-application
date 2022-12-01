@@ -15,23 +15,21 @@ import { editMedia } from "./profile/edit/editProfile.mjs";
 import { getPostAPI } from "./profile/post/getPost.mjs";
 
 // Single post react & comment
-import { reactToPost } from "./posts/react.mjs";
 import { commentPost } from "./home/singlePost/comment.mjs";
 
 // Posts
 import { editPost } from "./profile/post/editPost.mjs";
 import { deletePost } from "./profile/post/delete.mjs";
 import { createPost } from "./profile/post/create.mjs";
-import { displayUsersProfile } from "./users/profile/displayUsersProfile.mjs";
 import { followUser } from "./users/profile/followUser.mjs";
-import { displayUsersPosts } from "./users/profile/displayUsersPosts.mjs";
 
 import { getFeed } from "./home/getFeed.mjs";
 import { getPosts } from "./profile/displayProfile/getPosts.mjs";
 
 // Users
 import { getUsersAPI } from "./users/profile/getUsers.mjs";
-import { searchUsers } from "./users/searchUsers.mjs";
+import { getSingleUserAPI } from "./users/profile/getSingleUser.mjs";
+import { getSingleUserPostsAPI } from "./users/profile/getSingleUserPosts.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -78,8 +76,8 @@ if (path === "/users/") {
   getUsersAPI(urlLinks.allUsersUrl);
 }
 
-// if (path === "/users/profile/") {
-//   getAPI(urlLinks.singleUserUrl);
-//   displayUsersPosts(urlLinks.otherUsersPostsUrl);
-//   followUser();
-// }
+if (path === "/users/profile/") {
+  getSingleUserAPI(urlLinks.singleUserUrl);
+  getSingleUserPostsAPI(urlLinks.singleUserPostsUrl);
+  followUser();
+}

@@ -1,37 +1,23 @@
 import * as storage from "../../storage/localStorage.mjs";
 
-export async function displayUsersPosts(url) {
-  try {
-    const token = storage.get("token");
+export function displaySingleUserPosts(posts) {
+  for (let i = 0; i < posts.length; i++) {
+    const usersPost = document.querySelector("#userPost");
 
-    const getData = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    };
+    const id = posts[i].id;
+    const title = posts[i].title;
+    const date = new Date(posts[i].created).toLocaleDateString();
+    const postContent = posts[i].body;
+    const comments = posts[i]._count.comments;
+    const reactions = posts[i]._count.reactions;
+    var postImg;
+    if (posts[i].media === null) {
+      var postImg = "";
+    } else {
+      var postImg = posts[i].media;
+    }
 
-    const response = await fetch(url, getData);
-    const posts = await response.json();
-
-    for (let i = 0; i < posts.length; i++) {
-      const usersPost = document.querySelector("#userPost");
-
-      const id = posts[i].id;
-      const title = posts[i].title;
-      const date = new Date(posts[i].created).toLocaleDateString();
-      const postContent = posts[i].body;
-      const comments = posts[i]._count.comments;
-      const reactions = posts[i]._count.reactions;
-      var postImg;
-      if (posts[i].media === null) {
-        var postImg = "";
-      } else {
-        var postImg = posts[i].media;
-      }
-
-      usersPost.innerHTML += `
+    usersPost.innerHTML += `
                             <div class="card mb-3">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center justify-content-between mb-3">
@@ -47,10 +33,5 @@ export async function displayUsersPosts(url) {
                                 </div>
                             </div>
                             `;
-    }
-
-    console.log(posts);
-  } catch (error) {
-    console.log(error);
   }
 }

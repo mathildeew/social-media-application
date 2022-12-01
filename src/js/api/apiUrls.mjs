@@ -18,7 +18,7 @@ export const allUsersUrl = `${baseUrl}/api/v1/social/profiles`;
 export const singleUserUrl = `${baseUrl}/api/v1/social/profiles/${userName}`;
 export const followUserUrl = `${baseUrl}/api/v1/social/profiles/${userName}/follow`;
 export const unFollowUserUrl = `${baseUrl}/api/v1/social/profiles/${userName}/unfollow`;
-export const otherUsersPostsUrl = `${baseUrl}/api/v1/social/profiles/${userName}/posts`;
+export const singleUserPostsUrl = `${baseUrl}/api/v1/social/profiles/${userName}/posts`;
 
 export const editMediaUrl = `${baseUrl}/api/v1/social/profiles/${name}/media`;
 
