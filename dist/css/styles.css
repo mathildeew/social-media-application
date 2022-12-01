@@ -10,6 +10,7 @@
 }
 
 h1, .h1 {
+  color: #6458a8;
   font-family: gimlet-display, serif;
 }
 
@@ -10870,7 +10871,7 @@ i {
 
 .formError {
   display: none;
-  color: red;
+  color: #b73b71;
 }
 
 .card i {

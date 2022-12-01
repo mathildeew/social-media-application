@@ -37,7 +37,6 @@ if (path === "/") {
 
 if (path === "/profile/register/") {
   registerUser();
-  automaticLogout();
 }
 
 if (path === "/profile/") {
