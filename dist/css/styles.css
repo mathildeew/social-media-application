@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://use.typekit.net/kuo1xhg.css");
 .btn-primary {
   background-color: #7668c6;
   border-color: #7668c6;
@@ -8,13 +9,17 @@
   background-color: #dee5f4;
 }
 
+h1, .h1 {
+  font-family: gimlet-display, serif;
+}
+
 a {
   color: #7668c6;
   text-decoration: none;
 }
 a:hover {
   color: #7668c6;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .bg-primary {
@@ -10800,11 +10805,24 @@ textarea.form-control-lg {
   }
 }
 .navbar-brand {
+  font-family: gimlet-display, serif;
   color: #f1f7fd;
 }
 
 .nav-link {
   color: #f1f7fd;
+}
+.nav-link:hover {
+  color: #f1f7fd;
+  text-decoration: none;
+}
+.nav-link:focus {
+  color: #f1f7fd;
+  text-decoration: none;
+}
+.nav-link.disabled {
+  color: #f1f7fd;
+  font-weight: bolder;
 }
 
 .borderGREEN {

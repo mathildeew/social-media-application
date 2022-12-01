@@ -14,8 +14,7 @@ export function followUser() {
       const response = await fetch(url, putData);
       const json = await response.json();
 
-      console.log(json);
-      console.log(putData);
+      window.location.reload();
     }
     followUserAPI(followUserUrl);
   });
