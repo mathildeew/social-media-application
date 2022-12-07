@@ -7,7 +7,7 @@ const followUserBtn = document.querySelector(".followUser");
 
 export function displayUser(user) {
   document.title += user.name;
-  userNameContainer.innerHTML = user.name;
+  userNameContainer.textContent = user.name;
 
   // Set placeholder if banner is missing
   if (user.banner === null || user.banner === "") {
@@ -39,7 +39,7 @@ export function displayUser(user) {
     followingContainer.innerHTML = `
                                   <div class="col-12">
                                     <p>Following no one</p>
-                                  </div>  
+                                  </div>
                                   `;
   } else {
     for (let i = 0; i < following.length; i++) {
@@ -50,12 +50,25 @@ export function displayUser(user) {
       } else {
         followingAvatar = following[i].avatar;
       }
-      followingContainer.innerHTML += `
-                                      <div class="col-4 d-flex flex-column align-items-center mb-4">
-                                        <img src="${followingAvatar}" class="rouded img-fluid friendPic"/>
-                                        <a class="text-decoration-none text-dark" href="/users/profile/?name=${following[i].name}">${following[i].name}</a>
-                                      </div>  
-                                      `;
+
+      // Display following
+      const followingContent = document.createElement("div");
+      followingContent.classList.add(
+        "col-4",
+        "d-flex",
+        "flex-column",
+        "align-items-center",
+        "mb-4"
+      );
+      followingContainer.append(followingContent);
+      const followingImg = document.createElement("img");
+      followingImg.src = followingAvatar;
+      followingImg.classList.add("rounded", "img-fluid", "friendPic");
+      const followingLink = document.createElement("a");
+      followingLink.classList.add("text-decoration-none", "text-dark");
+      followingLink.href = `/users/profile/?name=${following[i].name}`;
+      followingLink.textContent = following[i].name;
+      followingContent.append(followingImg, followingLink);
     }
   }
 
@@ -81,12 +94,24 @@ export function displayUser(user) {
         followersAvatar = followers[i].avatar;
       }
 
-      followersContainer.innerHTML += `
-                                    <div class="col-4 d-flex flex-column align-items-center mb-4">
-                                      <img src="${followersAvatar}"class="rouded img-fluid friendPic"/>
-                                      <a class="text-decoration-none text-dark" href="/users/profile/?name=${followers[i].name}">${followers[i].name}</a>
-                                    </div>  
-                                  `;
+      // Display followers
+      const followersContent = document.createElement("div");
+      followersContent.classList.add(
+        "col-4",
+        "d-flex",
+        "flex-column",
+        "align-items-center",
+        "mb-4"
+      );
+      followersContainer.append(followersContent);
+      const followersImg = document.createElement("img");
+      followersImg.src = followingAvatar;
+      followersImg.classList.add("rounded", "img-fluid", "friendPic");
+      const followersLink = document.createElement("a");
+      followersLink.classList.add("text-decoration-none", "text-dark");
+      followersLink.href = `/users/profile/?name=${following[i].name}`;
+      followersLink.textContent = following[i].name;
+      followersContent.append(followersImg, followersLink);
     }
   }
 }
