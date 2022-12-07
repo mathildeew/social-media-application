@@ -11,7 +11,6 @@ import { getFeed } from "./home/getFeed.mjs";
 
 // User profile
 import { getUserAPI } from "./profile/displayProfile/getProfile.mjs";
-import { displayUser } from "./profile/displayProfile/displayUser.mjs";
 import { getPostsAPI } from "./profile/displayProfile/getPosts.mjs";
 import { editPost } from "./post/editPost.mjs";
 
@@ -57,6 +56,7 @@ switch (path) {
     deletePost();
     logoutUser();
     automaticLogout();
+    break;
 
   case "/profile/edit/":
     getUserAPI(urlLinks.userProfileUrl);
