@@ -7,7 +7,7 @@ export function displayUsers(users) {
     var avatar;
     if (users[i].avatar === null || users[i].avatar === "") {
       var avatar =
-        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
+        "https://upload.wikimedia.org/wikipedia/commons/b/b1/Missing-image-232x150.png";
     } else {
       var avatar = users[i].avatar;
     }

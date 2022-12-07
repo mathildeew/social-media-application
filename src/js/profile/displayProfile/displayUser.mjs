@@ -26,6 +26,7 @@ export function displayUser(user) {
     var avatar = user.avatar;
   }
   avatarContainer.src = avatar;
+  avatarContainer.classList.add("rounded-circle", "border", "border-primary");
 
   const followingContainer = document.querySelector("#followingContainer");
   const followersContainer = document.querySelector("#followersContainer");
@@ -63,7 +64,13 @@ export function displayUser(user) {
       followingContainer.append(followingContent);
       const followingImg = document.createElement("img");
       followingImg.src = followingAvatar;
-      followingImg.classList.add("rounded", "img-fluid", "friendPic");
+      followingImg.classList.add(
+        "rounded-circle",
+        "img-fluid",
+        "friendPic",
+        "border",
+        "border-primary"
+      );
       const followingLink = document.createElement("a");
       followingLink.classList.add("text-decoration-none", "text-dark");
       followingLink.href = `/users/profile/?name=${following[i].name}`;

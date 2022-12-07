@@ -24,23 +24,30 @@ export function displayFeed(post) {
     var cardImg;
     if (post[i].media === null || post[i].media === "") {
       var cardImg =
-        "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg";
+        "https://upload.wikimedia.org/wikipedia/commons/b/b1/Missing-image-232x150.png";
     } else {
       var cardImg = post[i].media;
     }
 
-    feedContainer.innerHTML += `                   
+    feedContainer.innerHTML += `
                                 <div class="card m-1 col-md-5 col-lg-3">
                                   <div class="card-body">
-                                    <div class="d-flex flex-row align-items-center mb-3">
-                                      <img id="avatar" src="${avatar}" class="me-3" />
-                                      <a href="/users/profile/?name=${author}"><h4>${author}</h4></a>
+                                    <div class="d-flex flex-row align-items-center justify-content-between mb-3">
+                                      <div id="userDetails" class="d-flex align-items-center">
+                                        <img id="avatar" src="${avatar}" class="me-3 rounded-circle border border-primary" />
+                                        <a href="/users/profile/?name=${author}">
+                                          <h4>${author}</h4>
+                                        </a>
+                                      </div>
+                                      <a href="/home/post/?id=${id}">
+                                      <i class="bi bi-box-arrow-up-right"></i>
+                                      </a>
                                     </div>
                                     <div class="d-flex align-items-center">
                                       <h5 class="card-title">${title}</h5>
                                     </div>
-                                    <h6 class="card-subtitle mb-2 text-muted">${date}</h6>
-                                    <img src="${cardImg}" class="card-img missingImg" />
+                                    <h6 class="card-subtitle text-muted">${date}</h6>
+                                    <img src="${cardImg}" class="card-img border-dark missingImg" />
                                     <p class="card-text">${text}</p>
                                     <div class="d-flex justify-content-between">
                                       <div class="d-flex">
@@ -50,9 +57,6 @@ export function displayFeed(post) {
                                         <p class="">${react}</p>
                                       </div>
                                     </div>
-                                    <a class="btn btn-primary rounded-pill" href="/home/post/?id=${id}">
-                                        View post
-                                    </a>
                                   </div>
                                 </div>
                               `;
