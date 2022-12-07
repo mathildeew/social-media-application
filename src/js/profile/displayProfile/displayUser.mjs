@@ -105,12 +105,12 @@ export function displayUser(user) {
       );
       followersContainer.append(followersContent);
       const followersImg = document.createElement("img");
-      followersImg.src = followingAvatar;
+      followersImg.src = followersAvatar;
       followersImg.classList.add("rounded", "img-fluid", "friendPic");
       const followersLink = document.createElement("a");
       followersLink.classList.add("text-decoration-none", "text-dark");
-      followersLink.href = `/users/profile/?name=${following[i].name}`;
-      followersLink.textContent = following[i].name;
+      followersLink.href = `/users/profile/?name=${followers[i].name}`;
+      followersLink.textContent = followers[i].name;
       followersContent.append(followersImg, followersLink);
     }
   }
