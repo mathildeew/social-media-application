@@ -23,6 +23,7 @@ import { getPostAPI } from "./post/getPost.mjs";
 import { createPost } from "./post/create.mjs";
 import { commentPost } from "./post/comment.mjs";
 import { deletePost } from "./post/delete.mjs";
+import { reactPost } from "./post/react.mjs";
 
 // Users
 import { getUsersAPI } from "./users/getUsers.mjs";
@@ -73,8 +74,8 @@ switch (path) {
 
   case "/home/post/":
     getPostAPI(urlLinks.singlePostUrl);
-    //   reactToPost();
     commentPost();
+    reactPost();
     logoutUser();
     automaticLogout();
     break;

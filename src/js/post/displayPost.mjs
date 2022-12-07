@@ -11,6 +11,8 @@ export function displayPost(post) {
   const reactionsContainer = document.querySelector("#reactions");
   const commentsH2 = document.querySelector("#commentsh2");
 
+  console.log(post);
+
   // Set placeholder if post is missing image
   var cardImg;
   if (post.media === null) {
@@ -70,7 +72,6 @@ export function displayPost(post) {
 
   // Display reactions
   const reactions = post.reactions;
-  console.log(reactions);
   for (let i = 0; i < reactions.length; i++) {
     reactionsContainer.innerHTML += `
                                     <div class="d-flex flex-row me-4">

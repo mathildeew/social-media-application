@@ -17,7 +17,6 @@ export function editPost() {
       const response = await fetch(url, putData);
       const json = await response.json();
       location.reload();
-      console.log(json);
     }
     editPostAPI(singlePostUrl, putContent);
   });
