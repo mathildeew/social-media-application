@@ -17,7 +17,7 @@ export const userProfileUrl = `${baseUrl}profiles/${name}?_following=true&_follo
 export const editMediaUrl = `${baseUrl}profiles/${name}/media`;
 
 // Users
-export const allUsersUrl = `${baseUrl}social/profiles`;
+export const allUsersUrl = `${baseUrl}profiles`;
 
 // Users profile
 export const profileUrl = `${baseUrl}profiles/${userName}?_following=true&_followers=true`;

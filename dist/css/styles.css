@@ -10869,7 +10869,7 @@ i {
 #bannerContainer {
   max-height: 300px;
   object-fit: cover;
-  object-position: bottom center;
+  object-position: center center;
 }
 
 .formError {
@@ -10890,8 +10890,8 @@ i {
   height: 40px;
 }
 
-.reactBtn {
-  font-size: 2.5rem;
+.reactEmoji {
+  font-size: 1.5rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

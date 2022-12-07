@@ -4,7 +4,6 @@ const bannerContainer = document.querySelector("#bannerContainer");
 const avatarContainer = document.querySelector("#avatarContainer");
 const userNameContainer = document.querySelector("#userNameContainer");
 const followUserBtn = document.querySelector(".followUser");
-const unfollowUserBtn = document.querySelector(".unfollowUser");
 
 export function displayUser(user) {
   document.title += user.name;

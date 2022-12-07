@@ -1,4 +1,8 @@
+import * as storage from "../storage/localStorage.mjs";
+
 export function displayPost(post) {
+  const userName = storage.get("name");
+
   const author = document.querySelector("#author");
   const avatar = document.querySelector("#avatar");
 
@@ -75,7 +79,7 @@ export function displayPost(post) {
   for (let i = 0; i < reactions.length; i++) {
     reactionsContainer.innerHTML += `
                                     <div class="d-flex flex-row me-4">
-                                      <p class="me-2">${reactions[i].symbol}</p>
+                                      <p class="me-2 reactEmoji">${reactions[i].symbol}</p>
                                       <p>${reactions[i].count}</p>
                                     </div>
                                    `;
