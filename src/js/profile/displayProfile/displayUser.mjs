@@ -52,13 +52,11 @@ export function displayUser(user) {
         followingAvatar = following[i].avatar;
       }
       followingContainer.innerHTML += `
-                                    <div class="col-4">
-                                      <img src="${followingAvatar}"
-                                        class="rouded img-fluid friendPic"
-                                      />
-                                      <p>${following[i].name}</p>
-                                    </div>  
-                                  `;
+                                      <div class="col-4 d-flex flex-column align-items-center mb-4">
+                                        <img src="${followingAvatar}" class="rouded img-fluid friendPic"/>
+                                        <a class="text-decoration-none text-dark" href="/users/profile/?name=${following[i].name}">${following[i].name}</a>
+                                      </div>  
+                                      `;
     }
   }
 
@@ -85,11 +83,9 @@ export function displayUser(user) {
       }
 
       followersContainer.innerHTML += `
-                                    <div class="col-4">
-                                      <img src="${followersAvatar}"
-                                        class="rouded img-fluid friendPic"
-                                      />
-                                      <p>${followers[i].name}</p>
+                                    <div class="col-4 d-flex flex-column align-items-center mb-4">
+                                      <img src="${followersAvatar}"class="rouded img-fluid friendPic"/>
+                                      <a class="text-decoration-none text-dark" href="/users/profile/?name=${followers[i].name}">${followers[i].name}</a>
                                     </div>  
                                   `;
     }
