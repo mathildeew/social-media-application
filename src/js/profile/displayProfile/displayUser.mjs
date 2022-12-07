@@ -1,6 +1,10 @@
+import * as storage from "../../storage/localStorage.mjs";
+
 const bannerContainer = document.querySelector("#bannerContainer");
 const avatarContainer = document.querySelector("#avatarContainer");
 const userNameContainer = document.querySelector("#userNameContainer");
+const followUserBtn = document.querySelector("#followUser");
+const unfollowUserBtn = document.querySelector("#unfollowUser");
 
 export function displayUser(user) {
   document.title += user.name;
@@ -58,8 +62,13 @@ export function displayUser(user) {
     }
   }
 
-  // Display followers
+  // Display followers & follow/unfollow button
+  followUserBtn.style.display = "none";
+  unfollowUserBtn.style.display = "none";
+
   if (!followers.length) {
+    followUserBtn.style.display = "inline";
+
     followersContainer.innerHTML = `
                                     <div class="col-12">
                                       <p>No followers</p>
@@ -67,6 +76,14 @@ export function displayUser(user) {
                                     `;
   } else {
     for (let i = 0; i < followers.length; i++) {
+      // Display right follow/unfollow button
+      const userName = storage.get("name");
+      if (followers[i].name === userName) {
+        unfollowUserBtn.style.display = "inline";
+      } else {
+        followUserBtn.style.display = "inline";
+      }
+
       // Set placeholder if followers avatar is missing
       if (followers[i].avatar === null || followers[i].avatar === "") {
         followersAvatar =

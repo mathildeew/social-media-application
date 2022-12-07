@@ -21,7 +21,7 @@ export const fetchOptions = [
     body: "",
   },
 
-  // Edit media, follow users
+  // Edit media, follow and unfollow users
   {
     method: "PUT",
     headers: {
