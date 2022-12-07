@@ -3,7 +3,7 @@ import { followUserUrl } from "../../api/apiUrls.mjs";
 import * as storage from "../../storage/localStorage.mjs";
 
 export function followUser() {
-  const followUserBtn = document.querySelector("#followUser");
+  const followUserBtn = document.querySelector(".followUser");
 
   followUserBtn.addEventListener("click", (event) => {
     async function followUserAPI(url) {

@@ -3,7 +3,7 @@ import { unfollowUserUrl } from "../../api/apiUrls.mjs";
 import * as storage from "../../storage/localStorage.mjs";
 
 export function unfollowUser() {
-  const unfollowUserBtn = document.querySelector("#unfollowUser");
+  const unfollowUserBtn = document.querySelector(".unfollowUser");
 
   unfollowUserBtn.addEventListener("click", (event) => {
     async function unfollowUserAPI(url) {

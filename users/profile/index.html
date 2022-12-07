@@ -82,15 +82,21 @@
                 class="profilePic rounded me-1 img-fluid"
                 id="avatarContainer"
               />
-              <button class="btn btn-primary rounded-pill" id="followUser">
+              <button
+                class="btn btn-primary rounded-pill followUser unfollowUser"
+                id="followUser"
+              >
                 Follow
-              </button>
-              <button class="btn btn-primary rounded-pill" id="unfollowUser">
-                Unfollow
               </button>
             </div>
           </div>
         </section>
+
+        <!-- // Follow & unfollow button
+        const userName = storage.get("name");
+        if (followers[i].name === userName) {
+          followUserBtn.innerHTML = "Unfollow"
+        } -->
 
         <!-- Friends -->
         <section class="card bg-white mx-1 mb-3">
