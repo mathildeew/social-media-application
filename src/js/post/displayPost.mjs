@@ -7,9 +7,9 @@ export function displayPost(post) {
   const img = document.querySelector("#image");
   const text = document.querySelector("#text");
   const link = document.querySelector("#userprofileLink");
-  const commentsCount = document.querySelector("#postComments");
-  const reactsCount = document.querySelector("#postReacts");
   const postDate = new Date(post.created).toLocaleDateString();
+  const reactionsContainer = document.querySelector("#reactions");
+  const commentsH2 = document.querySelector("#commentsh2");
 
   // Set placeholder if post is missing image
   var cardImg;
@@ -38,12 +38,9 @@ export function displayPost(post) {
   date.innerHTML = postDate;
   img.src = cardImg;
   text.innerHTML = post.body;
-  console.log(post);
-
-  commentsCount.innerHTML = post._count.comments;
-  reactsCount.innerHTML = post._count.reactions;
 
   // Display comments
+  commentsH2.innerHTML += ` (${post._count.comments})`;
   const commentsContainer = document.querySelector("#comments");
 
   const comments = post.comments;
@@ -69,5 +66,17 @@ export function displayPost(post) {
                                     <p>No comments yet. Be the first one!</p>
                                   </div>
                                   `;
+  }
+
+  // Display reactions
+  const reactions = post.reactions;
+  console.log(reactions);
+  for (let i = 0; i < reactions.length; i++) {
+    reactionsContainer.innerHTML += `
+                                    <div class="d-flex flex-row me-4">
+                                      <p class="me-2">${reactions[i].symbol}</p>
+                                      <p>${reactions[i].count}</p>
+                                    </div>
+                                   `;
   }
 }

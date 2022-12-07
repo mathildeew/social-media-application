@@ -18,6 +18,7 @@ export async function getPostAPI(url) {
 
     const response = await fetch(url, getData);
     const json = await response.json();
+    console.log(json);
 
     displayPost(json);
   } catch (error) {
