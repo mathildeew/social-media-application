@@ -8,6 +8,8 @@ export function displayPosts(posts) {
     const postContent = posts[i].body;
     const comments = posts[i]._count.comments;
     const reactions = posts[i]._count.reactions;
+
+    // Placeholder image for post
     var postImg;
     if (posts[i].media === null || posts[i].media === "") {
       var postImg =

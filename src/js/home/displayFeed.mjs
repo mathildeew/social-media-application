@@ -39,7 +39,7 @@ export function displayFeed(post) {
                                           <h4>${author}</h4>
                                         </a>
                                       </div>
-                                      <a href="/home/post/?id=${id}">
+                                      <a href="/users/post/?id=${id}">
                                       <i class="bi bi-box-arrow-up-right"></i>
                                       </a>
                                     </div>

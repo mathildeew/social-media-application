@@ -38,6 +38,8 @@ export function displayPost(post) {
   if (location.pathname === "/home/post/") {
     link.href = `/users/profile/?name=${post.author.name}`;
   }
+
+  // Display post
   avatar.src = postAvatar;
   author.innerHTML = post.author.name;
   title.innerHTML = post.title;
@@ -78,9 +80,9 @@ export function displayPost(post) {
   const reactions = post.reactions;
   for (let i = 0; i < reactions.length; i++) {
     reactionsContainer.innerHTML += `
-                                    <div class="d-flex flex-row me-4">
-                                      <p class="me-2 reactEmoji">${reactions[i].symbol}</p>
-                                      <p>${reactions[i].count}</p>
+                                    <div class="d-flex col-2 col-sm-1 col-lg-2">
+                                      <p class="reactEmoji">${reactions[i].symbol}</p>
+                                      <p>(${reactions[i].count})</p>
                                     </div>
                                    `;
   }

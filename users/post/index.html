@@ -19,7 +19,7 @@
   <body class="bg-light">
     <nav class="navbar navbar-expand-lg bg-primary">
       <div class="container-fluid">
-        <span class="navbar-brand me-5">Pattern</span>
+        <a class="navbar-brand me-5" href="/home/">Pattern</a>
         <div
           class="d-lg-none"
           data-bs-toggle="collapse"
@@ -65,9 +65,9 @@
       </div>
     </nav>
 
-    <main class="mx-auto row justify-content-around">
+    <main class="mx-auto row justify-content-center">
       <!-- Users post -->
-      <section class="col-md-8 col-lg-5 mt-4 mx-1">
+      <div class="col-md-8 col-lg-4 mt-4 mx-1">
         <div class="card mb-3">
           <div class="card-body">
             <div class="d-flex flex-row align-items-center mb-3">
@@ -80,50 +80,49 @@
             <h6 id="date" class="card-subtitle mb-2 text-muted"></h6>
             <img id="image" class="card-img" />
             <p id="text" class="card-text"></p>
-            <div id="reactions" class="d-flex flex-row"></div>
+            <div id="reactions" class="row"></div>
+            <hr />
+
+            <!-- Send reactions -->
+            <p class="fw-semibold">Send reaction:</p>
+            <div class="d-flex flex-row justify-content-around bg-white">
+              <form
+                id="reactionOne"
+                class="d-flex flex-column justify-content-center"
+              >
+                <button type="submit" class="btn reactEmoji">❤️</button>
+              </form>
+              <form
+                id="reactionTwo"
+                class="d-flex flex-column justify-content-center"
+              >
+                <button type="submit" class="btn reactEmoji">🌶</button>
+              </form>
+              <form
+                id="reactionThree"
+                class="d-flex flex-column justify-content-center"
+              >
+                <button type="submit" class="btn reactEmoji">☄️</button>
+              </form>
+              <form
+                id="reactionFour"
+                class="d-flex flex-column justify-content-center"
+              >
+                <button type="submit" class="btn reactEmoji">🤸‍♀️</button>
+              </form>
+              <form
+                id="reactionFive"
+                class="d-flex flex-column justify-content-center"
+              >
+                <button type="submit" class="btn reactEmoji">👊</button>
+              </form>
+            </div>
           </div>
         </div>
-      </section>
 
-      <div class="col-md-8 col-lg-4 mt-4">
+        <!-- Make comment -->
         <section class="mb-4">
-          <h2>React to post</h2>
-          <div class="d-flex flex-row">
-            <form
-              id="reactionOne"
-              class="d-flex flex-column justify-content-center"
-            >
-              <button type="submit" class="btn reactEmoji">❤️</button>
-            </form>
-            <form
-              id="reactionTwo"
-              class="d-flex flex-column justify-content-center"
-            >
-              <button type="submit" class="btn reactEmoji">🌶</button>
-            </form>
-            <form
-              id="reactionThree"
-              class="d-flex flex-column justify-content-center"
-            >
-              <button type="submit" class="btn reactEmoji">☄️</button>
-            </form>
-            <form
-              id="reactionFour"
-              class="d-flex flex-column justify-content-center"
-            >
-              <button type="submit" class="btn reactEmoji">🤸‍♀️</button>
-            </form>
-            <form
-              id="reactionFive"
-              class="d-flex flex-column justify-content-center"
-            >
-              <button type="submit" class="btn reactEmoji">👊</button>
-            </form>
-          </div>
-        </section>
-
-        <section class="mb-4">
-          <h2>Comment post</h2>
+          <h2>Comment</h2>
           <form
             id="makeCommentForm"
             class="d-flex flex-column justify-content-center"
@@ -133,15 +132,17 @@
               id="comment"
               class="form-control mb-3"
               maxlength="280"
-              rows="7"
+              rows="3"
             ></textarea>
 
             <button type="submit" class="btn btn-primary rounded-pill">
-              Post comment
+              Comment
             </button>
           </form>
         </section>
+      </div>
 
+      <div class="col-md-8 col-lg-4 mt-3">
         <section class="mb-4">
           <h2 id="commentsh2">Comments</h2>
           <div id="comments"></div>

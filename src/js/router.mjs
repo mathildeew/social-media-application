@@ -72,19 +72,10 @@ switch (path) {
     automaticLogout();
     break;
 
-  case "/home/post/":
-    getPostAPI(urlLinks.singlePostUrl);
-    commentPost();
-    reactPost();
-    logoutUser();
-    automaticLogout();
-    break;
-
   case "/users/":
     getUsersAPI(urlLinks.allUsersUrl);
     logoutUser();
     automaticLogout();
-
     break;
 
   case "/users/profile/":
@@ -92,6 +83,14 @@ switch (path) {
     getUserPostsAPI(urlLinks.profilePostsUrl);
     followUser();
     unfollowUser();
+    logoutUser();
+    automaticLogout();
+    break;
+
+  case "/users/post/":
+    getPostAPI(urlLinks.singlePostUrl);
+    commentPost();
+    reactPost();
     logoutUser();
     automaticLogout();
     break;
