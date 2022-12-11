@@ -21,11 +21,11 @@ export function displayPosts(posts) {
     usersPost.innerHTML += `
                             <div class="card mb-3">
                               <div class="card-body">
-                                <div class="d-flex align-items-center justify-content-between mb-3">
-                                  <h5 class="card-title">${title}</h5>
+                                <div class="d-flex align-items-center justify-content-between">
+                                  <p class="card-title fs-5 fw-semibold mb-0">${title}<p/>
                                   <a href="/profile/post/?id=${id}"><i class="bi bi-pencil-square"></i></a>
                                 </div>
-                                <h6 class="card-subtitle mb-2 text-muted">${date}</h6>
+                                <p class="card-subtitle mb-2 text-muted">${date}</p>
                                 <img src="${postImg}" class="card-img" />
                                 <p class="card-text">${postContent}</p>
                                 <i class="bi bi-chat-left-text"></i>

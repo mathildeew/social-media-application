@@ -3,12 +3,11 @@
 @import "reboot.scss";
 @import "utilities.scss";
 @import "../../node_modules/bootstrap/scss/bootstrap";
-
 @import "navbar.scss";
 @import "nav.scss";
 
-.borderGREEN {
-  border: 2px solid green;
+h1 {
+  font-size: 1.6rem;
 }
 
 // Navbar
@@ -17,11 +16,7 @@ i {
   color: $light;
 }
 
-.wallPost {
-  background-color: #fff;
-  height: 60px;
-}
-
+// Images
 .profilePic {
   height: 100px;
   width: 100px;
@@ -36,38 +31,8 @@ i {
   object-position: center center;
 }
 
-.postImg {
-  width: 50px;
-  height: 50px;
-}
-
-.borderREMOVE {
-  border: 2px solid green;
-}
-
-.editMedia {
-  width: 100px;
-}
-
 #bannerContainer {
   max-height: 300px;
-  object-fit: cover;
-  object-position: center center;
-}
-
-.formError {
-  display: none;
-  color: #b73b71;
-}
-
-.card {
-  i {
-    color: $primary;
-  }
-}
-
-.card-img {
-  height: 200px;
   object-fit: cover;
   object-position: center center;
 }
@@ -79,8 +44,25 @@ i {
   object-position: center center;
 }
 
+.card-img {
+  height: 200px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.card {
+  i {
+    color: $primary;
+  }
+}
+
 .reactEmoji {
   font-size: 1rem;
+}
+
+.formError {
+  display: none;
+  color: #b73b71;
 }
 
 // Loader

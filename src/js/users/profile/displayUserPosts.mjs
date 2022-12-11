@@ -21,26 +21,26 @@ export function displayUserPosts(posts) {
     }
 
     usersPost.innerHTML += `
-                            <div class="card mb-3">
-                              <div class="card-body">
-                                <div class="d-flex align-items-center justify-content-between mb-3">
-                                  <h5 class="card-title">${title}</h5>
-                                </div>
-                                <h6 class="card-subtitle mb-2 text-muted">${date}</h6>
-                                <img src="${postImg}" class="card-img" />
-                                <div class="d-flex justify-content-between">
-                                  <div class="d-flex">
-                                    <i class="bi bi-chat-left-text me-1"></i>
-                                    <p class="me-4">${comments}</p>
-                                    <i class="bi bi-suit-heart me-1"></i>
-                                    <p class="">${reactions}</p>
+                              <div class="card mb-3">
+                                <div class="card-body">
+                                  <div class="d-flex align-items-center justify-content-between">
+                                    <p class="card-title fs-5 fw-semibold">${title}</p>
                                   </div>
+                                  <p class="card-subtitle fs-6 text-muted">${date}</p>
+                                  <img src="${postImg}" class="card-img" />
+                                  <div class="d-flex justify-content-between">
+                                    <div class="d-flex">
+                                      <i class="bi bi-chat-left-text me-1"></i>
+                                      <p class="me-4">${comments}</p>
+                                      <i class="bi bi-suit-heart me-1"></i>
+                                      <p class="">${reactions}</p>
+                                    </div>
+                                  </div>
+                                  <a class="btn btn-primary rounded-pill" href="/users/post/?id=${id}">
+                                    View post
+                                  </a>
                                 </div>
-                                <a class="btn btn-primary rounded-pill" href="/home/post/?id=${id}">
-                                  View post
-                                </a>
                               </div>
-                            </div>
                             `;
   }
 }

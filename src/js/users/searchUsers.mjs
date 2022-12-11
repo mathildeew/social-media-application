@@ -13,6 +13,5 @@ export function searchUsers(users) {
       }
     });
     displayUsers(filteredUsers);
-    console.log(filteredUsers);
   });
 }

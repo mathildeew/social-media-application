@@ -23,7 +23,9 @@
   <body class="bg-light">
     <nav class="navbar navbar-expand-lg bg-primary">
       <div class="container-fluid">
-        <a class="navbar-brand me-5" href="/home/">Pattern</a>
+        <a class="navbar-brand me-5" href="/home/"
+          ><h1 class="mb-0">Pattern</h1></a
+        >
         <div
           class="d-lg-none"
           data-bs-toggle="collapse"
@@ -70,6 +72,17 @@
     </nav>
 
     <main class="row justify-content-center">
+      <div id="loader" class="loader-grid mt-5">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       <img id="bannerContainer" class="col-12" />
       <div class="col-md-4">
         <section class="card bg-white mx-1 my-3">
@@ -87,7 +100,7 @@
 
       <div class="col-md-4">
         <div class="mx-1 mt-3 mb-3 p-1">
-          <h2>Update media</h2>
+          <h3>Update media</h3>
           <form
             id="updateMediaForm"
             class="d-flex flex-column justify-content-center"

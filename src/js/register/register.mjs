@@ -34,8 +34,6 @@ export function registerUser() {
       } else {
         errorMessage.style.display = "block";
       }
-
-      console.log(json);
     }
     registerUserAPI(registerUrl, postContent);
   });

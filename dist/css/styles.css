@@ -9,7 +9,7 @@
   background-color: #dee5f4;
 }
 
-h1, .h1 {
+.h1-primary {
   color: #6458a8;
   font-family: gimlet-display, serif;
 }
@@ -10826,18 +10826,13 @@ textarea.form-control-lg {
   font-weight: bolder;
 }
 
-.borderGREEN {
-  border: 2px solid green;
+h1, .h1 {
+  font-size: 1.6rem;
 }
 
 i {
   font-size: 1.3rem;
   color: #f1f7fd;
-}
-
-.wallPost {
-  background-color: #fff;
-  height: 60px;
 }
 
 .profilePic {
@@ -10854,36 +10849,8 @@ i {
   object-position: center center;
 }
 
-.postImg {
-  width: 50px;
-  height: 50px;
-}
-
-.borderREMOVE {
-  border: 2px solid green;
-}
-
-.editMedia {
-  width: 100px;
-}
-
 #bannerContainer {
   max-height: 300px;
-  object-fit: cover;
-  object-position: center center;
-}
-
-.formError {
-  display: none;
-  color: #b73b71;
-}
-
-.card i {
-  color: #7668c6;
-}
-
-.card-img {
-  height: 200px;
   object-fit: cover;
   object-position: center center;
 }
@@ -10895,8 +10862,23 @@ i {
   object-position: center center;
 }
 
+.card-img {
+  height: 200px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.card i {
+  color: #7668c6;
+}
+
 .reactEmoji {
   font-size: 1rem;
+}
+
+.formError {
+  display: none;
+  color: #b73b71;
 }
 
 .loader-grid {

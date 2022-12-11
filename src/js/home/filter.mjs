@@ -8,7 +8,7 @@ export function filterPosts(posts) {
 
   // Shows oldest to newest posts
   selectOne.addEventListener("click", (event) => {
-    const oldestToNewest = posts.sort(function (a, b) {
+    const oldestToNewest = posts.sort((a, b) => {
       return a.id - b.id;
     });
     displayFeed(oldestToNewest);
@@ -16,7 +16,7 @@ export function filterPosts(posts) {
 
   // Shows newest to oldest posts (default)
   selectTwo.addEventListener("click", (event) => {
-    const newestToOldest = posts.sort(function (a, b) {
+    const newestToOldest = posts.sort((a, b) => {
       return b.id - a.id;
     });
     displayFeed(newestToOldest);
@@ -31,17 +31,14 @@ export function filterPosts(posts) {
         return true;
       }
     });
-
     displayFeed(postsWithImage);
   });
 
-  console.log(posts);
-
-  //Excludes posts containing test in title, authorname and content
+  //Excludes posts containing test in title and authorname
   selectFour.addEventListener("click", (event) => {
     const filter = "test";
 
-    const postsWithoutTest = posts.filter(function (post) {
+    const postsWithoutTest = posts.filter((post) => {
       if (
         post.title.toLowerCase().includes(filter) ||
         post.author.name.toLowerCase().includes(filter)
@@ -51,7 +48,6 @@ export function filterPosts(posts) {
         return true;
       }
     });
-
     displayFeed(postsWithoutTest);
   });
 }

@@ -36,7 +36,7 @@ export function displayFeed(post) {
                                       <div id="userDetails" class="d-flex align-items-center">
                                         <img id="avatar" src="${avatar}" class="me-3 rounded-circle border border-primary" />
                                         <a href="/users/profile/?name=${author}">
-                                          <h4>${author}</h4>
+                                          <p class="fs-4">${author}</p>
                                         </a>
                                       </div>
                                       <a href="/users/post/?id=${id}">
@@ -44,9 +44,9 @@ export function displayFeed(post) {
                                       </a>
                                     </div>
                                     <div class="d-flex align-items-center">
-                                      <h5 class="card-title">${title}</h5>
+                                      <p class="card-title fs-5 fw-semibold">${title}</p>
                                     </div>
-                                    <h6 class="card-subtitle text-muted">${date}</h6>
+                                    <p class="card-subtitle fs-6 text-muted mb-2">${date}</>
                                     <img src="${cardImg}" class="card-img border-dark missingImg mb-2" />
                                     <p class="card-text">${text}</p>
                                     <div class="d-flex justify-content-between">
