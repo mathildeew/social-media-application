@@ -17,12 +17,12 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="/dist/css/styles.css" />
-    <title>Pattern | Profile - Edit post</title>
+    <title>Pattern | Profile - Post - Edit</title>
   </head>
   <body class="bg-light">
     <nav class="navbar navbar-expand-lg bg-primary">
       <div class="container-fluid">
-        <a class="navbar-brand me-5" href="/home/">Pattern</a>
+        <span class="navbar-brand">Pattern</span>
         <div
           class="d-lg-none"
           data-bs-toggle="collapse"
@@ -69,7 +69,7 @@
     </nav>
 
     <main class="row justify-content-center">
-      <section class="mt-5 mx-1 mb-3 col-md-8 col-lg-5">
+      <div class="col-md-8 col-lg-4 mt-5 mx-1">
         <div class="card mb-3">
           <div class="card-body">
             <div class="d-flex flex-row align-items-center mb-3">
@@ -85,10 +85,9 @@
             <div id="reactions" class="d-flex flex-row"></div>
           </div>
         </div>
-      </section>
 
-      <div class="col-md-4">
-        <div class="mx-1 mt-3 mb-3 p-1">
+        <!-- Update post -->
+        <section class="mx-1 mt-3 mb-3 p-1">
           <h2>Update post</h2>
           <form
             id="updatePostForm"
@@ -122,11 +121,14 @@
               Update
             </button>
             <button class="btn btn-secondary rounded-pill" id="delete">
-              Delete post
+              Delete
             </button>
           </form>
-        </div>
+        </section>
+      </div>
 
+      <!-- Comments -->
+      <div class="col-md-8 col-lg-4 mt-3">
         <section class="mb-3">
           <h2 id="commentsh2">Comments</h2>
           <div id="comments"></div>

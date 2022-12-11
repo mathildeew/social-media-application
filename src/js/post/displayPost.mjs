@@ -15,8 +15,6 @@ export function displayPost(post) {
   const reactionsContainer = document.querySelector("#reactions");
   const commentsH2 = document.querySelector("#commentsh2");
 
-  console.log(post);
-
   // Set placeholder if image is missing
   var cardImg;
   if (post.media === null || post.media === "") {
