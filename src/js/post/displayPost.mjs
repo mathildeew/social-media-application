@@ -1,8 +1,6 @@
 import * as storage from "../storage/localStorage.mjs";
 
 export function displayPost(post) {
-  const userName = storage.get("name");
-
   const author = document.querySelector("#author");
   const avatar = document.querySelector("#avatar");
 
@@ -14,8 +12,6 @@ export function displayPost(post) {
   const postDate = new Date(post.created).toLocaleDateString();
   const reactionsContainer = document.querySelector("#reactions");
   const commentsH2 = document.querySelector("#commentsh2");
-
-  console.log(post);
 
   // Set placeholder if image is missing
   var cardImg;
