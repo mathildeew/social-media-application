@@ -10884,7 +10884,8 @@ i {
 
 .card-img {
   height: 200px;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center center;
 }
 
 #avatar {

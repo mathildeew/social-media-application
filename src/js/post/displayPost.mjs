@@ -15,6 +15,8 @@ export function displayPost(post) {
   const reactionsContainer = document.querySelector("#reactions");
   const commentsH2 = document.querySelector("#commentsh2");
 
+  console.log(post);
+
   // Set placeholder if image is missing
   var cardImg;
   if (post.media === null || post.media === "") {
@@ -33,7 +35,7 @@ export function displayPost(post) {
     var postAvatar = post.author.avatar;
   }
 
-  if (location.pathname === "/home/post/") {
+  if (location.pathname === `/users/post/`) {
     link.href = `/users/profile/?name=${post.author.name}`;
   }
 

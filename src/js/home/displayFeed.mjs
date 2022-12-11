@@ -47,7 +47,7 @@ export function displayFeed(post) {
                                       <h5 class="card-title">${title}</h5>
                                     </div>
                                     <h6 class="card-subtitle text-muted">${date}</h6>
-                                    <img src="${cardImg}" class="card-img border-dark missingImg" />
+                                    <img src="${cardImg}" class="card-img border-dark missingImg mb-2" />
                                     <p class="card-text">${text}</p>
                                     <div class="d-flex justify-content-between">
                                       <div class="d-flex">

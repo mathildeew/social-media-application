@@ -15,7 +15,7 @@ export function displayUserPosts(posts) {
     var postImg;
     if (posts[i].media === null || posts[i].media === "") {
       var postImg =
-        "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg";
+        "https://upload.wikimedia.org/wikipedia/commons/b/b1/Missing-image-232x150.png";
     } else {
       var postImg = posts[i].media;
     }
