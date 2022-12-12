@@ -21,26 +21,24 @@ export function displayUserPosts(posts) {
     }
 
     usersPost.innerHTML += `
-                              <div class="card mb-3">
-                                <div class="card-body">
-                                  <div class="d-flex align-items-center justify-content-between">
-                                    <p class="card-title fs-5 fw-semibold">${title}</p>
-                                  </div>
-                                  <p class="card-subtitle fs-6 text-muted">${date}</p>
-                                  <img src="${postImg}" class="card-img" />
-                                  <div class="d-flex justify-content-between">
-                                    <div class="d-flex">
-                                      <i class="bi bi-chat-left-text me-1"></i>
-                                      <p class="me-4">${comments}</p>
-                                      <i class="bi bi-suit-heart me-1"></i>
-                                      <p class="">${reactions}</p>
-                                    </div>
-                                  </div>
-                                  <a class="btn btn-primary rounded-pill" href="/users/post/?id=${id}">
-                                    View post
+                            <div class="card mb-3">
+                              <div class="card-body">
+                                <div class="d-flex justify-content-end">
+                                  <a href="/users/post/?id=${id}">
+                                    <i class="bi bi-box-arrow-up-right" class="text-align-right"></i>
                                   </a>
                                 </div>
+                                <p class="card-title fs-5 fw-semibold">${title}</p>
+                                <p class="card-subtitle fs-6 text-muted">${date}</p>
+                                <img src="${postImg}" class="card-img" />
+                                <div class="d-flex">
+                                  <i class="bi bi-chat-left-text me-1"></i>
+                                  <p class="me-4">${comments}</p>
+                                  <i class="bi bi-suit-heart me-1"></i>
+                                  <p class="">${reactions}</p>
+                                </div>
                               </div>
-                            `;
+                            </div>                         
+                           `;
   }
 }

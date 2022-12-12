@@ -10,6 +10,8 @@ export function displayPost(post) {
   const text = document.querySelector("#text");
   const link = document.querySelector("#userprofileLink");
   const postDate = new Date(post.created).toLocaleDateString();
+  const commentsContainer = document.querySelector("#comments");
+
   const reactionsContainer = document.querySelector("#reactions");
   const commentsH2 = document.querySelector("#commentsh2");
 
@@ -45,7 +47,6 @@ export function displayPost(post) {
 
   // Display comments
   commentsH2.innerHTML += ` (${post._count.comments})`;
-  const commentsContainer = document.querySelector("#comments");
 
   const comments = post.comments;
 

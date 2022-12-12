@@ -1,13 +1,11 @@
 import * as storage from "../../storage/localStorage.mjs";
 
-const loader = document.querySelector("#loader");
 const bannerContainer = document.querySelector("#bannerContainer");
 const avatarContainer = document.querySelector("#avatarContainer");
 const userNameContainer = document.querySelector("#userNameContainer");
 const followUserBtn = document.querySelector(".followUser");
 
 export function displayUser(user) {
-  loader.style.display = "none";
   document.title += ` ${user.name}`;
   userNameContainer.textContent = user.name;
 
