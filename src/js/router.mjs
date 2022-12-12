@@ -5,6 +5,7 @@ import { registerUser } from "./register/register.mjs";
 import { loginUser } from "./login/login.mjs";
 import { logoutUser } from "./profile/logout.mjs";
 import { automaticLogout } from "./profile/logout.mjs";
+import { redirectUser } from "./handlers/redirect.mjs";
 
 // Home
 import { getFeed } from "./home/getFeed.mjs";
@@ -85,6 +86,8 @@ switch (path) {
     unfollowUser();
     logoutUser();
     automaticLogout();
+    redirectUser();
+
     break;
 
   case "/users/post/":

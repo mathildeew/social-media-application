@@ -34,28 +34,24 @@ export function displayFeed(post) {
                                   <div class="card-body">
                                     <div class="d-flex flex-row align-items-center justify-content-between mb-3">
                                       <div id="userDetails" class="d-flex align-items-center">
-                                        <img id="avatar" src="${avatar}" class="me-3 rounded-circle border border-primary" />
-                                        <a href="/users/profile/?name=${author}">
-                                          <p class="fs-4">${author}</p>
-                                        </a>
+                                        <img id="avatar" src="${avatar}" class="me-1 rounded-circle border border-primary" />
+                                        <a href="/users/profile/?name=${author}">${author}</a>
                                       </div>
                                       <a href="/users/post/?id=${id}">
-                                      <i class="bi bi-box-arrow-up-right"></i>
+                                        <i class="bi bi-box-arrow-up-right"></i>
                                       </a>
                                     </div>
-                                    <div class="d-flex align-items-center">
-                                      <p class="card-title fs-5 fw-semibold">${title}</p>
-                                    </div>
-                                    <p class="card-subtitle fs-6 text-muted mb-2">${date}</>
+                                    <p class="card-title fs-5 fw-semibold">${title}</p>
                                     <img src="${cardImg}" class="card-img border-dark missingImg mb-2" />
                                     <p class="card-text">${text}</p>
-                                    <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between align-items-center">
                                       <div class="d-flex">
                                         <i class="bi bi-chat-left-text me-1"></i>
                                         <p class="me-4">${comments}</p>
                                         <i class="bi bi-suit-heart me-1"></i>
                                         <p class="">${react}</p>
                                       </div>
+                                      <p class="card-subtitle fs-6 text-muted mb-2">${date}</p>
                                     </div>
                                   </div>
                                 </div>
