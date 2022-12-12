@@ -10812,6 +10812,9 @@ textarea.form-control-lg {
 .navbar-brand:focus {
   color: #f1f7fd;
 }
+.navbar-brand:hover {
+  color: #f1f7fd;
+}
 
 .nav-link {
   color: #f1f7fd;

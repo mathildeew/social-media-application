@@ -1,14 +1,8 @@
 import * as storage from "../storage/localStorage.mjs";
 
 export function displayPost(post) {
-  const author = document.querySelector("#author");
-  const avatar = document.querySelector("#avatar");
+  const postContainer = document.querySelector("#postContainer");
 
-  const title = document.querySelector("#title");
-  const date = document.querySelector("#date");
-  const img = document.querySelector("#image");
-  const text = document.querySelector("#text");
-  const link = document.querySelector("#userprofileLink");
   const postDate = new Date(post.created).toLocaleDateString();
   const commentsContainer = document.querySelector("#comments");
 
@@ -19,7 +13,7 @@ export function displayPost(post) {
   var cardImg;
   if (post.media === null || post.media === "") {
     var cardImg =
-      "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg";
+      "https://upload.wikimedia.org/wikipedia/commons/b/b1/Missing-image-232x150.png";
   } else {
     var cardImg = post.media;
   }
@@ -33,17 +27,23 @@ export function displayPost(post) {
     var postAvatar = post.author.avatar;
   }
 
-  if (location.pathname === `/users/post/`) {
-    link.href = `/users/profile/?name=${post.author.name}`;
-  }
+  console.log(post);
 
   // Display post
-  avatar.src = postAvatar;
-  author.innerHTML = post.author.name;
-  title.innerHTML = post.title;
-  date.innerHTML = postDate;
-  img.src = cardImg;
-  text.innerHTML = post.body;
+  postContainer.innerHTML = `
+                            <div class="d-flex flex-row align-items-center justify-content-between mb-3">
+                              <div id="userDetails" class="d-flex align-items-center">
+                                <img id="avatar" src="${postAvatar}" class="me-1 rounded-circle border border-primary" />
+                                  <a href="/users/profile/?name=${post.author.name}">${post.author.name}</a>
+                              </div>
+                            </div>
+                            <p class="card-title fs-5 fw-semibold">${post.title}</p>
+                            <img src="${cardImg}" class="card-img border-dark missingImg mb-2" />
+                            <p class="card-text">${post.body}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <p class="card-subtitle fs-6 text-muted mb-2">${postDate}</p>
+                            </div>
+                            `;
 
   // Display comments
   commentsH2.innerHTML += ` (${post._count.comments})`;

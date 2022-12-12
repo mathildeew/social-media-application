@@ -1,5 +1,6 @@
 import * as storage from "../../storage/localStorage.mjs";
 
+const name = storage.get("name");
 const bannerContainer = document.querySelector("#bannerContainer");
 const avatarContainer = document.querySelector("#avatarContainer");
 const userNameContainer = document.querySelector("#userNameContainer");
@@ -88,7 +89,6 @@ export function displayUser(user) {
   } else {
     for (let i = 0; i < followers.length; i++) {
       // Follow & unfollow button
-      const userName = storage.get("name");
       if (followers[i].name === userName) {
         followUserBtn.innerHTML = "Unfollow";
       }
