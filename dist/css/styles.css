@@ -10809,6 +10809,9 @@ textarea.form-control-lg {
   font-family: gimlet-display, serif;
   color: #f1f7fd;
 }
+.navbar-brand:focus {
+  color: #f1f7fd;
+}
 
 .nav-link {
   color: #f1f7fd;
