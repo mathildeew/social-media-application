@@ -73,25 +73,22 @@
 
     <main class="row justify-content-center mb-3">
       <!-- User info -->
-      <img id="bannerContainer" class="col-12" />
+      <img id="bannerContainer" class="col-12 mb-3" />
 
       <div class="col-md-8 col-lg-4">
-        <section id="about" class="card bg-white mx-1 my-3">
-          <div class="d-flex flex-column p-1">
-            <h2 id="userNameContainer"></h2>
-            <div>
-              <img
-                class="profilePic rounded me-1 img-fluid"
-                id="avatarContainer"
-              />
-              <button
-                class="btn btn-primary rounded-pill followUser unfollowUser"
-                id="followUser"
-              >
-                Follow
-              </button>
-            </div>
-          </div>
+        <section
+          id="about"
+          class="card d-flex align-items-center justify-content-center mb-3 p-1 mx-1"
+        >
+          <img class="profilePic rounded me-1 img-fluid" id="avatarContainer" />
+          <h2 id="userNameContainer"></h2>
+
+          <button
+            class="btn btn-primary rounded-pill followUser unfollowUser"
+            id="followUser"
+          >
+            Follow
+          </button>
         </section>
 
         <!-- Friends -->
