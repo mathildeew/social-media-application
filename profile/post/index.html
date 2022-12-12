@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit post</title>
+    <meta
+      name="description"
+      content="Social Media Application made for JavaScript 2 Course Assignment."
+    />
     <link
       rel="stylesheet"
       href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -14,11 +17,14 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="/dist/css/styles.css" />
+    <title>Pattern | Profile - Post - Edit</title>
   </head>
   <body class="bg-light">
     <nav class="navbar navbar-expand-lg bg-primary">
       <div class="container-fluid">
-        <span class="navbar-brand">Logo</span>
+        <a class="navbar-brand me-5" href="/home/"
+          ><h1 class="mb-0">Pattern</h1></a
+        >
         <div
           class="d-lg-none"
           data-bs-toggle="collapse"
@@ -64,35 +70,26 @@
       </div>
     </nav>
 
-    <main class="row justify-content-center">
-      <section class="mt-5 mx-1 mb-3 col-md-8 col-lg-5">
+    <main class="row justify-content-center mx-auto">
+      <div class="col-md-8 col-lg-4 mt-5">
         <div class="card mb-3">
           <div class="card-body">
             <div class="d-flex flex-row align-items-center mb-3">
               <img id="avatar" class="postAvatar me-3" />
-              <h4 id="author"></h4>
+              <p id="author" class="fs-4 fw-semibold"></p>
             </div>
             <div class="d-flex align-items-center">
-              <h5 class="card-title" id="title"></h5>
+              <p class="card-title fs-5 fw-semibold" id="title"></p>
             </div>
             <h6 class="card-subtitle mb-2 text-muted" id="date"></h6>
             <img class="card-img" id="image" />
             <p class="card-text" id="text"></p>
-            <i class="bi bi-chat-left-text"></i>
-            <p id="postComment" class="d-inline me-4"></p>
-            <i class="bi bi-suit-heart me-2"></i>
-            <p id="postReact" class="d-inline me-4"></p>
-            <div id="iconOne"></div>
-            <div id="iconTwo"></div>
-            <div id="iconThree"></div>
-            <div id="iconFour"></div>
-            <div id="iconFive"></div>
+            <div id="reactions" class="d-flex flex-row"></div>
           </div>
         </div>
-      </section>
 
-      <div class="col-md-4">
-        <div class="mx-1 mt-3 mb-3 p-1">
+        <!-- Update post -->
+        <section class="mt-3 mb-3">
           <h2>Update post</h2>
           <form
             id="updatePostForm"
@@ -126,13 +123,16 @@
               Update
             </button>
             <button class="btn btn-secondary rounded-pill" id="delete">
-              Delete post
+              Delete
             </button>
           </form>
-        </div>
+        </section>
+      </div>
 
+      <!-- Comments -->
+      <div class="col-md-8 col-lg-4 mt-3">
         <section class="mb-3">
-          <h2>Comments</h2>
+          <h2 id="commentsh2">Comments</h2>
           <div id="comments"></div>
         </section>
       </div>

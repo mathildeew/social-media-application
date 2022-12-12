@@ -1,5 +1,5 @@
-import { fetchOptions } from "../../api/fetchOptions.mjs";
-import { commentPostUrl } from "../../api/apiUrls.mjs";
+import { fetchOptions } from "../api/fetchOptions.mjs";
+import { commentPostUrl } from "../api/apiUrls.mjs";
 
 // Get params to link
 const IDurl = new URL(location.href);
@@ -20,7 +20,8 @@ export function commentPost() {
       postData["body"] = JSON.stringify(postContent);
       const response = await fetch(url, postData);
       const json = await response.json();
-      location.reload();
+      console.log(json);
+      // location.reload();
     }
     commentPostAPI(commentPostUrl, postContent);
   });

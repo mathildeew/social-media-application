@@ -1,12 +1,12 @@
 import { fetchOptions } from "../../api/fetchOptions.mjs";
-import { followUserUrl } from "../../api/apiUrls.mjs";
+import { unfollowUserUrl } from "../../api/apiUrls.mjs";
 import * as storage from "../../storage/localStorage.mjs";
 
-export function followUser() {
-  const followUserBtn = document.querySelector(".followUser");
+export function unfollowUser() {
+  const unfollowUserBtn = document.querySelector(".unfollowUser");
 
-  followUserBtn.addEventListener("click", (event) => {
-    async function followUserAPI(url) {
+  unfollowUserBtn.addEventListener("click", (event) => {
+    async function unfollowUserAPI(url) {
       const [getData, postData, putData] = fetchOptions;
       const token = storage.get("token");
       putData["headers"] = { Authorization: `Bearer ${token}` };
@@ -16,6 +16,6 @@ export function followUser() {
 
       window.location.reload();
     }
-    followUserAPI(followUserUrl);
+    unfollowUserAPI(unfollowUserUrl);
   });
 }

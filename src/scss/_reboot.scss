@@ -1,8 +1,15 @@
+@import url("https://use.typekit.net/kuo1xhg.css");
+
+.h1-primary {
+  color: #6458a8;
+  font-family: gimlet-display, serif;
+}
+
 a {
   color: $primary;
   text-decoration: none;
   &:hover {
     color: $primary;
-    text-decoration: underline;
+    text-decoration: none;
   }
 }

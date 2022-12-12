@@ -1,5 +1,4 @@
-import { displayFeed } from "../home/displayFeed.mjs";
-import { displayPost } from "../profile/post/displayPost.mjs";
+import { displayFeed } from "./displayFeed.mjs";
 
 export function filterPosts(posts) {
   const selectOne = document.querySelector("#selectOne");
@@ -7,18 +6,23 @@ export function filterPosts(posts) {
   const selectThree = document.querySelector("#selectThree");
   const selectFour = document.querySelector("#selectFour");
 
+  // Shows oldest to newest posts
   selectOne.addEventListener("click", (event) => {
-    const oldestToNewest = posts.sort(function (a, b) {
+    const oldestToNewest = posts.sort((a, b) => {
       return a.id - b.id;
     });
     displayFeed(oldestToNewest);
   });
+
+  // Shows newest to oldest posts (default)
   selectTwo.addEventListener("click", (event) => {
-    const newestToOldest = posts.sort(function (a, b) {
+    const newestToOldest = posts.sort((a, b) => {
       return b.id - a.id;
     });
     displayFeed(newestToOldest);
   });
+
+  // Shows posts with image
   selectThree.addEventListener("click", (event) => {
     const postsWithImage = posts.filter((post) => {
       if (post.media === null || post.media === "") {
@@ -27,17 +31,17 @@ export function filterPosts(posts) {
         return true;
       }
     });
-
     displayFeed(postsWithImage);
   });
 
+  //Excludes posts containing test in title and authorname
   selectFour.addEventListener("click", (event) => {
-    const filter = "test".toLowerCase().trim();
+    const filter = "test";
 
-    const postsWithoutTest = posts.filter(function (post) {
+    const postsWithoutTest = posts.filter((post) => {
       if (
         post.title.toLowerCase().includes(filter) ||
-        post.body.toLowerCase().includes(filter)
+        post.author.name.toLowerCase().includes(filter)
       ) {
         return false;
       } else {

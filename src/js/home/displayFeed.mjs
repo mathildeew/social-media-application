@@ -12,7 +12,7 @@ export function displayFeed(post) {
     const comments = post[i]._count.comments;
     const react = post[i]._count.reactions;
 
-    var avatar;
+    // Set placeholder if avatar is missing
     if (post[i].author.avatar === null || post[i].author.avatar === "") {
       var avatar =
         "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
@@ -20,40 +20,45 @@ export function displayFeed(post) {
       var avatar = post[i].author.avatar;
     }
 
+    // Set placeholder if post is missing image
     var cardImg;
     if (post[i].media === null || post[i].media === "") {
       var cardImg =
-        "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg";
+        "https://upload.wikimedia.org/wikipedia/commons/b/b1/Missing-image-232x150.png";
     } else {
       var cardImg = post[i].media;
     }
 
-    feedContainer.innerHTML += `                   
+    feedContainer.innerHTML += `
                                 <div class="card m-1 col-md-5 col-lg-3">
                                   <div class="card-body">
-                                    <div class="d-flex flex-row align-items-center mb-3">
-                                      <img src="${avatar}" class="postAvatar me-3">
-                                      <a href="/users/profile/?name=${author}"><h4 >${author}</h4></a>
+                                    <div class="d-flex flex-row align-items-center justify-content-between mb-3">
+                                      <div id="userDetails" class="d-flex align-items-center">
+                                        <img id="avatar" src="${avatar}" class="me-3 rounded-circle border border-primary" />
+                                        <a href="/users/profile/?name=${author}">
+                                          <p class="fs-4">${author}</p>
+                                        </a>
+                                      </div>
+                                      <a href="/users/post/?id=${id}">
+                                      <i class="bi bi-box-arrow-up-right"></i>
+                                      </a>
                                     </div>
                                     <div class="d-flex align-items-center">
-                                      <h5 class="card-title">${title}</h5>
+                                      <p class="card-title fs-5 fw-semibold">${title}</p>
                                     </div>
-                                    <h6 class="card-subtitle mb-2 text-muted">${date}</h6>
-                                    <img src="${cardImg}" class="card-img missingImg" />
+                                    <p class="card-subtitle fs-6 text-muted mb-2">${date}</>
+                                    <img src="${cardImg}" class="card-img border-dark missingImg mb-2" />
                                     <p class="card-text">${text}</p>
-                                      <div class="d-flex justify-content-between">
-                                        <div>
-                                          <i class="bi bi-chat-left-text"></i>
-                                          <p class="d-inline me-4">${comments}</p>
-                                          <i class="bi bi-suit-heart"></i>
-                                          <p class="d-inline">${react}</p>
-                                        </div>
-                                        <a href="/home/post/?id=${id}">View post</a>
+                                    <div class="d-flex justify-content-between">
+                                      <div class="d-flex">
+                                        <i class="bi bi-chat-left-text me-1"></i>
+                                        <p class="me-4">${comments}</p>
+                                        <i class="bi bi-suit-heart me-1"></i>
+                                        <p class="">${react}</p>
                                       </div>
+                                    </div>
                                   </div>
                                 </div>
-                                `;
+                              `;
   }
 }
-
-// ØVERTSTE LINJE `

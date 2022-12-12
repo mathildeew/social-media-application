@@ -4,11 +4,10 @@ import { loginUrl } from "../api/apiUrls.mjs";
 
 export function loginUser() {
   const loginForm = document.querySelector("#loginForm");
+  const errorMessage = document.querySelector(".formError");
 
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    const errorMessage = document.querySelector(".formError");
 
     const form = event.target;
     const formData = new FormData(form);
@@ -25,15 +24,16 @@ export function loginUser() {
         storage.set("name", name);
         const avatar = json.avatar;
         storage.set("avatar", avatar);
+        const banner = json.banner;
+        storage.set("banner", banner);
         const accessToken = json.accessToken;
         storage.set("token", accessToken);
 
-        if (accessToken === undefined) {
-          errorMessage.style.display = "block";
-        } else {
+        if (response.ok) {
           errorMessage.style.display = "none";
-
           window.location.href = "/profile/";
+        } else {
+          errorMessage.style.display = "block";
         }
       } catch (error) {
         console.log(error);

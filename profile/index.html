@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile</title>
+    <meta
+      name="description"
+      content="Social Media Application made for JavaScript 2 Course Assignment."
+    />
     <link
       rel="stylesheet"
       href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -14,11 +17,15 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="/dist/css/styles.css" />
+    <title>Pattern | Profile -</title>
   </head>
+
   <body class="bg-light">
     <nav class="navbar navbar-expand-lg bg-primary">
       <div class="container-fluid">
-        <span class="navbar-brand">Logo</span>
+        <a class="navbar-brand me-5" href="/home/"
+          ><h1 class="mb-0">Pattern</h1></a
+        >
         <div
           class="d-lg-none"
           data-bs-toggle="collapse"
@@ -47,7 +54,7 @@
               <i class="bi bi-house"></i>
               Home</a
             >
-            <a class="nav-link" href="/profile/" aria-current="page">
+            <a class="nav-link disabled" aria-current="page">
               <i class="bi bi-person-fill"></i>
               Profile
             </a>
@@ -64,50 +71,53 @@
       </div>
     </nav>
 
-    <main class="row">
+    <main class="row justify-content-center mb-3">
+      <img id="bannerContainer" class="col-12 mb-3" />
       <!-- User info -->
-      <img id="bannerContainer" class="col-12" />
+      <div class="col-md-8 col-lg-4">
+        <section
+          id="about"
+          class="card bg-white d-flex align-items-center justify-content-center mb-3 p-1 mx-1"
+        >
+          <img class="profilePic rounded img-fluid" id="avatarContainer" />
+          <h2 id="userNameContainer"></h2>
 
-      <div class="col-md-4">
-        <section class="card bg-white mx-1 my-3" id="about">
-          <div class="p-1">
-            <div class="mb-2 d-flex flex-row align-items-center">
-              <img
-                class="profilePic rounded me-1 img-fluid"
-                id="avatarContainer"
-              />
-              <h2 id="userNameContainer"></h2>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <a href="./edit/" class="btn btn-primary rounded-pill"
-              >Edit profile</a
-            >
-          </div>
+          <a href="./edit/" class="btn btn-primary rounded-pill"
+            >Edit profile</a
+          >
         </section>
 
         <!-- Friends -->
-        <section class="card bg-white mx-1" id="friends">
+        <section class="card bg-white mx-1 mb-3">
           <div class="p-1">
-            <h3>Friends</h3>
+            <h3>Following</h3>
+            <div
+              id="followingContainer"
+              class="row d-flex justify-content-around"
+            ></div>
+          </div>
+        </section>
 
-            <img
-              src="/assets/images/anthony-fomin-oHCBHRuzOyA-unsplash-cropped-downsized.jpg"
-              alt=""
-              class="rounded img-fluid friendPic"
-            />
+        <section class="card bg-white mx-1">
+          <div class="p-1">
+            <h3>Followers</h3>
+            <div
+              id="followersContainer"
+              class="row d-flex justify-content-around"
+            ></div>
           </div>
         </section>
       </div>
 
-      <div class="col-md-8">
+      <div class="col-md-8 col-lg-4">
         <!-- Create a post -->
         <section class="mx-1 mt-3 mb-3">
           <div class="p-1">
             <h3>Make a post</h3>
-            <form id="createPost">
+            <form
+              id="createPost"
+              class="d-flex flex-column justify-content-center"
+            >
               <input
                 type="text"
                 name="title"
@@ -135,8 +145,8 @@
                 ></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary rounded-pill">
-                Make post
+              <button type="submit" class="btn btn-primary rounded-pill mx-5">
+                Post
               </button>
             </form>
           </div>
