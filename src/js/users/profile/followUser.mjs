@@ -1,6 +1,6 @@
+import * as storage from "../../storage/localStorage.mjs";
 import { fetchOptions } from "../../api/fetchOptions.mjs";
 import { followUserUrl } from "../../api/apiUrls.mjs";
-import * as storage from "../../storage/localStorage.mjs";
 
 export function followUser() {
   const followUserBtn = document.querySelector(".followUser");

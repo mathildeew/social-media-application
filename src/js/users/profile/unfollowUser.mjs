@@ -1,6 +1,6 @@
+import * as storage from "../../storage/localStorage.mjs";
 import { fetchOptions } from "../../api/fetchOptions.mjs";
 import { unfollowUserUrl } from "../../api/apiUrls.mjs";
-import * as storage from "../../storage/localStorage.mjs";
 
 export function unfollowUser() {
   const unfollowUserBtn = document.querySelector(".unfollowUser");
