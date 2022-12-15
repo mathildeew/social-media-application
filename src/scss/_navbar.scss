@@ -1,0 +1,10 @@
+.navbar-brand {
+  font-family: gimlet-display, serif;
+  color: $light;
+  &:focus {
+    color: $light;
+  }
+  &:hover {
+    color: $light;
+  }
+}

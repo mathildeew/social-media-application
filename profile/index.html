@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Social Media Application made for JavaScript 2 Course Assignment."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <title>Pattern | Profile -</title>
+  </head>
+
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand me-5" href="/home/"
+          ><h1 class="mb-0">Pattern</h1></a
+        >
+        <div
+          class="d-lg-none"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            class="bi"
+            fill="white"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="navbar-nav me-auto mb-2 mb-lg-0">
+            <a class="nav-link" href="/home/">
+              <i class="bi bi-house"></i>
+              Home</a
+            >
+            <a class="nav-link disabled" aria-current="page">
+              <i class="bi bi-person-fill"></i>
+              Profile
+            </a>
+            <a class="nav-link" href="/users/">
+              <i class="bi bi-people"></i>
+              Users
+            </a>
+            <a class="nav-link" id="logout">
+              <i class="bi bi-door-closed"></i>
+              Log out</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="row justify-content-center mb-3">
+      <img id="bannerContainer" class="col-12 mb-3" />
+      <!-- User info -->
+      <div class="col-md-8 col-lg-4">
+        <section
+          id="about"
+          class="card bg-white d-flex align-items-center justify-content-center mb-3 p-1 mx-1"
+        >
+          <img class="profilePic rounded img-fluid" id="avatarContainer" />
+          <h2 id="userNameContainer"></h2>
+
+          <a href="./edit/" class="btn btn-primary rounded-pill"
+            >Edit profile</a
+          >
+        </section>
+
+        <!-- Friends -->
+        <section class="card bg-white mx-1 mb-3">
+          <div class="p-1">
+            <h3>Following</h3>
+            <div
+              id="followingContainer"
+              class="row d-flex justify-content-around"
+            ></div>
+          </div>
+        </section>
+
+        <section class="card bg-white mx-1">
+          <div class="p-1">
+            <h3>Followers</h3>
+            <div
+              id="followersContainer"
+              class="row d-flex justify-content-around"
+            ></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-md-8 col-lg-4">
+        <!-- Create a post -->
+        <section class="mx-1 mt-3 mb-3">
+          <div class="p-1">
+            <h3>Make a post</h3>
+            <form
+              id="createPost"
+              class="d-flex flex-column justify-content-center"
+            >
+              <input
+                type="text"
+                name="title"
+                placeholder="Title"
+                class="form-control mb-3"
+                id=""
+              />
+
+              <input
+                type="link"
+                name="media"
+                placeholder="Link to image (must be a url)"
+                class="form-control mb-3"
+                id=""
+              />
+              <div class="mb-3">
+                <textarea
+                  name="body"
+                  type="text"
+                  placeholder="Share something with the world!"
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                  maxlength="280"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary rounded-pill mx-5">
+                Post
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <!-- Posts -->
+        <section class="mx-1 mb-3">
+          <div class="p-1">
+            <h3>Posts</h3>
+            <div id="userPost"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="/src/js/script.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
