@@ -1,6 +1,15 @@
 import { allPostsUrl } from "../api/apiUrls.mjs";
 import { fetchOptions } from "../api/fetchOptions.mjs";
 
+/**
+ * Creates a new post
+ * @example
+ * ```
+ * // The content from the create post form is sent to the server by a POST request.
+ * createPost()
+ * // If the request is successfull, the page reloads and displays the new post.
+ * ```
+ */
 export function createPost() {
   const postForm = document.querySelector("#createPost");
 

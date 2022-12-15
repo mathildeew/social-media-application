@@ -1,4 +1,13 @@
-// Display feed at home page
+/**
+ * Displays feed at home page with 100 posts
+ * @param {*} post API content with the posts
+ * @example
+ * ```
+ * // Displays 100 of the latest posts.
+ * // Placeholder if image is missing.
+ * displayFeed(post);
+ * ```
+ */
 export function displayFeed(post) {
   const feedContainer = document.querySelector("#feedContainer");
   feedContainer.innerHTML = "";

@@ -1,5 +1,14 @@
 import { displayUsers } from "./displayUsers.mjs";
 
+/**
+ * Seach in users at users page.
+ * @param {*} users The json with all of the users.
+ * @example
+ * ```
+ * // Search in users by username. If there is a match, the result is displayed.
+ * searchUsers(users);
+ * ```
+ */
 export function searchUsers(users) {
   const search = document.querySelector("#search");
 

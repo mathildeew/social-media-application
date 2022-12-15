@@ -1,5 +1,14 @@
 import { displayFeed } from "./displayFeed.mjs";
 
+/**
+ * Filters post at home page.
+ * @param {*} posts API content with all the 100 posts.
+ * @example
+ * ```
+ * // Choose between oldest > newest, newest > oldest, with image and without test.
+ * filterPosts(posts)
+ * ```
+ */
 export function filterPosts(posts) {
   const selectOne = document.querySelector("#selectOne");
   const selectTwo = document.querySelector("#selectTwo");

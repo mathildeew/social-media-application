@@ -2,6 +2,16 @@ import * as storage from "../storage/localStorage.mjs";
 import { fetchOptions } from "../api/fetchOptions.mjs";
 import { registerUrl } from "../api/apiUrls.mjs";
 
+/**
+ * Registers a new user if the required field are filled in correctly.
+ * @example
+ * ```
+ * // Sends the form content to the server by a POST request.
+ * // The profile information, media content and the retrived access token is stored in local storage.
+ * // If the registration is successful, the user is sent back to log in page.
+ * registerUser();
+ * ```
+ */
 export function registerUser() {
   const registerForm = document.querySelector("#registerForm");
   const errorMessage = document.querySelector(".formError");

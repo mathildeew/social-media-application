@@ -16,6 +16,15 @@ const reactionUrl = [
 const IDurl = new URL(location.href);
 const postID = IDurl.searchParams.get("id");
 
+/**
+ * Lets the user send reactions to a post with a PUT request.
+ * @example
+ * ```
+ * // Five different reactions.
+ * // The page is reloaded when the reaction is sent.
+ * reactPosts()
+ * ```
+ */
 export function reactPost() {
   const reactionOne = document.querySelector("#reactionOne");
   const reactionTwo = document.querySelector("#reactionTwo");

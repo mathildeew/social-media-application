@@ -1,6 +1,15 @@
 import { fetchOptions } from "../api/fetchOptions.mjs";
 import { singlePostUrl } from "../api/apiUrls.mjs";
 
+/**
+ * Lets the user edit the post.
+ * @example
+ * ```
+ * // The new content (title, image and bodytext) is sent to the server by a PUT request.
+ * // If the request is successfull the page is reloaded and displays the updated post.
+ * editPost();
+ * ```
+ */
 export function editPost() {
   const updateForm = document.querySelector("#updatePostForm");
 
