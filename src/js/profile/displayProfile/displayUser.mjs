@@ -99,7 +99,7 @@ export function displayUser(user) {
   } else {
     for (let i = 0; i < followers.length; i++) {
       // Follow & unfollow button
-      if (followers[i].name === userName) {
+      if (followers[i].name === name) {
         followUserBtn.innerHTML = "Unfollow";
       }
 
