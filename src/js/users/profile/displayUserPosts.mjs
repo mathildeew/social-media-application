@@ -1,5 +1,13 @@
-import * as storage from "../../storage/localStorage.mjs";
-
+/**
+ * Displays all of the users post at profile page.
+ * @param {*} posts The API content.
+ * @example
+ * ```
+ * // The posts content is displayed. If the posts doesnt contain an image,
+ * // a placeholder imaged is used instead.
+ * displayUserPosts(posts);
+ * ```
+ */
 export function displayUserPosts(posts) {
   for (let i = 0; i < posts.length; i++) {
     const usersPost = document.querySelector("#userPost");

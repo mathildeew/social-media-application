@@ -2,14 +2,12 @@ import { fetchOptions } from "../api/fetchOptions.mjs";
 import { displayPost } from "./displayPost.mjs";
 
 /**
- * 
+ * Retreives a single post from the server with a GET request.
  * @param {string} url Single post url
  * @example
- * ```js
- * // Get single posts from API with ID from params.get
-const url = "https://api.noroff.dev/api/v1/social/posts/${id}?_author=true&_comments=true&_reactions=true"
-// The response is a posts from the API called json and sent to displayPost
-displayPost(json)
+ * ```
+ * // The response is a single posts from the server.
+ * getPostAPI(url)
  * ```
  */
 export async function getPostAPI(url) {

@@ -6,6 +6,16 @@ const avatarContainer = document.querySelector("#avatarContainer");
 const userNameContainer = document.querySelector("#userNameContainer");
 const followUserBtn = document.querySelector(".followUser");
 
+/**
+ * Displays the user information at profile page.
+ * @param {*} user The API content from the server containing user information.
+ * @example
+ * ```
+ * // Displays info thats stored in localstorage, followers and followed.
+ * // Followers and following is retrieved from the server.
+ * displayUser(user);
+ * ```
+ */
 export function displayUser(user) {
   document.title += ` ${user.name}`;
   userNameContainer.textContent = user.name;

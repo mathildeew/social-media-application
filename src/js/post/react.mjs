@@ -2,6 +2,7 @@ import { fetchOptions } from "../api/fetchOptions.mjs";
 import * as storage from "../storage/localStorage.mjs";
 import { reactUrl } from "../api/apiUrls.mjs";
 
+// Five different symbols in escape code
 const reactionsUrl = [
   `${reactUrl}%E2%9D%A4`,
   `${reactUrl}%F0%9F%8C%B6`,
@@ -14,6 +15,15 @@ const reactionsUrl = [
 const IDurl = new URL(location.href);
 const postID = IDurl.searchParams.get("id");
 
+/**
+ * Lets the user send reactions to a post with a PUT request.
+ * @example
+ * ```
+ * // Five different reactions.
+ * // The page is reloaded when the reaction is sent.
+ * reactPosts()
+ * ```
+ */
 export function reactPost() {
   const reactionOne = document.querySelector("#reactionOne");
   const reactionTwo = document.querySelector("#reactionTwo");

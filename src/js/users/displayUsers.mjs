@@ -1,3 +1,14 @@
+/**
+ * Displays all of the users.
+ * @param {*} user The API content from the server containing all users.
+ * @example
+ * ```
+ * // Sorts the users alphabetical.
+ * // Displays all of the users with following and followers.
+ * // If the avatar is missing a placeholder image is used.
+ * displayUsers(usersJson);
+ * ```
+ */
 export function displayUsers(usersJson) {
   const usersContainer = document.querySelector("#allUsers");
   usersContainer.innerHTML = "";

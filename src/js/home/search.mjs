@@ -1,5 +1,14 @@
 import { displayFeed } from "./displayFeed.mjs";
 
+/**
+ * Search in posts by the title and author. The filtered result is then displayed.
+ * @param {*} posts All posts API json.
+ * @example
+ * ```
+ * searchPosts(posts)
+ * ```
+ */
+
 export function searchPosts(posts) {
   const search = document.querySelector("#search");
 

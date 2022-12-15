@@ -1,4 +1,8 @@
-// Display feed at home page
+/**
+ * Displays feed at home page
+ * @param {*} post API content
+ */
+
 export function displayFeed(post) {
   const feedContainer = document.querySelector("#feedContainer");
   feedContainer.innerHTML = "";

@@ -4,16 +4,12 @@ import { searchPosts } from "./search.mjs";
 import { filterPosts } from "./filter.mjs";
 
 /**
- * 
- * @param {string} url All posts url
+ * Retrieves all posts from the API. The json is used to display the feed, search in posts and filter the posts.
+ * @param {string} url All posts API url
  * @example
-``` js
-// Get posts from API
+```
 const url = "https://api.noroff.dev/api/v1/social/posts/?_author=true&_comments=true&_reactions=true"
-// The response is all the posts from the API called json and sent to display feed, search and filter functions
-displayFeed(json)
-searchPosts(json);
-filterPosts(json);
+getFeed(url)
 ```
 */
 

@@ -1,4 +1,12 @@
-import * as storage from "../storage/localStorage.mjs";
+/**
+ * Displays a single post when clicked.
+ * @param {*} post The API content from the GET request.
+ * @example
+ * ```
+ * // Displays the post with comments and reactions.
+ * displayPost(post);
+ * ```
+ */
 
 export function displayPost(post) {
   const postContainer = document.querySelector("#postContainer");
@@ -26,8 +34,6 @@ export function displayPost(post) {
   } else {
     var postAvatar = post.author.avatar;
   }
-
-  console.log(post);
 
   // Display post
   postContainer.innerHTML = `

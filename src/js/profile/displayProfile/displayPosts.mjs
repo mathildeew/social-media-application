@@ -1,3 +1,13 @@
+/**
+ * Displays all of the users post at profile page.
+ * @param {*} posts The API content.
+ * @example
+ * ```
+ * // The posts content is displayed. If the posts doesnt contain an image,
+ * // a placeholder imaged is used instead.
+ * displayPosts(posts);
+ * ```
+ */
 export function displayPosts(posts) {
   const usersPost = document.querySelector("#userPost");
 

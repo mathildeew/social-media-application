@@ -2,6 +2,15 @@ import * as storage from "../storage/localStorage.mjs";
 import { fetchOptions } from "../api/fetchOptions.mjs";
 import { loginUrl } from "../api/apiUrls.mjs";
 
+/**
+ * Logs in a registrated user if the required field are filled in correctly.
+ * The profile information, media content and the retrived access token is stored in local storage.
+ * If the login is successful, the user is sent to the right profile page.
+ * @example
+ * ```
+ * loginUser()
+ * ```
+ */
 export function loginUser() {
   const loginForm = document.querySelector("#loginForm");
   const errorMessage = document.querySelector(".formError");

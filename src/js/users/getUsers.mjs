@@ -2,6 +2,15 @@ import { fetchOptions } from "../api/fetchOptions.mjs";
 import { displayUsers } from "./displayUsers.mjs";
 import { searchUsers } from "./searchUsers.mjs";
 
+/**
+ * Gets all of the users.
+ * @param {*} url The API url to retreive the users.
+ * @example
+ * ```
+ * // A GET request is sent to the server and retrieves all of the users.
+ * getUsersAPI(url);
+ * ```
+ */
 export async function getUsersAPI(url) {
   const [getData] = fetchOptions;
 

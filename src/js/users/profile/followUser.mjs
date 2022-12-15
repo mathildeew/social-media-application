@@ -2,6 +2,16 @@ import * as storage from "../../storage/localStorage.mjs";
 import { fetchOptions } from "../../api/fetchOptions.mjs";
 import { followUserUrl } from "../../api/apiUrls.mjs";
 
+/**
+ * Lets the logged in user follow another user
+ * @example
+ * ```
+ * // When the follow button is clicked a PUT request is sent to the server.
+ * // The page is reloaded and displays the logged in user under followers.
+ * // The button changes to "Unfollow".
+ * followUser();
+ * ```
+ */
 export function followUser() {
   const followUserBtn = document.querySelector(".followUser");
 
