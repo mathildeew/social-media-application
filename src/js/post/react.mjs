@@ -3,11 +3,14 @@ import * as storage from "../storage/localStorage.mjs";
 
 import { reactUrl } from "../api/apiUrls.mjs";
 
-const reactionOneUrl = `${reactUrl}%E2%9D%A4`;
-const reactionTwoUrl = `${reactUrl}%F0%9F%8C%B6`;
-const reactionThreeUrl = `${reactUrl}%E2%98%84`;
-const reactionFourUrl = `${reactUrl}%F0%9F%A4%B8`;
-const reactionFiveUrl = `${reactUrl}%F0%9F%91%8A`;
+// Reaction url to corresponding symbol
+const reactionUrl = [
+  `${reactUrl}%E2%9D%A4`,
+  `${reactUrl}%F0%9F%8C%B6`,
+  `${reactUrl}%E2%98%84`,
+  `${reactUrl}%F0%9F%A4%B8`,
+  `${reactUrl}%F0%9F%91%8A`,
+];
 
 // Get params to link
 const IDurl = new URL(location.href);
@@ -31,11 +34,10 @@ export function reactPost() {
       const response = await fetch(url, putData);
       const json = await response.json();
 
-      console.log(json);
-      //   location.reload();
+      location.reload();
     }
 
-    reactionOneAPI(reactionOneUrl);
+    reactionOneAPI(reactionUrl[0]);
   });
 
   reactionTwo.addEventListener("submit", (event) => {
@@ -53,7 +55,7 @@ export function reactPost() {
       window.location.reload();
     }
 
-    reactionTwoAPI(reactionTwoUrl);
+    reactionTwoAPI(reactionUrl[1]);
   });
 
   reactionThree.addEventListener("submit", (event) => {
@@ -71,7 +73,7 @@ export function reactPost() {
       window.location.reload();
     }
 
-    reactionThreeAPI(reactionThreeUrl);
+    reactionThreeAPI(reactionUrl[2]);
   });
 
   reactionFour.addEventListener("submit", (event) => {
@@ -89,7 +91,7 @@ export function reactPost() {
       window.location.reload();
     }
 
-    reactionFourAPI(reactionFourUrl);
+    reactionFourAPI(reactionUrl[3]);
   });
 
   reactionFive.addEventListener("submit", (event) => {
@@ -107,6 +109,6 @@ export function reactPost() {
       window.location.reload();
     }
 
-    reactionFiveAPI(reactionFiveUrl);
+    reactionFiveAPI(reactionUrl[4]);
   });
 }
