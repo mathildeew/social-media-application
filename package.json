@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "i bootstrap & -D sass & -D live-server",
     "build": "sass src/scss:dist/css",
     "watch": "sass --watch src/scss:dist/css & live-server"
   },
