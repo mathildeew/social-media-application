@@ -13,13 +13,20 @@ The goal was to apply knowledge of JavaScript techniques to implement the front-
 
 To use the project run these commands:
 
-````javascript
+1. Installs bootstrap, sass & liveserver
+
+```javascript
 npm run install
-```: will install bootstrap, sass & liveserver
-``` javascript
+```
+
+2. Compiles all .scss files into the right folder.
+
+```javascript
 npm run build
-```: will compile all .scss files into the right folder.
-``` javascript
+```
+
+3. Automaticly converts SASS to CSS whenever a file is changed and runs live-server.
+
+```javascript
 npm run watch
-```: will automaticly converts SASS to CSS whenever a file is changed and runs live-server.
-````
+```
