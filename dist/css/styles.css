@@ -10836,6 +10836,10 @@ h1, .h1 {
   font-size: 1.6rem;
 }
 
+#logout {
+  cursor: pointer;
+}
+
 i {
   font-size: 1.3rem;
   color: #f1f7fd;

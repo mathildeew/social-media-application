@@ -29,8 +29,7 @@ export function commentPost() {
       postData["body"] = JSON.stringify(postContent);
       const response = await fetch(url, postData);
       const json = await response.json();
-      console.log(json);
-      // location.reload();
+      location.reload();
     }
     commentPostAPI(commentPostUrl, postContent);
   });

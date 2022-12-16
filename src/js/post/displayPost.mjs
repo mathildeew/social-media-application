@@ -1,5 +1,3 @@
-import * as storage from "../storage/localStorage.mjs";
-
 /**
  * Displays a single post when clicked.
  * @param {*} post The API content from the GET request.
@@ -10,6 +8,8 @@ import * as storage from "../storage/localStorage.mjs";
  * ```
  */
 export function displayPost(post) {
+  document.title = `${post.author.name} - ${post.title}`;
+
   const postContainer = document.querySelector("#postContainer");
   const postDate = new Date(post.created).toLocaleDateString();
   const commentsContainer = document.querySelector("#comments");
