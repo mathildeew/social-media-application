@@ -18,12 +18,12 @@
 
   <body class="bg-secondary">
     <main class="d-flex flex-column align-items-center">
-      <h1 class="mt-5">Pattern</h1>
+      <h1 class="h1-primary my-5">Pattern</h1>
 
       <div class="bg-light rounded-4">
-        <form id="registerForm" class="d-flex flex-column mb-4 p-4">
+        <form id="registerForm" class="d-flex flex-column pt-4 ps-4 pe-4 pb-2">
           <div class="mb-1">
-            <label for="username">Username</label>
+            <label for="username" class="fw-bold">Username</label>
             <input
               id="username"
               class="form-control rounded-4"
@@ -36,7 +36,7 @@
             />
           </div>
           <div class="mb-1">
-            <label for="email">Email</label>
+            <label for="email" class="fw-bold">Email</label>
             <input
               id="email"
               class="form-control rounded-4"
@@ -48,7 +48,7 @@
             />
           </div>
           <div class="mb-1">
-            <label for="password">Password</label>
+            <label for="password" class="fw-bold">Password</label>
             <input
               id="password"
               class="form-control rounded-4"
@@ -59,7 +59,7 @@
             />
           </div>
           <div class="mb-1">
-            <label for="avatar">Avatar</label>
+            <label for="avatar" class="fw-bold">Avatar</label>
             <input
               id="avatarRegister"
               class="form-control rounded-4"
@@ -69,7 +69,7 @@
             />
           </div>
           <div class="mb-1">
-            <label for="banner">Banner</label>
+            <label for="banner" class="fw-bold">Banner</label>
             <input
               id="bannerRegister"
               class="form-control rounded-4 mb-3"
@@ -81,10 +81,22 @@
 
           <div class="formError"><p>Try again!</p></div>
 
-          <button type="submit" class="btn btn-primary rounded-4">
+          <button
+            type="submit"
+            id="registerBtn"
+            class="btn btn-primary rounded-4"
+          >
             Create account
           </button>
         </form>
+        <div class="d-flex justify-content-center">
+          <div class="regLoader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
       </div>
     </main>
     <script defer type="module" src="/src/js/script.js"></script>

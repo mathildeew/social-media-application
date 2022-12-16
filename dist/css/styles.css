@@ -10887,6 +10887,10 @@ i {
   color: #b73b71;
 }
 
+.regCheck {
+  font-size: 1rem;
+}
+
 .loader-grid {
   display: inline-block;
   position: relative;
@@ -10963,6 +10967,67 @@ i {
   }
   50% {
     opacity: 0.5;
+  }
+}
+.regLoader {
+  display: none;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.regLoader div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #7668c6;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.regLoader div:nth-child(1) {
+  left: 8px;
+  animation: regLoader1 0.6s infinite;
+}
+
+.regLoader div:nth-child(2) {
+  left: 8px;
+  animation: regLoader2 0.6s infinite;
+}
+
+.regLoader div:nth-child(3) {
+  left: 32px;
+  animation: regLoader2 0.6s infinite;
+}
+
+.regLoader div:nth-child(4) {
+  left: 56px;
+  animation: regLoader3 0.6s infinite;
+}
+
+@keyframes regLoader1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes regLoader3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes regLoader2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
   }
 }
 

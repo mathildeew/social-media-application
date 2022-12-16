@@ -2,6 +2,9 @@ import * as storage from "../storage/localStorage.mjs";
 import { fetchOptions } from "../api/fetchOptions.mjs";
 import { registerUrl } from "../api/apiUrls.mjs";
 
+const registerBtn = document.querySelector("#registerBtn");
+const loader = document.querySelector(".regLoader");
+
 /**
  * Registers a new user if the required field are filled in correctly.
  * @example
@@ -29,22 +32,21 @@ export function registerUser() {
       const response = await fetch(url, postData);
       const json = await response.json();
 
-      const name = json.name;
-      storage.set("name", name);
-      const avatar = json.avatar;
-      storage.set("avatar", avatar);
-      const banner = json.banner;
-      storage.set("banner", banner);
-      const accessToken = json.accessToken;
-      storage.set("token", accessToken);
-
       if (response.ok) {
-        window.location.href = "/";
-        errorMessage.style.display = "none";
+        loader.style.display = "inline-block";
+        registerBtn.innerHTML = `
+                                  Profile created
+                                  <i class="bi bi-check-lg regCheck"></i>
+                                `;
+        setTimeout(registerResponse, 1500);
       } else {
         errorMessage.style.display = "block";
       }
     }
     registerUserAPI(registerUrl, postContent);
   });
+}
+
+function registerResponse() {
+  window.location.href = "/";
 }
