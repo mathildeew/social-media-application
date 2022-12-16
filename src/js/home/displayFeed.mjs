@@ -39,7 +39,7 @@ export function displayFeed(post) {
     }
 
     feedContainer.innerHTML += `
-                                <div class="card m-1 col-md-5 col-lg-3">
+                                <div class="card m-1 col-md-5 col-lg-3 mb-3">
                                   <div class="card-body">
                                     <div class="d-flex flex-row align-items-center justify-content-between mb-3">
                                       <div id="userDetails" class="d-flex align-items-center">

@@ -88,4 +88,15 @@ export function displayPost(post) {
                                     </div>
                                    `;
   }
+
+  // Display current post
+  console.log(post);
+
+  const currentTitle = document.querySelector("#newTitle");
+  const currentImg = document.querySelector("#newImg");
+  const currentText = document.querySelector("#newText");
+
+  currentTitle.value = `${post.title}`;
+  currentImg.value = `${post.media}`;
+  currentText.value = `${post.body}`;
 }
