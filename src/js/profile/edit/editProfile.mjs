@@ -4,6 +4,7 @@ import { editMediaUrl } from "../../api/apiUrls.mjs";
 
 export function editMedia() {
   const updateForm = document.querySelector("#updateMediaForm");
+  const error = document.querySelector(".errorMessage");
 
   updateForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -17,9 +18,15 @@ export function editMedia() {
       putData["body"] = JSON.stringify(putContent);
       const response = await fetch(url, putData);
       const json = await response.json();
-      storage.set("avatar", json.avatar);
-      storage.set("banner", json.banner);
-      location.reload();
+
+      if (response.ok) {
+        storage.set("avatar", json.avatar);
+        storage.set("banner", json.banner);
+        location.reload();
+      } else {
+        const error = document.querySelector(".errorMessage");
+        error.style.display = "inline";
+      }
     }
     editMediaAPI(editMediaUrl, putContent);
   });

@@ -20,6 +20,14 @@ export function displayUser(user) {
   document.title += ` ${user.name}`;
   userNameContainer.textContent = user.name;
 
+  // Keep value of avatar and banner at edit profile
+  if (location.pathname === "/profile/edit/") {
+    const currentAvatar = document.querySelector("#newAvatar");
+    const currentBanner = document.querySelector("#newBanner");
+    currentAvatar.value = user.avatar;
+    currentBanner.value = user.banner;
+  }
+
   // Set placeholder if banner is missing
   if (user.banner === null || user.banner === "") {
     var banner =
@@ -43,8 +51,8 @@ export function displayUser(user) {
   const followersContainer = document.querySelector("#followersContainer");
   const following = user.following;
   const followers = user.followers;
-  var followingAvatar;
-  var followersAvatar;
+  let followingAvatar;
+  let followersAvatar;
 
   // Display following
   if (!following.length) {
