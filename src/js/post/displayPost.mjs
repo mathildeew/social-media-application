@@ -17,21 +17,21 @@ export function displayPost(post) {
   const commentsH2 = document.querySelector("#commentsh2");
 
   // Set placeholder if image is missing
-  var cardImg;
+  let cardImg;
   if (post.media === null || post.media === "") {
-    var cardImg =
+    cardImg =
       "https://upload.wikimedia.org/wikipedia/commons/b/b1/Missing-image-232x150.png";
   } else {
-    var cardImg = post.media;
+    cardImg = post.media;
   }
 
   // Set placeholder if avatar is missing
-  var postAvatar;
+  let postAvatar;
   if (post.author.avatar === null || post.author.avatar === "") {
-    var postAvatar =
+    postAvatar =
       "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
   } else {
-    var postAvatar = post.author.avatar;
+    postAvatar = post.author.avatar;
   }
 
   // Display post

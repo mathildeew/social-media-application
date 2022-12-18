@@ -3,6 +3,9 @@ import { displayFeed } from "./displayFeed.mjs";
 import { searchPosts } from "./search.mjs";
 import { filterPosts } from "./filter.mjs";
 
+const errorMessage = document.querySelector(".errorMessage");
+const loader = document.querySelector(".loader-grid");
+
 /**
  * Retrieves all posts from the API. 
  * @param {string} url All posts API url
@@ -25,5 +28,7 @@ export async function getFeed(url) {
     filterPosts(json);
   } catch (error) {
     console.log(error);
+    errorMessage.style.display = "inline";
+    loader.style.display = "none";
   }
 }

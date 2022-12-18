@@ -22,12 +22,12 @@ export function displayUsers(usersJson) {
     });
 
     // Set placeholder if avatar is missing
-    var avatar;
+    let avatar;
     if (users[i].avatar === null || users[i].avatar === "") {
-      var avatar =
+      avatar =
         "https://upload.wikimedia.org/wikipedia/commons/b/b1/Missing-image-232x150.png";
     } else {
-      var avatar = users[i].avatar;
+      avatar = users[i].avatar;
     }
 
     usersContainer.innerHTML += `

@@ -19,22 +19,24 @@ export function displayFeed(post) {
     const date = new Date(post[i].created).toLocaleDateString();
     const text = post[i].body;
     const comments = post[i]._count.comments;
-    const react = post[i]._count.reactions;
+    const reactions = post[i]._count.reactions;
 
     // Set placeholder if avatar is missing
+    let avatar;
     if (post[i].author.avatar === null || post[i].author.avatar === "") {
-      var avatar =
+      avatar =
         "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
     } else {
-      var avatar = post[i].author.avatar;
+      avatar = post[i].author.avatar;
     }
 
     // Set placeholder if post is missing image
+    let postImg;
     if (post[i].media === null || post[i].media === "") {
-      var cardImg =
+      postImg =
         "https://upload.wikimedia.org/wikipedia/commons/b/b1/Missing-image-232x150.png";
     } else {
-      var cardImg = post[i].media;
+      postImg = post[i].media;
     }
 
     feedContainer.innerHTML += `
@@ -50,14 +52,14 @@ export function displayFeed(post) {
                                       </a>
                                     </div>
                                     <p class="card-title fs-5 fw-semibold">${title}</p>
-                                    <img src="${cardImg}" class="card-img border-dark missingImg mb-2" />
+                                    <img src="${postImg}" class="card-img border-dark missingImg mb-2" />
                                     <p class="card-text">${text}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                       <div class="d-flex">
                                         <i class="bi bi-chat-left-text me-1"></i>
                                         <p class="me-4">${comments}</p>
                                         <i class="bi bi-suit-heart me-1"></i>
-                                        <p class="">${react}</p>
+                                        <p class="">${reactions}</p>
                                       </div>
                                       <p class="card-subtitle fs-6 text-muted mb-2">${date}</p>
                                     </div>

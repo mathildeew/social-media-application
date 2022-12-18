@@ -29,8 +29,9 @@ export function displayUser(user) {
   }
 
   // Set placeholder if banner is missing
+  let banner;
   if (user.banner === null || user.banner === "") {
-    var banner =
+    banner =
       "https://www.unfe.org/wp-content/uploads/2019/04/SM-placeholder.png";
   } else {
     banner = user.banner;
@@ -38,12 +39,14 @@ export function displayUser(user) {
   bannerContainer.src = banner;
 
   // Set placeholder if avatar is missing
+  let avatar;
   if (user.avatar === null || user.avatar === "") {
-    var avatar =
+    avatar =
       "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
   } else {
-    var avatar = user.avatar;
+    avatar = user.avatar;
   }
+
   avatarContainer.src = avatar;
   avatarContainer.classList.add("rounded-circle", "border", "border-primary");
 
