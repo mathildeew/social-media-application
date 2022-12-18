@@ -2,6 +2,9 @@ import { fetchOptions } from "../api/fetchOptions.mjs";
 import { displayUsers } from "./displayUsers.mjs";
 import { searchUsers } from "./searchUsers.mjs";
 
+const loader = document.querySelector("#loader");
+const errorMessage = document.querySelector(".errorMessage");
+
 /**
  * Gets all of the users.
  * @param {*} url The API url to retreive the users.
@@ -12,11 +15,17 @@ import { searchUsers } from "./searchUsers.mjs";
  * ```
  */
 export async function getUsersAPI(url) {
-  const [getData] = fetchOptions;
+  try {
+    const [getData] = fetchOptions;
 
-  const response = await fetch(url, getData);
-  const json = await response.json();
+    const response = await fetch(url, getData);
+    const json = await response.json();
 
-  displayUsers(json);
-  searchUsers(json);
+    displayUsers(json);
+    searchUsers(json);
+  } catch (error) {
+    console.log(error);
+    errorMessage.style.display = "inline";
+    loader.style.display = "none";
+  }
 }
