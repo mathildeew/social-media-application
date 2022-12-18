@@ -1,16 +1,7 @@
 import { fetchOptions } from "../api/fetchOptions.mjs";
 import * as storage from "../storage/localStorage.mjs";
-
-import { reactUrl } from "../api/apiUrls.mjs";
-
-// Reaction url to corresponding symbol
-const reactionUrl = [
-  `${reactUrl}%E2%9D%A4`,
-  `${reactUrl}%F0%9F%8C%B6`,
-  `${reactUrl}%E2%98%84`,
-  `${reactUrl}%F0%9F%A4%B8`,
-  `${reactUrl}%F0%9F%91%8A`,
-];
+import { reactionsUrl } from "../api/apiUrls.mjs";
+const [reactOne, reactTwo, reactThree, reactFour, reactFive] = reactionsUrl;
 
 // Get params to link
 const IDurl = new URL(location.href);
@@ -46,7 +37,7 @@ export function reactPost() {
       location.reload();
     }
 
-    reactionOneAPI(reactionUrl[0]);
+    reactionOneAPI(reactOne);
   });
 
   reactionTwo.addEventListener("submit", (event) => {
@@ -64,7 +55,7 @@ export function reactPost() {
       window.location.reload();
     }
 
-    reactionTwoAPI(reactionUrl[1]);
+    reactionTwoAPI(reactTwo);
   });
 
   reactionThree.addEventListener("submit", (event) => {
@@ -82,7 +73,7 @@ export function reactPost() {
       window.location.reload();
     }
 
-    reactionThreeAPI(reactionUrl[2]);
+    reactionThreeAPI(reactThree);
   });
 
   reactionFour.addEventListener("submit", (event) => {
@@ -100,7 +91,7 @@ export function reactPost() {
       window.location.reload();
     }
 
-    reactionFourAPI(reactionUrl[3]);
+    reactionFourAPI(reactFour);
   });
 
   reactionFive.addEventListener("submit", (event) => {
@@ -118,6 +109,6 @@ export function reactPost() {
       window.location.reload();
     }
 
-    reactionFiveAPI(reactionUrl[4]);
+    reactionFiveAPI(reactFive);
   });
 }

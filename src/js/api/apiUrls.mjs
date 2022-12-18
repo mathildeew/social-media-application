@@ -35,4 +35,11 @@ export const allPostsUrl = `${baseUrl}posts/?_author=true&_comments=true&_reacti
 export const singlePostUrl = `${baseUrl}posts/${id}?_author=true&_comments=true&_reactions=true`;
 export const usersPostsUrl = `${baseUrl}profiles/${name}/posts`;
 export const commentPostUrl = `${baseUrl}posts/${id}/comment`;
-export const reactUrl = `${baseUrl}posts/${id}/react/`;
+const reactUrl = `${baseUrl}posts/${id}/react/`;
+export const reactionsUrl = [
+  `${reactUrl}%E2%9D%A4`,
+  `${reactUrl}%F0%9F%8C%B6`,
+  `${reactUrl}%E2%98%84`,
+  `${reactUrl}%F0%9F%A4%B8`,
+  `${reactUrl}%F0%9F%91%8A`,
+];

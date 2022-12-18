@@ -2,6 +2,9 @@ import * as storage from "../../storage/localStorage.mjs";
 import { fetchOptions } from "../../api/fetchOptions.mjs";
 import { editMediaUrl } from "../../api/apiUrls.mjs";
 
+/**
+ * Update avatar and banner
+ */
 export function editMedia() {
   const updateForm = document.querySelector("#updateMediaForm");
   const error = document.querySelector(".errorMessage");

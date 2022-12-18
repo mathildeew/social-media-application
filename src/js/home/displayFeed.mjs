@@ -30,7 +30,6 @@ export function displayFeed(post) {
     }
 
     // Set placeholder if post is missing image
-    var cardImg;
     if (post[i].media === null || post[i].media === "") {
       var cardImg =
         "https://upload.wikimedia.org/wikipedia/commons/b/b1/Missing-image-232x150.png";

@@ -90,11 +90,13 @@ export function displayPost(post) {
   }
 
   // Display current post
-  const currentTitle = document.querySelector("#newTitle");
-  const currentImg = document.querySelector("#newImg");
-  const currentText = document.querySelector("#newText");
+  if (location.pathname === "/profile/post/") {
+    const currentTitle = document.querySelector("#newTitle");
+    const currentImg = document.querySelector("#newImg");
+    const currentText = document.querySelector("#newText");
 
-  currentTitle.value = `${post.title}`;
-  currentImg.value = `${post.media}`;
-  currentText.value = `${post.body}`;
+    currentTitle.value = `${post.title}`;
+    currentImg.value = `${post.media}`;
+    currentText.value = `${post.body}`;
+  }
 }
