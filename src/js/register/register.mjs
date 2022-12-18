@@ -38,6 +38,8 @@ export function registerUser() {
                                   <i class="bi bi-check-lg regCheck"></i>
                                 `;
         setTimeout(registerResponse, 1500);
+        console.log(json);
+        errorMessage.style.display = "none";
       } else {
         errorMessage.style.display = "block";
       }
