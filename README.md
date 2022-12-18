@@ -16,7 +16,11 @@ To use the project run the following commands:
 1. Install bootstrap, sass and live-server.
 
 ```
-npm run install
+npm i bootstrap
+```
+
+```
+npm i -D sass & live-server
 ```
 
 2. To compile the .scss files into the dist/css folder and run live-server.
