@@ -42,8 +42,10 @@ export function loginUser() {
         if (response.ok) {
           errorMessage.style.display = "none";
           window.location.href = "/profile/";
+          console.log(json);
         } else {
           errorMessage.style.display = "block";
+          console.log(json);
         }
       } catch (error) {
         console.log(error);

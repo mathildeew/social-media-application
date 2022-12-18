@@ -20,12 +20,12 @@ export function displayPosts(posts) {
     const reactions = posts[i]._count.reactions;
 
     // Placeholder image for post
-    var postImg;
+    let postImg;
     if (posts[i].media === null || posts[i].media === "") {
-      var postImg =
+      postImg =
         "https://upload.wikimedia.org/wikipedia/commons/b/b1/Missing-image-232x150.png";
     } else {
-      var postImg = posts[i].media;
+      postImg = posts[i].media;
     }
 
     usersPost.innerHTML += `

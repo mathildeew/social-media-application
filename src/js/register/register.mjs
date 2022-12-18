@@ -1,4 +1,3 @@
-import * as storage from "../storage/localStorage.mjs";
 import { fetchOptions } from "../api/fetchOptions.mjs";
 import { registerUrl } from "../api/apiUrls.mjs";
 

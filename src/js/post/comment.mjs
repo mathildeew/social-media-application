@@ -1,10 +1,6 @@
 import { fetchOptions } from "../api/fetchOptions.mjs";
 import { commentPostUrl } from "../api/apiUrls.mjs";
 
-// Get params to link
-const IDurl = new URL(location.href);
-const postID = IDurl.searchParams.get("id");
-
 /**
  * Lets user comment on posts.
  * @example
