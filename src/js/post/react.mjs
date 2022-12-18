@@ -3,10 +3,6 @@ import * as storage from "../storage/localStorage.mjs";
 import { reactionsUrl } from "../api/apiUrls.mjs";
 const [reactOne, reactTwo, reactThree, reactFour, reactFive] = reactionsUrl;
 
-// Get params to link
-const IDurl = new URL(location.href);
-const postID = IDurl.searchParams.get("id");
-
 /**
  * Lets the user send reactions to a post with a PUT request.
  * @example
@@ -23,92 +19,40 @@ export function reactPost() {
   const reactionFour = document.querySelector("#reactionFour");
   const reactionFive = document.querySelector("#reactionFive");
 
+  // Base react to posts function
+  async function reactToPost(url) {
+    const [getData, postData, putData] = fetchOptions;
+    const token = storage.get("token");
+    putData["headers"] = { Authorization: `Bearer ${token}` };
+
+    const response = await fetch(url, putData);
+    const json = await response.json();
+
+    location.reload();
+  }
+
   reactionOne.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    async function reactionOneAPI(url, putContent) {
-      const [getData, postData, putData] = fetchOptions;
-      const token = storage.get("token");
-      putData["headers"] = { Authorization: `Bearer ${token}` };
-
-      const response = await fetch(url, putData);
-      const json = await response.json();
-
-      location.reload();
-    }
-
-    reactionOneAPI(reactOne);
+    reactToPost(reactOne);
   });
 
   reactionTwo.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    async function reactionTwoAPI(url, putContent) {
-      const [getData, postData, putData] = fetchOptions;
-      const token = storage.get("token");
-      putData["headers"] = { Authorization: `Bearer ${token}` };
-
-      const response = await fetch(url, putData);
-      const json = await response.json();
-
-      console.log(json);
-      window.location.reload();
-    }
-
-    reactionTwoAPI(reactTwo);
+    reactToPost(reactTwo);
   });
 
   reactionThree.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    async function reactionThreeAPI(url, putContent) {
-      const [getData, postData, putData] = fetchOptions;
-      const token = storage.get("token");
-      putData["headers"] = { Authorization: `Bearer ${token}` };
-
-      const response = await fetch(url, putData);
-      const json = await response.json();
-
-      console.log(json);
-      window.location.reload();
-    }
-
-    reactionThreeAPI(reactThree);
+    reactToPost(reactThree);
   });
 
   reactionFour.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    async function reactionFourAPI(url, putContent) {
-      const [getData, postData, putData] = fetchOptions;
-      const token = storage.get("token");
-      putData["headers"] = { Authorization: `Bearer ${token}` };
-
-      const response = await fetch(url, putData);
-      const json = await response.json();
-
-      console.log(json);
-      window.location.reload();
-    }
-
-    reactionFourAPI(reactFour);
+    reactToPost(reactFour);
   });
 
   reactionFive.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    async function reactionFiveAPI(url, putContent) {
-      const [getData, postData, putData] = fetchOptions;
-      const token = storage.get("token");
-      putData["headers"] = { Authorization: `Bearer ${token}` };
-
-      const response = await fetch(url, putData);
-      const json = await response.json();
-
-      console.log(json);
-      window.location.reload();
-    }
-
-    reactionFiveAPI(reactFive);
+    reactToPost(reactFive);
   });
 }
