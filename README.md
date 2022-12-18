@@ -28,3 +28,5 @@ npm i -D sass & live-server
 ```
 npm run watch
 ```
+
+3. Register with a @stud.noroff.no or @noroff.no email and enjoy!
