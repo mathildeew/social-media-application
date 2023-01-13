@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Social Media Application made for JavaScript 2 Course Assignment. Log in here."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <title>Pattern | Log in</title>
+  </head>
+
+  <body class="bg-secondary">
+    <main class="d-flex flex-column align-items-center">
+      <h1 class="h1-primary my-5">Pattern</h1>
+
+      <div class="bg-light rounded-4">
+        <form id="loginForm" class="d-flex flex-column mb-4 p-4">
+          <div class="mb-4">
+            <label for="email" class="fw-bold">Email</label>
+            <input
+              id="email"
+              class="form-control rounded-4"
+              type="email"
+              name="email"
+              placeholder="example@stud.noroff.no"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label for="password" class="fw-bold">Password</label>
+            <input
+              id="password"
+              class="form-control rounded-4"
+              type="password"
+              name="password"
+              placeholder="Min 8 characters"
+              minlength="8"
+              required
+            />
+          </div>
+          <div class="formError"><p>Invalid email or password</p></div>
+
+          <button type="submit" class="btn btn-primary rounded-4">Login</button>
+        </form>
+
+        <div class="d-flex justify-content-center">
+          <p>Want to join?</p>
+          <a href="profile/register/" class="ms-1">Register here</a>
+        </div>
+      </div>
+    </main>
+    <script defer type="module" src="src/js/script.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
