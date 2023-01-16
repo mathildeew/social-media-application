@@ -20,7 +20,7 @@ npm i bootstrap
 ```
 
 ```
-npm i -D sass & live-server
+npm i -D sass live-server
 ```
 
 2. To compile the .scss files into the dist/css folder and run live-server.
