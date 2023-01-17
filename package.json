@@ -9,7 +9,8 @@
     "watch": "sass --watch src/scss:dist/css & live-server",
     "start": "npm run build && live-server",
     "format": "prettier -w src/js/**/*.js",
-    "lint": "eslint src/js/**/*.js"
+    "lint": "eslint src/js/**/*.js",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,8 @@
   "homepage": "https://github.com/mathildeew/social-media-application#readme",
   "devDependencies": {
     "eslint": "^8.32.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
     "live-server": "^1.2.2",
     "prettier": "^2.8.3",
     "sass": "^1.57.1"
@@ -36,5 +39,17 @@
   "dependencies": {
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.2"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
   }
 }
