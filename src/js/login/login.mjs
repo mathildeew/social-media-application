@@ -25,7 +25,7 @@ export function loginUser() {
 
     async function loginAPI(url, postContent) {
       try {
-        const [getData, postData] = fetchOptions;
+        const [postData] = fetchOptions;
         postData["body"] = JSON.stringify(postContent);
         const response = await fetch(url, postData);
         const json = await response.json();
