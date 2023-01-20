@@ -1,3 +1,8 @@
+// import * as dotenv from "dotenv";
+// dotenv.config();
+// const USER_EMAIL = process.env.EMAIL;
+// const USER_PASSWORD = process.env.PASSWORD;
+
 describe("user with valid credentials", () => {
   it("can login user", () => {
     cy.visit("http://127.0.0.1:5500/");
