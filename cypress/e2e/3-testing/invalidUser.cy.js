@@ -1,6 +1,6 @@
 describe("fails user with invalid credentials", () => {
   beforeEach(() => {
-    cy.visit("http://127.0.0.1:5500/");
+    cy.visit("/");
     cy.clearLocalStorage();
   });
 

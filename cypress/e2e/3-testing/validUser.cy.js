@@ -5,7 +5,7 @@
 
 describe("user with valid credentials", () => {
   it("can login user", () => {
-    cy.visit("http://127.0.0.1:5500/");
+    cy.visit("/");
     cy.clearLocalStorage();
     cy.get("input#email").type("megumi@noroff.no", { delay: 100 });
     cy.get("input#password").type("11111111", { delay: 100 });
