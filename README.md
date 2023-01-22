@@ -31,3 +31,5 @@ npm run start
 
 ## Status badge
 [![Automated E2E Testing](https://github.com/MegumiKim/Mathilde-Social-App/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/MegumiKim/Mathilde-Social-App/actions/workflows/e2e-test.yml)
+
+[![Automated Unit Testing](https://github.com/MegumiKim/Mathilde-Social-App/actions/workflows/unit-test.yml/badge.svg)](https://github.com/MegumiKim/Mathilde-Social-App/actions/workflows/unit-test.yml)
