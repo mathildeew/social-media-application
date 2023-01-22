@@ -17,7 +17,7 @@ describe("user with valid credentials", () => {
 
   it("can log out with logout button", () => {
     cy.wait(1000);
-    cy.get("a#logout").contains("Log out").click();
+    cy.get("a#logout").click();
     cy.wait(1000);
     expect(localStorage.getItem("token")).to.be.null;
   });
