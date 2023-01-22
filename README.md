@@ -28,3 +28,6 @@ npm run start
 ```
 
 3. Register with a @stud.noroff.no or @noroff.no email and enjoy!
+
+## Status badge
+[![Automated E2E Testing](https://github.com/MegumiKim/Mathilde-Social-App/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/MegumiKim/Mathilde-Social-App/actions/workflows/e2e-test.yml)
