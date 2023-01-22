@@ -7,7 +7,7 @@
   "extends": "eslint:recommended",
   "overrides": [
     {
-      "files": ["**/*.test.js", "src/helpers/**/*.js"],
+      "files": ["**/*.test.js"],
       "env": { "jest": true },
       "plugins": ["jest"],
       "extends": ["plugin:jest/recommended"],
