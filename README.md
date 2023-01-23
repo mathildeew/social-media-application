@@ -11,22 +11,25 @@ The goal was to apply knowledge of JavaScript techniques to implement the front-
 
 ## Instructions
 
-To use the project run the following commands:
+To use the project run deploy workflow in Actions tab.
 
-1. Install bootstrap, sass and live-server.
+Or run the following commands manually:
 
-```
-npm i bootstrap
-```
+1. Install dependencies
 
 ```
-npm i -D sass live-server
+npm i
 ```
 
-2. To compile the .scss files into the dist/css folder and run live-server.
+2. 
 
 ```
-npm run watch
+npm run start
 ```
 
 3. Register with a @stud.noroff.no or @noroff.no email and enjoy!
+
+## Status badge
+[![Automated E2E Testing](https://github.com/MegumiKim/Mathilde-Social-App/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/MegumiKim/Mathilde-Social-App/actions/workflows/e2e-test.yml)
+
+[![Automated Unit Testing](https://github.com/MegumiKim/Mathilde-Social-App/actions/workflows/unit-test.yml/badge.svg)](https://github.com/MegumiKim/Mathilde-Social-App/actions/workflows/unit-test.yml)
